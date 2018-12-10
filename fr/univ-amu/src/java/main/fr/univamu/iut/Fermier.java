@@ -1,58 +1,38 @@
 package fr.univamu.iut;
 
-fermier;
+public class Fermier implements Client {
 
-/**
- * 
- */
-public class Fermier extends Client {
+    private String prenom;
 
-    /**
-     * Default constructor
-     */
-    public Fermier() {
-    }
+    private String nom;
 
-    /**
-     * 
-     */
-    private string prenom;
-
-    /**
-     * 
-     */
-    private string nom;
-
-    /**
-     * 
-     */
     private int id;
 
-
-    /**
-     * 
-     */
     private CompteBancaire monCompte;
 
-    /**
-     * 
-     */
-    public void void acheterRessources() {
-        // TODO implement here
+    public Fermier(String prenom, String nom,int id, CompteBancaire monCompte) {
+        this.prenom = prenom;
+        this.nom = nom;
+        this.id = id;
+        this.monCompte = monCompte;
     }
 
-    /**
-     * @param int gain
-     */
-    public void int cotiserSomme(void int gain) {
+    public void acheterRessources() {
         // TODO implement here
     }
-
-    /**
-     * @param PropostitionProduitFermier
-     */
-    public void void proposerProduit(void PropostitionProduitFermier) {
-        // TODO implement here
+    public int cotiserSomme(int gain) {
+        return 0;
     }
 
+    public void proposerProduit(PropositionProduitFermier produit) {
+        // TODO implement here
+    }
+    @Override
+    public void acheterProduit(ProduitCommercialisable produitvoulu)  {
+
+    }
+    @Override
+    public void notifierClient() {
+
+    }
 }
