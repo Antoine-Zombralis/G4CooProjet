@@ -31,8 +31,10 @@ public class Fermier implements Client {
     public void acheterProduit(ProduitCommercialisable produitvoulu)  {
 
     }
+
     @Override
-    public void notifierClient() {
+    public void notifierClient(int id) {
 
     }
+
 }
