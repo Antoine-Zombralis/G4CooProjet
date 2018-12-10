@@ -2,40 +2,18 @@ package fr.univamu.iut;
 
 import java.util.List;
 
-/**
- * 
- */
 public interface Client {
 
-    /**
-     * 
-     */
-    List<ProduitCommercialisable> mesProduitsAchetés;
+    List<ProduitCommercialisable> mesProduitsAchetés = null;
 
-    /**
-     * 
-     */
-    public boolean abonne;
+    public boolean abonne = false;
 
-    /**
-     * 
-     */
-    public int id;
+    public int id = 0;
 
-    /**
-     * 
-     */
-    private CompteBancaire monComte;
+    CompteBancaire monComte = null;
 
+    public void acheterProduit(ProduitCommercialisable produit);
 
-    /**
-     * @param ProduitCommercialisable produit
-     */
-    public void void acheterProduit(ProduitCommercialisable produit);
-
-    /**
-     * @param int id
-     */
-    public void void notifierClient(void int id);
+    public void notifierClient(int id);
 
 }
