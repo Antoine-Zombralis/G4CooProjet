@@ -1,46 +1,34 @@
 package fr.univamu.iut;
 
-fermier;
-
 import java.util.*;
 
-/**
- * 
- */
+
 public class CompteBancaire {
 
-    /**
-     * Default constructor
-     */
-    public CompteBancaire() {
+    public CompteBancaire(int idClient, int solde) {
+        this.idClient = idClient;
+        this.solde = solde;
     }
 
-    /**
-     * 
-     */
     private int idClient;
 
-    /**
-     * 
-     */
     private int solde;
 
-    /**
-     * 
-     */
-    private Set<Fermier> mesClients;
+    private List<Fermier> mesFermiers;
 
-    /**
-     * 
-     */
-    private Set<Client> mesClients;
+    private List<Client> mesClients;
 
-    /**
-     * @param int idClient 
-     * @param int solde
-     */
-    public void void miseAJour(void int idClient, void int solde) {
-        // TODO implement here
+    public void crediter(int idClient, int solde) {
+        if(this.idClient == idClient){
+            this.solde = this.solde + solde;
+        }
     }
+
+    public void debiter(int idClient, int solde) {
+        if(this.idClient == idClient){
+            this.solde = this.solde - solde;
+        }
+    }
+
 
 }

@@ -1,41 +1,19 @@
 package fr.univamu.iut;
 
-fermier;
+import java.util.List;
 
-/**
- * 
- */
 public interface Client {
 
-    /**
-     * 
-     */
-    private array<ProduitCommercialisable> mesProduitsAchetés;
+    List<ProduitCommercialisable> mesProduitsAchetés = null;
 
-    /**
-     * 
-     */
-    public bool abonné;
+    public boolean abonne = false;
 
-    /**
-     * 
-     */
-    public int id;
+    public int id = 0;
 
-    /**
-     * 
-     */
-    private CompteBancaire monComte;
+    CompteBancaire monComte = null;
 
+    public void acheterProduit(ProduitCommercialisable produit);
 
-    /**
-     * @param ProduitCommercialisable produit
-     */
-    public void void acheterProduit(void ProduitCommercialisable produit);
-
-    /**
-     * @param int id
-     */
-    public void void notifierClient(void int id);
+    public void notifierClient(int id);
 
 }

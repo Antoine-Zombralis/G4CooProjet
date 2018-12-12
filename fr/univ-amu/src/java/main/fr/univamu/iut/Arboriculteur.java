@@ -1,7 +1,5 @@
 package fr.univamu.iut;
 
-fermier;
-
 /**
  * 
  */
@@ -10,10 +8,10 @@ public class Arboriculteur extends Fermier {
     /**
      * Default constructor
      */
-    public Arboriculteur() {
+    public Arboriculteur(String prenom, String nom, int id, CompteBancaire monCompte) {
+        super(prenom, nom, id, monCompte);
     }
-
-    /**
+/**
      * 
      */
     public void void cultiverArbre() {
