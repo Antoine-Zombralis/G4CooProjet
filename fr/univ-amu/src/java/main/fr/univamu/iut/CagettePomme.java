@@ -22,9 +22,7 @@ public class CagettePomme extends Fruit {
         return quantiteCagette;
     }
 
-    public int getPrixPommeUnite() {
-        return prixPommeUnite;
-    }
+    public int getPrixPommeUnite(){ return prixPommeUnite; }
 
     public void setQuantitePomme(int quantitePomme) {
         this.quantitePomme = quantitePomme;
