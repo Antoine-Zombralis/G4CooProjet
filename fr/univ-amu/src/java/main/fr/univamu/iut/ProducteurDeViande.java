@@ -1,7 +1,5 @@
 package fr.univamu.iut;
 
-import java.util.List;
-
 public class ProducteurDeViande extends Fermier {
 
     public ProducteurDeViande(String prenom, String nom, int id, CompteBancaire monCompte) {

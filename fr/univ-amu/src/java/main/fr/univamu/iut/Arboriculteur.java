@@ -8,13 +8,5 @@ public class Arboriculteur extends Fermier {
         super(prenom, nom, id, monCompte);
     }
 
-    public void cultiverFruit(Fruit fruit) {
-         mesProductions.add(fruit);
-    }
-
-    public void cultiverLegule(Legume legume) {
-        mesProductions.add(legume);
-    }
-
 
 }
