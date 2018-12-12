@@ -5,12 +5,12 @@ fermier;
 /**
  * 
  */
-public class Légume extends Tomate {
+public class Legume extends Tomate {
 
     /**
      * Default constructor
      */
-    public Légume() {
+    public Legume() {
     }
 
 }

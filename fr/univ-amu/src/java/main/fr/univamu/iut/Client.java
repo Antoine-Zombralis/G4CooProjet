@@ -10,7 +10,7 @@ public interface Client {
     /**
      * 
      */
-    List<ProduitCommercialisable> mesProduitsAchetés;
+    List<ProduitCommercialisable> mesProduitsAchetes;
 
     /**
      * 

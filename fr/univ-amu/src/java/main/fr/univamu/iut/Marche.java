@@ -7,12 +7,12 @@ import java.util.*;
 /**
  * 
  */
-public class Marché {
+public class Marche {
 
     /**
      * Default constructor
      */
-    public Marché() {
+    public Marche() {
     }
 
 }
