@@ -4,66 +4,42 @@ fermier;
 
 import java.util.*;
 
-/**
- * 
- */
+
 private class PropositionProduitFermier {
 
-    /**
-     * Default constructor
-     */
     private PropositionProduitFermier() {
     }
 
-    /**
-     * 
-     */
-    private string propriétaire;
+    private String propriétaire;
 
-    /**
-     * 
-     */
-    private string id;
+    private String id;
 
-    /**
-     * 
-     */
-    private bool bio;
+    private boolean bio;
 
-    /**
-     * 
-     */
-    private bool conforme;
+    private boolean conforme;
 
-    /**
-     * 
-     */
     private int quantité;
 
-    /**
-     * 
-     */
     private int prix;
 
-    /**
-     * 
-     */
-    public date datePéremption;
+    public Date datePéremption;
 
-
-
-    /**
-     * @param ProduitFermier produit
-     */
-    public void bool isBio(void ProduitFermier produit) {
-        // TODO implement here
+    public boolean isBio( PropositionProduitFermier produit) {
+        if (bio){
+            return true;
+        }
+        return false;
     }
 
     /**
      * @param bool conforme
      */
-    public void void changerConforme(void bool conforme) {
-        // TODO implement here
+    public void changerConforme(boolean conforme) {
+        if (conforme){
+            conforme = false;
+        } else {
+            conforme = true;
+        }
     }
 
 }

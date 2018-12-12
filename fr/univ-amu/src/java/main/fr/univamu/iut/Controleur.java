@@ -36,7 +36,7 @@ public class Controleur {
     /**
      * @param ProduitFermier produit
      */
-    public void void validerProduit(void ProduitFermier produit) {
+    public void validerProduit(ProduitFermier produit) {
         // TODO implement here
     }
 
