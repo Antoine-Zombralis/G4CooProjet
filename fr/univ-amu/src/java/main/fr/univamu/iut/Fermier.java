@@ -12,9 +12,9 @@ public class Fermier extends Client {
 
     private CompteBancaire monCompte;
 
-    private List<ProduitCommercialisable> mesProduits;
+    private List<ProduitCommercialisable> mesProduitsCommercialisable;
 
-    public Fermier(String prenom, String nom, int id, CompteBancaire monCompte) {
+    Fermier(String prenom, String nom, int id, CompteBancaire monCompte) {
         this.prenom = prenom;
         this.nom = nom;
         this.id = id;
@@ -35,7 +35,7 @@ public class Fermier extends Client {
     @Override
     public void acheterProduit(ProduitCommercialisable produitvoulu)  {
         this.monCompte.debiter(this.id, produitvoulu.getPrix());
-        mesProduits.add(produitvoulu);
+        mesProduitsCommercialisable.add(produitvoulu);
     }
 
     @Override
