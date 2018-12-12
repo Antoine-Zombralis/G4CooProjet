@@ -14,6 +14,6 @@ public interface Client {
 
     public void acheterProduit(ProduitCommercialisable produit);
 
-    public void notifierClient(int id);
+    public void notifierClient(Client client);
 
 }
