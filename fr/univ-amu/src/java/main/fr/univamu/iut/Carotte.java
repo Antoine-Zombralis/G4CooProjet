@@ -5,7 +5,7 @@ fermier;
 /**
  * 
  */
-public class Carotte extends Légume {
+public class Carotte extends Legume {
 
     /**
      * Default constructor
