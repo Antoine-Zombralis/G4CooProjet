@@ -4,8 +4,6 @@ import java.util.List;
 
 public class Arboriculteur extends Fermier {
 
-    private List<Object> mesProductions;
-
     public Arboriculteur(String prenom, String nom, int id, CompteBancaire monCompte) {
         super(prenom, nom, id, monCompte);
     }
@@ -14,7 +12,7 @@ public class Arboriculteur extends Fermier {
          mesProductions.add(fruit);
     }
 
-    public void cultiverLegule(Légume legume) {
+    public void cultiverLegule(Legume legume) {
         mesProductions.add(legume);
     }
 

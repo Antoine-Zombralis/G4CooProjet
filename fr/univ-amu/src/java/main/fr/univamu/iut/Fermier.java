@@ -14,6 +14,8 @@ public class Fermier extends Client {
 
     private List<ProduitCommercialisable> mesProduitsCommercialisable;
 
+    List<Object> mesProductions;
+
     Fermier(String prenom, String nom, int id, CompteBancaire monCompte) {
         this.prenom = prenom;
         this.nom = nom;
