@@ -8,5 +8,8 @@ public class Arboriculteur extends Fermier {
         super(prenom, nom, id, monCompte);
     }
 
+    public void produireArbre(Arbre arbre){
+        mesProductions.add(arbre);
+    }
 
 }
