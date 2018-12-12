@@ -6,7 +6,14 @@ import java.util.*;
 
 public class PropositionProduitFermier {
 
-    private PropositionProduitFermier() {
+    public PropositionProduitFermier(String propriétaire, String id, boolean bio, boolean conforme, int quantité, int prix, Date datePéremption) {
+        this.propriétaire = propriétaire;
+        this.id = id;
+        this.bio = bio;
+        this.conforme = conforme;
+        this.quantité = quantité;
+        this.prix = prix;
+        this.datePéremption = datePéremption;
     }
 
     private String propriétaire;
@@ -21,7 +28,7 @@ public class PropositionProduitFermier {
 
     private int prix;
 
-    public Date datePéremption;
+    private Date datePéremption;
 
     public boolean isBio( PropositionProduitFermier produit) {
         if (bio){
