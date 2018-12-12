@@ -1,11 +1,10 @@
 package fr.univamu.iut;
 
-fermier;
 
 import java.util.*;
 
 
-private class PropositionProduitFermier {
+public class PropositionProduitFermier {
 
     private PropositionProduitFermier() {
     }
@@ -31,9 +30,6 @@ private class PropositionProduitFermier {
         return false;
     }
 
-    /**
-     * @param bool conforme
-     */
     public void changerConforme(boolean conforme) {
         if (conforme){
             conforme = false;
