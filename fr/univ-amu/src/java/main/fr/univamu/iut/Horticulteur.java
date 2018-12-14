@@ -3,8 +3,8 @@ package fr.univamu.iut;
 public class Horticulteur extends Fermier {
 
 
-    public Horticulteur(String prenom, String nom, int id, CompteBancaire monCompte) {
-        super(prenom, nom, id, monCompte);
+    public Horticulteur(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
+        super(nom, abonne, idClient, idVendeur, monComte);
     }
 
     public void cultiverFruit(Fruit fruit) {
