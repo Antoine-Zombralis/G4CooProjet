@@ -27,6 +27,10 @@ public class Fermier extends Client {
         System.out.println("Je propose le produit " + produit + " à la vente");
     }
 
+    public void alerter(){
+        System.out.println("Vous avez recu une sanction");
+    }
+
     @Override
     public void acheterProduit(ProduitCommercialisable produitvoulu)  {
         this.getMonComte().debiter(this.getIdClient(), produitvoulu.getPrix());
@@ -35,7 +39,7 @@ public class Fermier extends Client {
 
     @Override
     public void notifierClient(Client client) {
-        System.out.println("De nouveau produit ont été mis en vente pour vous" + Client.getNom());
+        System.out.println("De nouveau produit ont été mis en vente pour vous" + client.getNom());
     }
 
     public int getId() {

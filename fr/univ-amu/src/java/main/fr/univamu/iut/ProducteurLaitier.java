@@ -6,7 +6,9 @@ public class ProducteurLaitier extends Fermier {
         super(nom, abonne, idClient, idVendeur, monComte);
     }
 
-    public void produiretLait() {
+    public void produiretLait(Vache vache) {
+
+        mesProductions.add(vache);
 
     }
 
