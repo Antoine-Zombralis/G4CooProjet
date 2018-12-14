@@ -2,40 +2,68 @@ package fr.univamu.iut;
 
 import java.util.List;
 
-/**
- * 
- */
-public interface Client {
+public abstract class Client {
 
-    /**
-     * 
-     */
-    List<ProduitCommercialisable> mesProduitsAchetes;
+    private String nom;
+    private boolean abonne = false;
+    private int id = 0;
+    private CompteBancaire monComte = null;
+    protected List<ProduitCommercialisable> mesProduitsAchetés = null;
 
-    /**
-     * 
-     */
-    public boolean abonne;
+    public Client(String nom, boolean abonne, int id, CompteBancaire monComte, List<ProduitCommercialisable> mesProduitsAchetés) {
+        this.nom = nom;
+        this.abonne = abonne;
+        this.id = id;
+        this.monComte = monComte;
+        this.mesProduitsAchetés = mesProduitsAchetés;
+    }
 
-    /**
-     * 
-     */
-    public int id;
+    public boolean isAbonne() {
+        return abonne;
+    }
 
-    /**
-     * 
-     */
-    private CompteBancaire monComte;
+    public void setAbonne(boolean abonne) {
+        this.abonne = abonne;
+    }
 
+    public int getId() {
+        return id;
+    }
 
-    /**
-     * @param ProduitCommercialisable produit
-     */
-    public void void acheterProduit(ProduitCommercialisable produit);
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    /**
-     * @param int id
-     */
-    public void void notifierClient(void int id);
+    public CompteBancaire getMonComte() {
+        return monComte;
+    }
+
+    public void setMonComte(CompteBancaire monComte) {
+        this.monComte = monComte;
+    }
+
+    public List<ProduitCommercialisable> getMesProduitsAchetés() {
+        return mesProduitsAchetés;
+    }
+
+    public void setMesProduitsAchetés(List<ProduitCommercialisable> mesProduitsAchetés) {
+        this.mesProduitsAchetés = mesProduitsAchetés;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void acheterProduit(ProduitCommercialisable produit){
+        mesProduitsAchetés.add(produit) ;
+    }
+
+    public void notifierClient(Client client){
+        System.out.println("De nouveaux produit ont été mis en vente pour vous " + client.getNom());
+    }
 
 }

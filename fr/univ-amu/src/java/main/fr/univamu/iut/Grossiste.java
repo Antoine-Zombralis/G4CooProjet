@@ -1,30 +1,22 @@
 package fr.univamu.iut;
 
-fermier;
+
 
 import java.util.*;
 
-/**
- * 
- */
+
 public class Grossiste extends Client {
 
-    /**
-     * Default constructor
-     */
-    public Grossiste() {
+    public Grossiste(String nom, boolean abonne, int id, CompteBancaire monComte, List<ProduitCommercialisable> mesProduitsAchetés, Set<CentraleAchat> monGérantAchat) {
+        super(nom, abonne, id, monComte, mesProduitsAchetés);
+        this.monGérantAchat = monGérantAchat;
     }
 
-    /**
-     * 
-     */
-    private Set<Centrale D'Achat> monGérantD'Achat;
+    private Set<CentraleAchat> monGérantAchat;
 
-    /**
-     * @param ProduitCommercialisable produit
-     */
-    public void void acheterProduit(void ProduitCommercialisable produit) {
-        // TODO implement here
+
+    public void acheterProduit(ProduitCommercialisable produit) {
+        mesProduitsAchetés.add(produit) ;
     }
 
 }
