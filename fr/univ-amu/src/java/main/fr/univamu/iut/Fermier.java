@@ -4,27 +4,20 @@ import java.util.List;
 
 public class Fermier extends Client {
 
-    private String prenom;
-
-    private String nom;
-
-    private int id;
-
-    private CompteBancaire monCompte;
+    private int idVendeur;
 
     private List<ProduitCommercialisable> mesProduitsCommercialisable;
 
     List<Object> mesProductions;
 
-    Fermier(String prenom, String nom, int id, CompteBancaire monCompte) {
-        this.prenom = prenom;
-        this.nom = nom;
-        this.id = id;
-        this.monCompte = monCompte;
+
+    public Fermier(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
+        super(nom, abonne, idClient, monComte);
+        this.idVendeur = idVendeur;
     }
 
     public void acheterRessources(int prix) {
-        this.monCompte.debiter(this.id, prix);
+        this.getMonComte().debiter(this.getId(), prix);
     }
     public int cotiserSomme(int gain, int Taxe) {
         return gain * Taxe;
@@ -34,18 +27,34 @@ public class Fermier extends Client {
         System.out.println("Je propose le produit " + produit + " à la vente");
     }
 
+    public void alerter(){
+        System.out.println("Vous avez recu une sanction");
+    }
+
     @Override
     public void acheterProduit(ProduitCommercialisable produitvoulu)  {
-        this.monCompte.debiter(this.id, produitvoulu.getPrix());
+//        this.getMonComte().debiter(this.getIdClient(), produitvoulu.getPrix());
         mesProduitsCommercialisable.add(produitvoulu);
     }
 
     @Override
     public void notifierClient(Client client) {
-        System.out.println("De nouveau produit ont été mis en vente pour vous" + Client.getNom());
+        System.out.println("De nouveau produit ont été mis en vente pour vous" + client.getNom());
     }
 
     public int getId() {
-        return id;
+        return getIdClient();
+    }
+
+    public int getIdVendeur() {
+        return idVendeur;
+    }
+
+    public List<ProduitCommercialisable> getMesProduitsCommercialisable() {
+        return mesProduitsCommercialisable;
+    }
+
+    public List<Object> getMesProductions() {
+        return mesProductions;
     }
 }

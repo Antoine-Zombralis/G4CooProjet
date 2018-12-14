@@ -2,8 +2,8 @@ package fr.univamu.iut;
 
 public class ProducteurDeViande extends Fermier {
 
-    public ProducteurDeViande(String prenom, String nom, int id, CompteBancaire monCompte) {
-        super(prenom, nom, id, monCompte);
+    public ProducteurDeViande(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
+        super(nom, abonne, idClient, idVendeur, monComte);
     }
 
     public void produireVache(Vache vache){

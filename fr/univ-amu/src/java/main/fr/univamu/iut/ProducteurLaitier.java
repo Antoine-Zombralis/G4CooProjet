@@ -2,11 +2,13 @@ package fr.univamu.iut;
 
 public class ProducteurLaitier extends Fermier {
 
-    public ProducteurLaitier(String prenom, String nom, int id, CompteBancaire monCompte) {
-        super(prenom, nom, id, monCompte);
+    public ProducteurLaitier(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
+        super(nom, abonne, idClient, idVendeur, monComte);
     }
 
-    public void produiretLait() {
+    public void produiretLait(Vache vache) {
+
+        mesProductions.add(vache);
 
     }
 
