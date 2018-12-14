@@ -7,12 +7,12 @@ import java.util.*;
 /**
  * 
  */
-public class Négociation {
+public class Negociation {
 
     /**
      * Default constructor
      */
-    public Négociation() {
+    public Negociation() {
     }
 
     /**
