@@ -1,23 +1,18 @@
 package fr.univamu.iut;
 
-fermier;
-
-/**
- * 
- */
 public class Horticulteur extends Fermier {
 
-    /**
-     * Default constructor
-     */
-    public Horticulteur() {
+
+    public Horticulteur(String prenom, String nom, int id, CompteBancaire monCompte) {
+        super(prenom, nom, id, monCompte);
     }
 
-    /**
-     * 
-     */
-    public void void cultiverLégumeFruit() {
-        // TODO implement here
+    public void cultiverFruit(Fruit fruit) {
+        mesProductions.add(fruit);
+    }
+
+    public void cultiverLegume(Legume legume) {
+        mesProductions.add(legume);
     }
 
 }
