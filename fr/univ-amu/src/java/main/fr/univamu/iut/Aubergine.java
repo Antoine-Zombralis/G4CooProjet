@@ -1,26 +1,39 @@
 package fr.univamu.iut;
 
-fermier;
+private class Aubergine extends Legume {
 
-/**
- * 
- */
-private class Aubergine extends Légume {
+    private int prixAubergineUnite;
+    private int quantiteAubergine;
+    private int prixCagetteUnite;
+    private int quantiteCagette;
 
-    /**
-     * Default constructor
-     */
-    private Aubergine() {
+    public CagetteAubergine(int prixAubergineUnite, int quantiteAubergine, int quantiteCagette) {
+        this.prixAubergineUnite = prixAubergineUnite;
+        this.quantiteAubergine = quantiteAubergine;
+        this.prixCagetteUnite = quantiteAubergine * prixAubergineUnite;
+        this.quantiteCagette = quantiteCagette;
     }
 
-    /**
-     * 
-     */
-    private int prix;
+    public int getQuantiteAubergine() {
+        return quantiteAubergine;
+    }
 
-    /**
-     * 
-     */
-    private int quantité;
+    public int getQuantiteCagette() {
+        return quantiteCagette;
+    }
+
+    public int getPrixAubergineUnite(){ return prixAubergineUnite; }
+
+    public void setQuantiteAubergine(int quantiteAubergine) {
+        this.quantiteAubergine = quantiteAubergine;
+    }
+
+    public void setQuantiteCagette(int quantiteCagette) {
+        this.quantiteCagette = quantiteCagette;
+    }
+
+    public void setPrixAubergineUnite(int prixAubergineUnite) {
+        this.prixAubergineUnite = prixAubergineUnite;
+    }
 
 }
