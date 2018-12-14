@@ -1,43 +1,38 @@
 package fr.univamu.iut;
 
-fermier;
 
 import java.util.*;
 
-/**
- * 
- */
+
 public class Controleur {
 
-    /**
-     * Default constructor
-     */
-    public Controleur() {
+
+    public Controleur() {}
+
+
+    private List<String> adhérents;
+    public List<PropositionProduitFermier> produitInterdits;
+
+
+ 
+    public void sanctionner(Fermier fermier) {
+        fermier.alerter() ;
     }
 
-    /**
-     * 
-     */
-    private array<string> adhérents;
+  
+    public void validerProduit(PropositionProduitFermier produit) {
+        for (PropositionProduitFermier produitInter: produitInterdits) {
+            if (produit.equals(produitInter)) {
+                produit.setConforme(false);
+            }
+            else if (
+            else {produit.setConforme(true);
 
-    /**
-     * 
-     */
-    public array<PropositionProduitFermier> produitInterdits;
-
-
-    /**
-     * @param Fermier fermier
-     */
-    public void void sanctionner(void Fermier fermier) {
-        // TODO implement here
-    }
-
-    /**
-     * @param ProduitFermier produit
-     */
-    public void void validerProduit(void ProduitFermier produit) {
-        // TODO implement here
+        }
+             ) {
+            
+        }
+        
     }
 
     /**
