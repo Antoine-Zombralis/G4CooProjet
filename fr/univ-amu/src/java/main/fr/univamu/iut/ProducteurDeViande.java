@@ -1,23 +1,19 @@
 package fr.univamu.iut;
 
-fermier;
-
-/**
- * 
- */
 public class ProducteurDeViande extends Fermier {
 
-    /**
-     * Default constructor
-     */
-    public ProducteurDeViande() {
+    public ProducteurDeViande(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
+        super(nom, abonne, idClient, idVendeur, monComte);
     }
 
-    /**
-     * 
-     */
-    public void void produireViande() {
-        // TODO implement here
+    public void produireVache(Vache vache){
+        mesProductions.add(vache);
     }
 
+    public void produireCochon(Cochon cochon){
+        mesProductions.add(cochon);
+    }
+    public void produireVolaille(Volaille volaille){
+        mesProductions.add(volaille);
+    }
 }

@@ -1,23 +1,15 @@
 package fr.univamu.iut;
 
-fermier;
+import java.util.List;
 
-/**
- * 
- */
 public class Arboriculteur extends Fermier {
 
-    /**
-     * Default constructor
-     */
-    public Arboriculteur() {
+    public Arboriculteur(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
+        super(nom, abonne, idClient, idVendeur, monComte);
     }
 
-    /**
-     * 
-     */
-    public void void cultiverArbre() {
-        // TODO implement here
+    public void produireArbre(Arbre arbre){
+        mesProductions.add(arbre);
     }
 
 }

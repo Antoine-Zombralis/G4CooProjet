@@ -1,33 +1,29 @@
 package fr.univamu.iut;
 
-fermier;
+import java.util.List;
 
-/**
- * 
- */
 public class Trader extends Client {
 
-    /**
-     * Default constructor
-     */
-    public Trader() {
+    private Boolean travaillerSurMarché;
+    private List<ProduitCommercialisable> mesProdtuisEnVente = null;
+
+    public Trader(String nom, boolean abonne, int id, CompteBancaire monComte, List<ProduitCommercialisable> mesProduitsAchetés, Boolean travaillerSurMarché, List<ProduitCommercialisable> mesProdtuisEnVente) {
+        super(nom, abonne, id, monComte, mesProduitsAchetés);
+        this.travaillerSurMarché = travaillerSurMarché;
+        this.mesProdtuisEnVente = mesProdtuisEnVente;
     }
 
-    /**
-     * 
-     */
-    private bool travaillerSurMarché;
+    @Override
+    public void acheterProduit(ProduitCommercialisable produit){
+        mesProduitsAchetés.add(produit) ;
+    }
 
-    /**
-     * 
-     */
-    public array<ProduitCommercialisable> meProdtuisEnVente;
+    @Override
+    public void notifierClient(Client client){
+        System.out.println("De nouveaux produit ont été mis en vente pour vous " + client.getNom());
+    }
 
-
-    /**
-     * @param ProduitCommercialisable produit
-     */
-    public void void mettreEnVente(void ProduitCommercialisable produit) {
+    public void mettreEnVente(ProduitCommercialisable produit) {
         // TODO implement here
     }
 

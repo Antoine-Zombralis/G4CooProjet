@@ -1,38 +1,60 @@
 package fr.univamu.iut;
 
-public class Fermier implements Client {
+import java.util.List;
 
-    private String prenom;
+public class Fermier extends Client {
 
-    private String nom;
+    private int idVendeur;
 
-    private int id;
+    private List<ProduitCommercialisable> mesProduitsCommercialisable;
 
-    private CompteBancaire monCompte;
+    List<Object> mesProductions;
 
-    public Fermier(String prenom, String nom,int id, CompteBancaire monCompte) {
-        this.prenom = prenom;
-        this.nom = nom;
-        this.id = id;
-        this.monCompte = monCompte;
+
+    public Fermier(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
+        super(nom, abonne, idClient, monComte);
+        this.idVendeur = idVendeur;
     }
 
-    public void acheterRessources() {
-        // TODO implement here
+    public void acheterRessources(int prix) {
+        this.getMonComte().debiter(this.getId(), prix);
     }
-    public int cotiserSomme(int gain) {
-        return 0;
+    public int cotiserSomme(int gain, int Taxe) {
+        return gain * Taxe;
     }
 
     public void proposerProduit(PropositionProduitFermier produit) {
-        // TODO implement here
+        System.out.println("Je propose le produit " + produit + " à la vente");
     }
+
+    public void alerter(){
+        System.out.println("Vous avez recu une sanction");
+    }
+
     @Override
     public void acheterProduit(ProduitCommercialisable produitvoulu)  {
-
+//        this.getMonComte().debiter(this.getIdClient(), produitvoulu.getPrix());
+        mesProduitsCommercialisable.add(produitvoulu);
     }
-    @Override
-    public void notifierClient() {
 
+    @Override
+    public void notifierClient(Client client) {
+        System.out.println("De nouveau produit ont été mis en vente pour vous" + client.getNom());
+    }
+
+    public int getId() {
+        return getIdClient();
+    }
+
+    public int getIdVendeur() {
+        return idVendeur;
+    }
+
+    public List<ProduitCommercialisable> getMesProduitsCommercialisable() {
+        return mesProduitsCommercialisable;
+    }
+
+    public List<Object> getMesProductions() {
+        return mesProductions;
     }
 }

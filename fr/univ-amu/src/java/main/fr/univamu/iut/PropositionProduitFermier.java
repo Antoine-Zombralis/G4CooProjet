@@ -1,69 +1,48 @@
 package fr.univamu.iut;
 
-fermier;
 
 import java.util.*;
 
-/**
- * 
- */
-private class PropositionProduitFermier {
 
-    /**
-     * Default constructor
-     */
-    private PropositionProduitFermier() {
+public class PropositionProduitFermier {
+
+    public PropositionProduitFermier(String propriétaire, String id, boolean bio, boolean conforme, int quantité, int prix, Date datePéremption) {
+        this.propriétaire = propriétaire;
+        this.id = id;
+        this.bio = bio;
+        this.conforme = conforme;
+        this.quantité = quantité;
+        this.prix = prix;
+        this.datePéremption = datePéremption;
     }
 
-    /**
-     * 
-     */
-    private string propriétaire;
+    private String propriétaire;
 
-    /**
-     * 
-     */
-    private string id;
+    private String id;
 
-    /**
-     * 
-     */
-    private bool bio;
+    private boolean bio;
 
-    /**
-     * 
-     */
-    private bool conforme;
+    private boolean conforme;
 
-    /**
-     * 
-     */
     private int quantité;
 
-    /**
-     * 
-     */
     private int prix;
 
-    /**
-     * 
-     */
-    public date datePéremption;
+    private Date datePéremption;
 
-
-
-    /**
-     * @param ProduitFermier produit
-     */
-    public void bool isBio(void ProduitFermier produit) {
-        // TODO implement here
+    public boolean isBio( PropositionProduitFermier produit) {
+        if (bio){
+            return true;
+        }
+        return false;
     }
 
-    /**
-     * @param bool conforme
-     */
-    public void void changerConforme(void bool conforme) {
-        // TODO implement here
+    public void changerConforme(boolean conforme) {
+        if (conforme){
+            conforme = false;
+        } else {
+            conforme = true;
+        }
     }
 
 }
