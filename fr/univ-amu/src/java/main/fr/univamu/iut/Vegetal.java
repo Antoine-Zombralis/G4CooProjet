@@ -7,17 +7,17 @@ import java.util.*;
 /**
  * 
  */
-public class GrandLivreDuMarché {
+public class Vegetal extends PropositionProduitFermier {
 
     /**
      * Default constructor
      */
-    public GrandLivreDuMarché() {
+    public Vegetal() {
     }
 
     /**
      * 
      */
-    public Set<Transaction> mesTransactions;
+    private int poids;
 
 }

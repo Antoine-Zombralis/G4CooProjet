@@ -63,7 +63,7 @@ public abstract class Client {
     }
 
     public void notifierClient(Client client){
-        System.out.println("De nouveaux produit ont été mis en vente pour vous oui " + client.getNom());
+        System.out.println("De nouveaux produit ont été mis en vente pour vous " + client.getNom());
     }
 
 }

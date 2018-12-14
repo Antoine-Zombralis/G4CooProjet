@@ -1,6 +1,8 @@
 package fr.univamu.iut;
 
-public class Fermier implements Client {
+import java.util.List;
+
+public class Fermier extends Client {
 
     private String prenom;
 
@@ -10,31 +12,40 @@ public class Fermier implements Client {
 
     private CompteBancaire monCompte;
 
-    public Fermier(String prenom, String nom,int id, CompteBancaire monCompte) {
+    private List<ProduitCommercialisable> mesProduitsCommercialisable;
+
+    List<Object> mesProductions;
+
+    Fermier(String prenom, String nom, int id, CompteBancaire monCompte) {
         this.prenom = prenom;
         this.nom = nom;
         this.id = id;
         this.monCompte = monCompte;
     }
 
-    public void acheterRessources() {
-        // TODO implement here
+    public void acheterRessources(int prix) {
+        this.monCompte.debiter(this.id, prix);
     }
-    public int cotiserSomme(int gain) {
-        return 0;
+    public int cotiserSomme(int gain, int Taxe) {
+        return gain * Taxe;
     }
 
     public void proposerProduit(PropositionProduitFermier produit) {
-        // TODO implement here
+        System.out.println("Je propose le produit " + produit + " à la vente");
     }
+
     @Override
     public void acheterProduit(ProduitCommercialisable produitvoulu)  {
-
+        this.monCompte.debiter(this.id, produitvoulu.getPrix());
+        mesProduitsCommercialisable.add(produitvoulu);
     }
 
     @Override
-    public void notifierClient(int id) {
-
+    public void notifierClient(Client client) {
+        System.out.println("De nouveau produit ont été mis en vente pour vous" + Client.getNom());
     }
 
+    public int getId() {
+        return id;
+    }
 }
