@@ -33,7 +33,7 @@ public class Fermier extends Client {
 
     @Override
     public void acheterProduit(ProduitCommercialisable produitvoulu)  {
-        this.getMonComte().debiter(this.getIdClient(), produitvoulu.getPrix());
+//        this.getMonComte().debiter(this.getIdClient(), produitvoulu.getPrix());
         mesProduitsCommercialisable.add(produitvoulu);
     }
 
@@ -44,5 +44,17 @@ public class Fermier extends Client {
 
     public int getId() {
         return getIdClient();
+    }
+
+    public int getIdVendeur() {
+        return idVendeur;
+    }
+
+    public List<ProduitCommercialisable> getMesProduitsCommercialisable() {
+        return mesProduitsCommercialisable;
+    }
+
+    public List<Object> getMesProductions() {
+        return mesProductions;
     }
 }
