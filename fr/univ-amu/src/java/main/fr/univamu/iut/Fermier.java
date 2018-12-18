@@ -8,8 +8,6 @@ public class Fermier extends Client {
 
     private List<ProduitCommercialisable> mesProduitsCommercialisable;
 
-    List<Object> mesProductions;
-
 
     public Fermier(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
         super(nom, abonne, idClient, monComte);
@@ -54,7 +52,4 @@ public class Fermier extends Client {
         return mesProduitsCommercialisable;
     }
 
-    public List<Object> getMesProductions() {
-        return mesProductions;
-    }
 }
