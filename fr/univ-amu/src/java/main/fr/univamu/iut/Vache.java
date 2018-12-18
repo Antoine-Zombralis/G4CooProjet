@@ -1,31 +1,19 @@
 package fr.univamu.iut;
 
-fermier;
+import java.util.Date;
 
-/**
- * 
- */
 public class Vache extends Viande {
 
-    /**
-     * Default constructor
-     */
-    public Vache() {
+    public Vache(String propriétaire, String id, boolean bio, boolean conforme, int quantité, int prix, Date datePéremption, int poids, int quantité1) {
+        super(propriétaire, id, bio, conforme, quantité, prix, datePéremption, poids);
+        this.quantité = quantité1;
     }
 
-    /**
-     * 
-     */
-    public int prix;
-
-    /**
-     * 
-     */
     public int quantité;
 
-    /**
-     * 
-     */
-    public enum<string> catégorie;
+
+    public enum catégorie{
+        CHAROLAISE, LIMOUSINE, NORMANDE, TARENTAISE
+    }
 
 }

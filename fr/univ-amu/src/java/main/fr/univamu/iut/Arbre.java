@@ -4,7 +4,7 @@ public class Arbre extends Vegetal {
 
     String type;
 
-    public Arbre() {
+    public Arbre(String type) {
         this.type = type;
     }
 }
