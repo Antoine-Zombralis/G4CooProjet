@@ -1,5 +1,7 @@
 package fr.univamu.iut;
 
+import java.util.Date;
+
 /**
  * 
  */
@@ -10,10 +12,11 @@ public class CagettePoire extends Fruit {
     private int prixCagetteUnite;
     private int quantiteCagette;
 
-    public CagettePoire(int prixPoireUnite, int quantitePoire, int quantiteCagette) {
+    public CagettePoire(String propriétaire, String id, boolean bio, boolean conforme, int quantité, int prix, Date datePéremption, int poids, int prixPoireUnite, int quantitePoire, int prixCagetteUnite, int quantiteCagette) {
+        super(propriétaire, id, bio, conforme, quantité, prix, datePéremption, poids);
         this.prixPoireUnite = prixPoireUnite;
         this.quantitePoire = quantitePoire;
-        this.prixCagetteUnite = quantitePoire * prixPoireUnite;
+        this.prixCagetteUnite = prixCagetteUnite;
         this.quantiteCagette = quantiteCagette;
     }
 

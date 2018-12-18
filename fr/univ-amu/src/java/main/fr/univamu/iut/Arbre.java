@@ -10,4 +10,8 @@ public class Arbre extends Vegetal {
         super(propriétaire, id, bio, conforme, quantité, prix, datePéremption, poids);
         this.type = type;
     }
+
+    public String getType() {
+        return type;
+    }
 }

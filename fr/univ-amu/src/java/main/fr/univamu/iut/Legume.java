@@ -1,13 +1,11 @@
 package fr.univamu.iut;
 
 
+import java.util.Date;
 
-public class Legume extends Tomate {
+public abstract class Legume extends Vegetal {
 
-    /**
-     * Default constructor
-     */
-    public Legume() {
+    public Legume(String propriétaire, String id, boolean bio, boolean conforme, int quantité, int prix, Date datePéremption, int poids) {
+        super(propriétaire, id, bio, conforme, quantité, prix, datePéremption, poids);
     }
-
 }
