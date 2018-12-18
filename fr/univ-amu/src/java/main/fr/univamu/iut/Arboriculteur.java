@@ -5,18 +5,18 @@ import java.util.List;
 
 public class Arboriculteur extends Fermier {
 
-    private List<Arbre> mesArbres;
+    private List<Arbre> mesProductions;
 
     public Arboriculteur(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
         super(nom, abonne, idClient, idVendeur, monComte);
-        this.mesArbres = new ArrayList<>();
+        mesProductions = new ArrayList<>();
     }
 
     public void produireArbre(Arbre arbre){
-        mesArbres.add(arbre);
+        mesProductions.add(arbre);
     }
 
-    public List<Arbre> getMesArbres() {
-        return this.mesArbres;
+    public List<Arbre> getMesProductions() {
+        return mesProductions;
     }
 }

@@ -1,5 +1,6 @@
 package fr.univamu.iut;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProducteurLaitier extends Fermier {
@@ -8,6 +9,7 @@ public class ProducteurLaitier extends Fermier {
 
     public ProducteurLaitier(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
         super(nom, abonne, idClient, idVendeur, monComte);
+        mesProductions = new ArrayList<>();
     }
 
     public void produiretLait(Vache vache) {

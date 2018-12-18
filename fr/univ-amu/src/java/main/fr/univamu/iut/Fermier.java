@@ -9,7 +9,6 @@ public class Fermier extends Client {
     private List<ProduitCommercialisable> mesProduitsCommercialisable;
 
 
-
     public Fermier(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
         super(nom, abonne, idClient, monComte);
         this.idVendeur = idVendeur;

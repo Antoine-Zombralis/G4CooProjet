@@ -1,5 +1,6 @@
 package fr.univamu.iut;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Horticulteur extends Fermier {
@@ -8,9 +9,11 @@ public class Horticulteur extends Fermier {
 
     public Horticulteur(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
         super(nom, abonne, idClient, idVendeur, monComte);
+        mesProductions = new ArrayList<>();
     }
 
     public void cultiverFruit(Fruit fruit) {
+
         mesProductions.add(fruit);
     }
 

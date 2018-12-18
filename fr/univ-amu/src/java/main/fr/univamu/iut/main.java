@@ -12,7 +12,7 @@ public class main {
         Arbre pin = new Arbre(gile.getNom(), "1", true,true, 1,10, date, 20, "Pin");
         gile.produireArbre(pin);
 
-        for(Arbre objet: gile.getMesArbres()){
+        for(Arbre objet: gile.getMesProductions()){
             System.out.println(objet.getType());
         }
 
