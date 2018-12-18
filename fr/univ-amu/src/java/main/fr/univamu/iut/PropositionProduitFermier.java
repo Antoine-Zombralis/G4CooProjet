@@ -3,11 +3,20 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 public class PropositionProduitFermier {
-    public PropositionProduitFermier(String propriétaire, String id, boolean bio, boolean conforme, int quantité, int prix) {
+
+    private Fermier propriétaire;
+    private String id;
+    private boolean bio;
+    private boolean conforme;
+    private int quantité;
+    private int prix;
+    private Date datePéremption;
+
+
+    public PropositionProduitFermier(Fermier propriétaire, String id, boolean bio, int quantité, int prix) {
         this.propriétaire = propriétaire;
         this.id = id;
         this.bio = bio;
-        this.conforme = conforme;
         this.quantité = quantité;
         this.prix = prix;
         Calendar calendar = Calendar.getInstance();
@@ -15,19 +24,8 @@ public class PropositionProduitFermier {
         Date date = calendar.getTime();
         this.datePéremption = date ;
     }
-    private String propriétaire;
-    private String id;
-    private boolean bio;
-    private boolean conforme;
-    private int quantité;
-    private int prix;
-    private Date datePéremption;
-    public String isBio( PropositionProduitFermier produit) {
-        if (bio){
-            return "Le produit est bio";
-        }
-        return "Le produit n'est pas bio";
-    }
+
+
     public void changerConforme(boolean conforme) {
         if (conforme){
             conforme = false;
@@ -35,10 +33,10 @@ public class PropositionProduitFermier {
             conforme = true;
         }
     }
-    public String getPropriétaire() {
+    public Fermier getPropriétaire() {
         return propriétaire;
     }
-    public void setPropriétaire(String propriétaire) {
+    public void setPropriétaire(Fermier propriétaire) {
         this.propriétaire = propriétaire;
     }
     public String getId() {
@@ -47,9 +45,12 @@ public class PropositionProduitFermier {
     public void setId(String id) {
         this.id = id;
     }
-    public boolean isBio() {
-        return bio;
-    }
+    public String isBio() {
+            if (bio){
+                return "Le produit est bio";
+            }
+            return "Le produit n'est pas bio";
+        }
     public void setBio(boolean bio) {
         this.bio = bio;
     }

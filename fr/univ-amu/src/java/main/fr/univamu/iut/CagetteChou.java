@@ -9,8 +9,8 @@ public class CagetteChou extends Legume {
     private int prixCagetteUnite;
     private int quantiteCagette;
 
-    public CagetteChou(String propriétaire, String id, boolean bio, boolean conforme, int quantité, int prix, Date datePéremption, int poids, int prixChouUnite, int quantiteChou, int prixCagetteUnite, int quantiteCagette) {
-        super(propriétaire, id, bio, conforme, quantité, prix, datePéremption, poids);
+    public CagetteChou(Fermier propriétaire, String id, boolean bio, int quantité, int prix, int poids, int prixChouUnite, int quantiteChou, int prixCagetteUnite, int quantiteCagette) {
+        super(propriétaire, id, bio, quantité, prix, poids);
         this.prixChouUnite = prixChouUnite;
         this.quantiteChou = quantiteChou;
         this.prixCagetteUnite = prixCagetteUnite;
