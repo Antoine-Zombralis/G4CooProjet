@@ -8,9 +8,10 @@ public class main {
 
     public static void main(String[] args) {
 
-        Calendar calendar = Calendar.getInstance();
-        Date date = calendar.getTime();
-        System.out.println(date);
+
+       PropositionProduitFermier produit = new PropositionProduitFermier("Jean", "8", true, true, 8, 5) ;
+        System.out.println(produit.getDatePéremption()) ;
+        System.out.println(produit.isBio());
 
     }
 

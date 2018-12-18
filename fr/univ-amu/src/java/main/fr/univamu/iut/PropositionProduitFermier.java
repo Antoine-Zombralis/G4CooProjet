@@ -8,14 +8,17 @@ import java.util.*;
 
 public class PropositionProduitFermier {
 
-    public PropositionProduitFermier(String propriétaire, String id, boolean bio, boolean conforme, int quantité, int prix, Date datePéremption) {
+    public PropositionProduitFermier(String propriétaire, String id, boolean bio, boolean conforme, int quantité, int prix) {
         this.propriétaire = propriétaire;
         this.id = id;
         this.bio = bio;
         this.conforme = conforme;
         this.quantité = quantité;
         this.prix = prix;
-        this.datePéremption = datePéremption ;
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_YEAR, 7) ;
+        Date date = calendar.getTime();
+        this.datePéremption = date ;
 
 
     }
@@ -34,11 +37,11 @@ public class PropositionProduitFermier {
 
     private Date datePéremption;
 
-    public boolean isBio( PropositionProduitFermier produit) {
+    public String isBio( PropositionProduitFermier produit) {
         if (bio){
-            return true;
+            return "Le produit est bio";
         }
-        return false;
+        return "Le produit n'est pas bio";
     }
 
     public void changerConforme(boolean conforme) {
@@ -97,11 +100,9 @@ public class PropositionProduitFermier {
         this.prix = prix;
     }
 
-    public String getDatePéremption() {
-        Date datePéremption = new Date();
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        String dat = dateFormat.format(datePéremption);
-        return dat ;
+    public Date getDatePéremption() {
+
+        return datePéremption ;
     }
 
     public void setDatePéremption(Date datePéremption) {
