@@ -1,9 +1,15 @@
 package fr.univamu.iut;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProducteurDeViande extends Fermier {
+
+    private List<Viande> mesProductions;
 
     public ProducteurDeViande(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
         super(nom, abonne, idClient, idVendeur, monComte);
+        mesProductions = new ArrayList<>();
     }
 
     public void produireVache(Vache vache){
@@ -15,5 +21,9 @@ public class ProducteurDeViande extends Fermier {
     }
     public void produireVolaille(Volaille volaille){
         mesProductions.add(volaille);
+    }
+
+    public List<Viande> getMesProductions() {
+        return mesProductions;
     }
 }
