@@ -7,8 +7,8 @@ import java.util.*;
 
 public class Grossiste extends Client {
 
-    public Grossiste(String nom, boolean abonne, int id, CompteBancaire monComte, List<ProduitCommercialisable> mesProduitsAchetés, Set<CentraleAchat> monGérantAchat) {
-        super(nom, abonne, id, monComte, mesProduitsAchetés);
+    public Grossiste(String nom, boolean abonne, int idClient, CompteBancaire monComte, Set<CentraleAchat> monGérantAchat) {
+        super(nom, abonne, idClient, monComte);
         this.monGérantAchat = monGérantAchat;
     }
 
