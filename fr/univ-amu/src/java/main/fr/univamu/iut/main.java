@@ -9,10 +9,11 @@ public class main {
         Date date = new Date();
 
         Arboriculteur gile = new Arboriculteur("gilou", false, 1, 1, new CompteBancaire(1, 1000));
-        gile.produireArbre(new Arbre(gile.getNom(), "1", true,true, 1,10, date, 20, "Pin"));
+        Arbre pin = new Arbre(gile.getNom(), "1", true,true, 1,10, date, 20, "Pin");
+        gile.produireArbre(pin);
 
-        for(Object objet: gile.getMesArbres()){
-            System.out.println(objet);
+        for(Arbre objet: gile.getMesArbres()){
+            System.out.println(objet.getType());
         }
 
     }

@@ -1,13 +1,15 @@
 package fr.univamu.iut;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Arboriculteur extends Fermier {
 
-    List<Arbre> mesArbres;
+    private List<Arbre> mesArbres;
 
     public Arboriculteur(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
         super(nom, abonne, idClient, idVendeur, monComte);
+        this.mesArbres = new ArrayList<>();
     }
 
     public void produireArbre(Arbre arbre){
@@ -15,6 +17,6 @@ public class Arboriculteur extends Fermier {
     }
 
     public List<Arbre> getMesArbres() {
-        return mesArbres;
+        return this.mesArbres;
     }
 }
