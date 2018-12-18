@@ -17,4 +17,5 @@ public class ProduitCommercialisable extends PropositionProduitFermier {
     }
 
 
+    }
 }
