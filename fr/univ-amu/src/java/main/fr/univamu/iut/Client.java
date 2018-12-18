@@ -6,16 +6,16 @@ public abstract class Client {
 
     private String nom;
     private boolean abonne = false;
-    private int id = 0;
+    private int idClient = 0;
     private CompteBancaire monComte = null;
+
     protected List<ProduitCommercialisable> mesProduitsAchetés = null;
 
-    public Client(String nom, boolean abonne, int id, CompteBancaire monComte, List<ProduitCommercialisable> mesProduitsAchetés) {
+    public Client(String nom, boolean abonne, int idClient, CompteBancaire monComte) {
         this.nom = nom;
         this.abonne = abonne;
-        this.id = id;
+        this.idClient = idClient;
         this.monComte = monComte;
-        this.mesProduitsAchetés = mesProduitsAchetés;
     }
 
     public boolean isAbonne() {
@@ -26,12 +26,12 @@ public abstract class Client {
         this.abonne = abonne;
     }
 
-    public int getId() {
-        return id;
+    public int getIdClient() {
+        return idClient;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int idClient) {
+        this.idClient = idClient;
     }
 
     public CompteBancaire getMonComte() {

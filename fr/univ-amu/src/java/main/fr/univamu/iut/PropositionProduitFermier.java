@@ -45,4 +45,78 @@ public class PropositionProduitFermier {
         }
     }
 
+    public String getPropriétaire() {
+        return propriétaire;
+    }
+
+    public void setPropriétaire(String propriétaire) {
+        this.propriétaire = propriétaire;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public boolean isBio() {
+        return bio;
+    }
+
+    public void setBio(boolean bio) {
+        this.bio = bio;
+    }
+
+    public boolean isConforme() {
+        return conforme;
+    }
+
+    public void setConforme(boolean conforme) {
+        this.conforme = conforme;
+    }
+
+    public int getQuantité() {
+        return quantité;
+    }
+
+    public void setQuantité(int quantité) {
+        this.quantité = quantité;
+    }
+
+    public int getPrix() {
+        return prix;
+    }
+
+    public void setPrix(int prix) {
+        this.prix = prix;
+    }
+
+    public Date getDatePéremption() {
+        return datePéremption;
+    }
+
+    public void setDatePéremption(Date datePéremption) {
+        this.datePéremption = datePéremption;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PropositionProduitFermier that = (PropositionProduitFermier) o;
+        return bio == that.bio &&
+                conforme == that.conforme &&
+                quantité == that.quantité &&
+                prix == that.prix &&
+                Objects.equals(propriétaire, that.propriétaire) &&
+                Objects.equals(id, that.id) &&
+                Objects.equals(datePéremption, that.datePéremption);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(propriétaire, id, bio, conforme, quantité, prix, datePéremption);
+    }
 }

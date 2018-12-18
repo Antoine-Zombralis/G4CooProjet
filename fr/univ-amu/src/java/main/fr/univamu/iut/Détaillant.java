@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Détaillant extends Client {
 
-    public Détaillant(String nom, boolean abonne, int id, CompteBancaire monComte, List<ProduitCommercialisable> mesProduitsAchetés) {
-        super(nom, abonne, id, monComte, mesProduitsAchetés);
+    public Détaillant(String nom, boolean abonne, int idClient, CompteBancaire monComte) {
+        super(nom, abonne, idClient, monComte);
     }
 
     public void acheterProduit(ProduitCommercialisable produit){

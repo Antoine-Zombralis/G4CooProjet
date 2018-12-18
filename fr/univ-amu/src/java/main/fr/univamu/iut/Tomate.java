@@ -1,6 +1,5 @@
 package fr.univamu.iut;
 
-fermier;
 
 import java.util.*;
 
