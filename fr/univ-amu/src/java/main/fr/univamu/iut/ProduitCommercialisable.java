@@ -16,6 +16,4 @@ public class ProduitCommercialisable extends PropositionProduitFermier {
         ROUGE, AOC, AOP, AB, IGP, STG, BBC
     }
 
-
-    }
 }
