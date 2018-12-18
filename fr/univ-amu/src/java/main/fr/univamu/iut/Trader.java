@@ -7,8 +7,8 @@ public class Trader extends Client {
     private Boolean travaillerSurMarché;
     private List<ProduitCommercialisable> mesProdtuisEnVente = null;
 
-    public Trader(String nom, boolean abonne, int id, CompteBancaire monComte, List<ProduitCommercialisable> mesProduitsAchetés, Boolean travaillerSurMarché, List<ProduitCommercialisable> mesProdtuisEnVente) {
-        super(nom, abonne, id, monComte, mesProduitsAchetés);
+    public Trader(String nom, boolean abonne, int idClient, CompteBancaire monComte, Boolean travaillerSurMarché, List<ProduitCommercialisable> mesProdtuisEnVente) {
+        super(nom, abonne, idClient, monComte);
         this.travaillerSurMarché = travaillerSurMarché;
         this.mesProdtuisEnVente = mesProdtuisEnVente;
     }

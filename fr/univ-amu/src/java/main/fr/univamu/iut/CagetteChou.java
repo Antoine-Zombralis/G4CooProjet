@@ -1,6 +1,6 @@
 package fr.univamu.iut;
 
-private class CagetteChou extends Legume {
+public class CagetteChou extends Legume {
 
     private int prixChouUnite;
     private int quantiteChou;
