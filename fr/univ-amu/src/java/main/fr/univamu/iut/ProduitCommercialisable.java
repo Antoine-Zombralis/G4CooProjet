@@ -6,7 +6,7 @@ import java.util.*;
 public class ProduitCommercialisable extends PropositionProduitFermier {
 
     public ProduitCommercialisable(String propriétaire, String id, boolean bio, boolean conforme, int quantité, int prix, Date datePéremption, int stock) {
-        super(propriétaire, id, bio, conforme, quantité, prix, datePéremption);
+        super(propriétaire, id, bio, conforme, quantité, prix);
         this.stock = stock;
     }
 

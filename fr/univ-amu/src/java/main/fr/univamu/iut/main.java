@@ -17,7 +17,6 @@ public class main {
                 PropositionProduitFermier produit = new PropositionProduitFermier("Jean", "8", true, true, 8, 5) ;
                 System.out.println(produit.getDatePéremption()) ;
                 System.out.println(produit.isBio());
-            }
 
         for(Arbre objet: gile.getMesProductions()){
             System.out.println(objet.getType());
