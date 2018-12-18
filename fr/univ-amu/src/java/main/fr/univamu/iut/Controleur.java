@@ -1,6 +1,8 @@
 //package fr.univamu.iut;
 //
 //
+//import java.text.DateFormat;
+//import java.text.SimpleDateFormat;
 //import java.util.*;
 //
 //
@@ -19,13 +21,16 @@
 //        fermier.alerter() ;
 //    }
 //
+//    Date actuelle = new Date();
+//
+//
 //
 //    public void validerProduit(PropositionProduitFermier produit) {
 //        for (PropositionProduitFermier produitInter: produitInterdits) {
 //            if (produit.equals(produitInter)) {
 //                produit.setConforme(false);
 //            }
-//            else if (
+//            else if (produit.getDatePéremption() == actuelle);
 //            else {produit.setConforme(true);
 //
 //        }

@@ -1,12 +1,16 @@
 package fr.univamu.iut;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class main {
 
     public static void main(String[] args) {
 
-        Arboriculteur gile = new Arboriculteur("gilou", false, 1, 1, new CompteBancaire(1, 1000));
-        gile.produireArbre(new Arbre("pin"));
-        System.out.println(gile.getMesProductions());
+        Calendar calendar = Calendar.getInstance();
+        Date date = calendar.getTime();
+        System.out.println(date);
 
     }
 

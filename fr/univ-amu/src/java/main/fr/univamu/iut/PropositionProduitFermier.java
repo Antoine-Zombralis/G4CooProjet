@@ -1,6 +1,8 @@
 package fr.univamu.iut;
 
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -13,7 +15,9 @@ public class PropositionProduitFermier {
         this.conforme = conforme;
         this.quantité = quantité;
         this.prix = prix;
-        this.datePéremption = datePéremption;
+        this.datePéremption = datePéremption ;
+
+
     }
 
     private String propriétaire;
@@ -93,8 +97,11 @@ public class PropositionProduitFermier {
         this.prix = prix;
     }
 
-    public Date getDatePéremption() {
-        return datePéremption;
+    public String getDatePéremption() {
+        Date datePéremption = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String dat = dateFormat.format(datePéremption);
+        return dat ;
     }
 
     public void setDatePéremption(Date datePéremption) {
