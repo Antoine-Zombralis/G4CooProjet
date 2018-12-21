@@ -3,26 +3,71 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 public class PropositionProduitFermier {
-    public PropositionProduitFermier(String propriétaire, String id, boolean bio, boolean conforme, int quantité, int prix) {
-        this.propriétaire = propriétaire;
-        this.id = id;
-        this.bio = bio;
-        this.conforme = conforme;
-        this.quantité = quantité;
-        this.prix = prix;
+
+    private Client proprietaire;
+    private boolean bio, conforme;
+    private int quantite, prix, id;
+    private Date datePeremption;
+
+    public PropositionProduitFermier(BuilderProduit builder) {
+        proprietaire = builder.proprietaire;
+        bio = builder.bio;
+        conforme = builder.conforme;
+        quantite = builder.quantite;
+        id = builder.id;
+        prix = builder.prix;
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DAY_OF_YEAR, 7) ;
         Date date = calendar.getTime();
-        this.datePéremption = date ;
+        datePeremption = date ;
     }
-    private String propriétaire;
-    private String id;
-    private boolean bio;
-    private boolean conforme;
-    private int quantité;
-    private int prix;
-    private Date datePéremption;
-    public String isBio( PropositionProduitFermier produit) {
+
+    public static class BuilderProduit{
+        private Client proprietaire;
+        private boolean bio, conforme;
+        private int quantite, prix, id;
+        private Date datePeremption;
+
+        public BuilderProduit(int quantite, int prix){
+            this.quantite = quantite;
+            this.prix = prix;
+        }
+
+        public BuilderProduit addId(int id){
+            this.id = id; return this;
+        }
+
+        public BuilderProduit addProprio(Client proprietaire){
+            this.proprietaire = proprietaire; return this;
+        }
+
+        public BuilderProduit addBio(boolean bio){
+            this.bio = bio; return this;
+        }
+
+        public BuilderProduit addConforme(boolean conforme){
+            this.conforme = conforme; return this;
+        }
+
+        public BuilderProduit addDatePeremption(Date fin){
+            datePeremption = fin; return this;
+        }
+
+        public PropositionProduitFermier build(){
+            return new PropositionProduitFermier(this);
+        }
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String isBio(PropositionProduitFermier produit) {
         if (bio){
             return "Le produit est bio";
         }
@@ -35,48 +80,56 @@ public class PropositionProduitFermier {
             conforme = true;
         }
     }
-    public String getPropriétaire() {
-        return propriétaire;
+
+
+    public Client getPropriétaire() {
+        return proprietaire;
     }
-    public void setPropriétaire(String propriétaire) {
-        this.propriétaire = propriétaire;
+
+    public void setPropriétaire(Client proprietaire) {
+        this.proprietaire = proprietaire;
     }
-    public String getId() {
-        return id;
-    }
-    public void setId(String id) {
-        this.id = id;
-    }
+
     public boolean isBio() {
         return bio;
     }
+
     public void setBio(boolean bio) {
         this.bio = bio;
     }
+
     public boolean isConforme() {
         return conforme;
     }
+
     public void setConforme(boolean conforme) {
         this.conforme = conforme;
     }
+
     public int getQuantité() {
-        return quantité;
+        return quantite;
     }
-    public void setQuantité(int quantité) {
-        this.quantité = quantité;
+
+    public void setQuantité(int quantite) {
+        this.quantite = quantite;
     }
+
     public int getPrix() {
         return prix;
     }
+
     public void setPrix(int prix) {
         this.prix = prix;
     }
+
     public Date getDatePéremption() {
-        return datePéremption ;
+        return datePeremption ;
     }
+
     public void setDatePéremption(Date datePéremption) {
-        this.datePéremption = datePéremption;
+        this.datePeremption = datePéremption;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -84,14 +137,14 @@ public class PropositionProduitFermier {
         PropositionProduitFermier that = (PropositionProduitFermier) o;
         return bio == that.bio &&
                 conforme == that.conforme &&
-                quantité == that.quantité &&
+                quantite == that.quantite &&
                 prix == that.prix &&
-                Objects.equals(propriétaire, that.propriétaire) &&
+                Objects.equals(proprietaire, that.proprietaire) &&
                 Objects.equals(id, that.id) &&
-                Objects.equals(datePéremption, that.datePéremption);
+                Objects.equals(datePeremption, that.datePeremption);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(propriétaire, id, bio, conforme, quantité, prix, datePéremption);
+        return Objects.hash(proprietaire, id, bio, conforme, quantite, prix, datePeremption);
     }
 }
