@@ -14,6 +14,10 @@ public class CompteBancaire {
 
     private int solde;
 
+    public int getSolde() {
+        return solde;
+    }
+
     private List<Fermier> mesFermiers;
 
     private List<Client> mesClients;

@@ -9,6 +9,7 @@ public class ProduitCommercialisable extends PropositionProduitFermier {
 
     public ProduitCommercialisable(BuilderProduit builder) {
         super(builder);
+
     }
 
 
