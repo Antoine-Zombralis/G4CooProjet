@@ -10,10 +10,12 @@ public class Produits {
     private boolean bio, conforme;
     private int quantite, prix, id;
     private Date datePeremption;
+    private String nom;
 
 
     public Produits(BuilderProduit builder) {
         proprietaire = builder.proprietaire;
+        nom = builder.nom;
         bio = builder.bio;
         conforme = builder.conforme;
         quantite = builder.quantite;
@@ -30,10 +32,12 @@ public class Produits {
         private boolean bio, conforme;
         private int quantite, prix, id;
         private Date datePeremption;
+        private String nom;
 
-        public BuilderProduit(int quantite, int prix){
+        public BuilderProduit(int quantite, int prix, String nom){
             this.quantite = quantite;
             this.prix = prix;
+            this.nom = nom;
         }
 
         public BuilderProduit addId(int id){
@@ -76,6 +80,7 @@ public class Produits {
         }
         return "Le produit n'est pas bio";
     }
+
     public void changerConforme(boolean conforme) {
         if (conforme){
             conforme = false;
@@ -85,11 +90,11 @@ public class Produits {
     }
 
 
-    public Client getPropriétaire() {
+    public Client getProprietaire() {
         return proprietaire;
     }
 
-    public void setPropriétaire(Client proprietaire) {
+    public void setProprietaire(Client proprietaire) {
         this.proprietaire = proprietaire;
     }
 
@@ -109,11 +114,11 @@ public class Produits {
         this.conforme = conforme;
     }
 
-    public int getQuantité() {
+    public int getQuantite() {
         return quantite;
     }
 
-    public void setQuantité(int quantite) {
+    public void setQuantite(int quantite) {
         this.quantite = quantite;
     }
 
@@ -125,13 +130,19 @@ public class Produits {
         this.prix = prix;
     }
 
-    public Date getDatePéremption() {
+    public Date getDatePeremption() {
         return datePeremption ;
     }
 
-    public void setDatePéremption(Date datePéremption) {
-        this.datePeremption = datePéremption;
+    public void setDatePeremption(Date datePeremption) {
+        this.datePeremption = datePeremption;
     }
 
+    public String getNom() {
+        return nom;
+    }
 
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 }

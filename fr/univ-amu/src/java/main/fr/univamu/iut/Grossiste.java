@@ -14,9 +14,4 @@ public class Grossiste extends Client {
 
     //private Set<CentraleAchat> monGérantAchat;
 
-
-    public void acheterProduit(ProduitCommercialisable produit) {
-        mesProduitsAchetés.add(produit) ;
-    }
-
 }

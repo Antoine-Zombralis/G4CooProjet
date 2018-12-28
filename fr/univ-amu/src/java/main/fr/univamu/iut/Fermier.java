@@ -15,13 +15,13 @@ public class Fermier extends Client {
     }
 
     public void acheterRessources(int prix) {
-        this.getMonComte().debiter(this.getId(), prix);
+        this.getMonComte().debiter(getIdClient(), prix);
     }
     public int cotiserSomme(int gain, int Taxe) {
         return gain * Taxe;
     }
 
-    public void proposerProduit(PropositionProduitFermier produit) {
+    public void proposerProduit(Produits produit) {
         System.out.println("Je propose le produit " + produit + " à la vente");
     }
 
