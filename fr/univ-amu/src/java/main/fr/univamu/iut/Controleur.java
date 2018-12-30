@@ -21,18 +21,18 @@ public class Controleur {
 
 
     public void validerProduit(PropositionProduitFermier produit) {
+        Calendar calendar = Calendar.getInstance();
+        Date date = calendar.getTime(); // on obtient la date courante
+        int péremption = date.compareTo(produit.getDatePeremption()) ; // on compare la date courante avec la date de péremption. Renvoie 1 si date > date péremption
         for (PropositionProduitFermier produitInter: produitInterdits) {
-            if (produit.equals(produitInter) || produit.getDatePeremption() > ) {
+            if (produit.equals(produitInter) || péremption > 0) // produit interdit ou date de péremption dépassée
+            {
                 produit.setConforme(false);
             }
-
             else {produit.setConforme(true);
 
         }
-             ) {
-
         }
-
     }
 
     /**
