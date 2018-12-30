@@ -38,7 +38,7 @@ public class main {
       c1.acheterProduit(poireVente);
       poireVente.mettreEnVente();
       System.out.println(c1.getMonComte().getSolde());
-
+        System.out.println("test");
 
     }
 
