@@ -7,16 +7,11 @@ import java.util.*;
 
 public class Grossiste extends Client {
 
-    public Grossiste(String nom, boolean abonne, int idClient, CompteBancaire monComte, Set<CentraleAchat> monGérantAchat) {
+    public Grossiste(String nom, boolean abonne, int idClient, CompteBancaire monComte) {
         super(nom, abonne, idClient, monComte);
-        this.monGérantAchat = monGérantAchat;
+        //this.monGérantAchat = monGérantAchat;
     }
 
-    private Set<CentraleAchat> monGérantAchat;
-
-
-    public void acheterProduit(ProduitCommercialisable produit) {
-        mesProduitsAchetés.add(produit) ;
-    }
+    //private Set<CentraleAchat> monGérantAchat;
 
 }

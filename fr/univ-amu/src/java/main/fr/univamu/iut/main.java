@@ -1,5 +1,7 @@
 package fr.univamu.iut;
 
+import com.sun.istack.internal.NotNull;
+
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -22,9 +24,20 @@ public class main {
             System.out.println(objet.getType());
         }*/
 
-      PropositionProduitFermier poire = new CagettePoire.BuilderProduit(2, 10)
+      Produits poire = new CagettePoire.BuilderProduit(2, 10, "Cagette de poire")
               .addId(1)
+              .addConforme(false)
               .build();
+
+      Fermier f1 = new Horticulteur("f1", false, 1, 1, new CompteBancaire(1, 1000));
+      f1.proposerProduit(poire);
+
+      ProduitCommercialisable poireVente = (ProduitCommercialisable) poire;
+
+      Client c1 = new Grossiste("c1", false, 2, new CompteBancaire(2, 1000));
+      c1.acheterProduit(poireVente);
+      poireVente.mettreEnVente();
+      System.out.println(c1.getMonComte().getSolde());
 
 
     }

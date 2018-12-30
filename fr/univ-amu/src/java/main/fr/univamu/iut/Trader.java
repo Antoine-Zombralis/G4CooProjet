@@ -4,18 +4,18 @@ import java.util.List;
 
 public class Trader extends Client {
 
-    private Boolean travaillerSurMarché;
+    private Boolean travaillerSurMarche;
     private List<ProduitCommercialisable> mesProdtuisEnVente = null;
 
-    public Trader(String nom, boolean abonne, int idClient, CompteBancaire monComte, Boolean travaillerSurMarché, List<ProduitCommercialisable> mesProdtuisEnVente) {
+    public Trader(String nom, boolean abonne, int idClient, CompteBancaire monComte, Boolean travaillerSurMarche, List<ProduitCommercialisable> mesProdtuisEnVente) {
         super(nom, abonne, idClient, monComte);
-        this.travaillerSurMarché = travaillerSurMarché;
+        this.travaillerSurMarche = travaillerSurMarche;
         this.mesProdtuisEnVente = mesProdtuisEnVente;
     }
 
     @Override
     public void acheterProduit(ProduitCommercialisable produit){
-        mesProduitsAchetés.add(produit) ;
+        getMesProduitsAchetes().add(produit) ;
     }
 
     @Override

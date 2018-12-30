@@ -3,14 +3,14 @@ package fr.univamu.iut;
 
 import java.util.List;
 
-public class Détaillant extends Client {
+public class Detaillant extends Client {
 
-    public Détaillant(String nom, boolean abonne, int idClient, CompteBancaire monComte) {
+    public Detaillant(String nom, boolean abonne, int idClient, CompteBancaire monComte) {
         super(nom, abonne, idClient, monComte);
     }
 
     public void acheterProduit(ProduitCommercialisable produit){
-        mesProduitsAchetés.add(produit) ;
+        getMesProduitsAchetes().add(produit) ;
     }
 
     public void notifierClient(Client client){
