@@ -1,6 +1,5 @@
 package fr.univamu.iut;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Fermier extends Client {
@@ -13,17 +12,16 @@ public class Fermier extends Client {
     public Fermier(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
         super(nom, abonne, idClient, monComte);
         this.idVendeur = idVendeur;
-        mesProduitsCommercialisable = new ArrayList<>();
     }
 
     public void acheterRessources(int prix) {
-        this.getMonComte().debiter(this.getId(), prix);
+        this.getMonComte().debiter(getIdClient(), prix);
     }
     public int cotiserSomme(int gain, int Taxe) {
         return gain * Taxe;
     }
 
-    public void proposerProduit(PropositionProduitFermier produit) {
+    public void proposerProduit(Produits produit) {
         System.out.println("Je propose le produit " + produit + " à la vente");
     }
 
@@ -52,9 +50,6 @@ public class Fermier extends Client {
 
     public List<ProduitCommercialisable> getMesProduitsCommercialisable() {
         return mesProduitsCommercialisable;
-    }
-    public void ajouterListe(ProduitCommercialisable produit){
-        mesProduitsCommercialisable.add(produit) ;
     }
 
 }

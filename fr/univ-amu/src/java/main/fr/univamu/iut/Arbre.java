@@ -6,8 +6,8 @@ public class Arbre extends Vegetal {
 
     String type;
 
-    public Arbre(Fermier propriétaire, String id, boolean bio, int quantité, int prix, int poids, String type) {
-        super(propriétaire, id, bio, quantité, prix, poids);
+    public Arbre(BuilderProduit builder, String type) {
+        super(builder);
         this.type = type;
     }
 

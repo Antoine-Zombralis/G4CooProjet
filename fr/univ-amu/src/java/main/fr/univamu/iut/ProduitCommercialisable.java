@@ -3,14 +3,17 @@ package fr.univamu.iut;
 import java.util.*;
 
 
-public class ProduitCommercialisable extends PropositionProduitFermier {
+public class ProduitCommercialisable extends Produits {
 
-    public ProduitCommercialisable(Fermier propriétaire, String id, boolean bio, int quantité, int prix, int stock) {
-        super(propriétaire, id, bio, quantité, prix);
-        this.stock = stock;
+
+    public ProduitCommercialisable(BuilderProduit builder) {
+        super(builder);
     }
 
-    private int stock;
+    public void mettreEnVente(){
+        System.out.println("Je suis le produit " + this.getNom() + " mon stock est de " + this.getQuantite() + " et je coute " + this.getPrix() + "euro");
+    }
+
 
     public enum label {
         ROUGE, AOC, AOP, AB, IGP, STG, BBC

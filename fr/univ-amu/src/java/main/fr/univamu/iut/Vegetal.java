@@ -3,13 +3,11 @@ package fr.univamu.iut;
 
 import java.util.Date;
 
-public class Vegetal extends PropositionProduitFermier {
-
-    public Vegetal(Fermier propriétaire, String id, boolean bio, int quantité, int prix, int poids) {
-        super(propriétaire, id, bio, quantité, prix);
-        this.poids = poids;
-    }
+public abstract class Vegetal extends ProduitCommercialisable {
 
     private int poids;
 
+    public Vegetal(BuilderProduit builder) {
+        super(builder);
+    }
 }
