@@ -2,11 +2,9 @@ package fr.univamu.iut;
 
 import java.util.*;
 
-/**
- * 
- */
-public class GrandLivreDuMarche {
 
+public class GrandLivreDuMarche {
+    private
     /**
      * Default constructor
      */
