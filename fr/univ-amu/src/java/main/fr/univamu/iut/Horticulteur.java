@@ -25,4 +25,7 @@ public class Horticulteur extends Fermier {
         mesProductions.add(legume);
     }
 
+    public List<Vegetal> getMesProductions() {
+        return mesProductions;
+    }
 }

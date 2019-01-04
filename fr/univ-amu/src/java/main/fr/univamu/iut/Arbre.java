@@ -1,12 +1,13 @@
 package fr.univamu.iut;
 
+import fr.univamu.iut.Produit.BuilderProduits;
 import fr.univamu.iut.Produit.Vegetal;
 
 public class Arbre extends Vegetal {
 
     String type;
 
-    public Arbre(BuilderProduit builder, String type) {
+    public Arbre(BuilderProduits builder, String type) {
         super(builder);
         this.type = type;
     }
