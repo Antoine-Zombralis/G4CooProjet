@@ -34,5 +34,12 @@ public class CompteBancaire {
         }
     }
 
+    public void ajouterClient(Client client) {
+        mesClients.add(client) ;
+    }
+
+    public void ajouterFermier(Fermier fermier) {
+        mesFermiers.add(fermier) ;
+    }
 
 }
