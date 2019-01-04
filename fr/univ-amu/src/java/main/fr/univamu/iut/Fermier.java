@@ -1,5 +1,8 @@
 package fr.univamu.iut;
 
+import fr.univamu.iut.Produit.ProduitCommercialisable;
+import fr.univamu.iut.Produit.Produits;
+
 import java.util.List;
 
 public class Fermier extends Client {

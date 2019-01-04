@@ -1,7 +1,7 @@
 package fr.univamu.iut;
 
 
-import java.util.List;
+import fr.univamu.iut.Produit.ProduitCommercialisable;
 
 public class Detaillant extends Client {
 

@@ -1,33 +1,16 @@
 package fr.univamu.iut;
+import fr.univamu.iut.Produit.BuilderProduits;
+import fr.univamu.iut.Produit.CagettePoire;
+import fr.univamu.iut.Produit.ProduitCommercialisable;
+import fr.univamu.iut.Produit.Produits;
 
-
-
-import java.util.Date;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 public class main {
 
     public static void main(String[] args) {
 
-      /*  Date date = new Date();
 
-        Arboriculteur gile = new Arboriculteur("gilou", false, 1, 1, new CompteBancaire(1, 1000));
-        Arbre pin = new Arbre(gile.getNom(), "1", true,true, 1,10, date, 20, "Pin");
-        gile.produireArbre(pin);
+      Produits poire = new CagettePoire(new BuilderProduits(2, 10, "Cagette de poire").addId(1).addConforme(false), 2, 20);
 
-        PropositionProduitFermier produit = new PropositionProduitFermier("Jean", "8", true, true, 8, 5) ;
-        System.out.println(produit.getDatePéremption()) ;
-        System.out.println(produit.isBio());
-
-        for(Arbre objet: gile.getMesProductions()){
-            System.out.println(objet.getType());
-        }*/
-
-      Produits poire = new CagettePoire.BuilderProduit(2, 10, "Cagette de poire")
-              .addId(1)
-              .addConforme(false)
-              .build();
 
       Fermier f1 = new Horticulteur("f1", false, 1, 1, new CompteBancaire(1, 1000));
       f1.proposerProduit(poire);

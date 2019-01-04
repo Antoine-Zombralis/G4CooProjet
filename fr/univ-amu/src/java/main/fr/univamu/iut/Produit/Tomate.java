@@ -1,4 +1,4 @@
-package fr.univamu.iut;
+package fr.univamu.iut.Produit;
 
 
 import java.util.*;

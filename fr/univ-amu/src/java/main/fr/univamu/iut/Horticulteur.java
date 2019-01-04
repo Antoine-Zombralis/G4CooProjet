@@ -1,5 +1,9 @@
 package fr.univamu.iut;
 
+import fr.univamu.iut.Produit.Fruit;
+import fr.univamu.iut.Produit.Legume;
+import fr.univamu.iut.Produit.Vegetal;
+
 import java.util.ArrayList;
 import java.util.List;
 

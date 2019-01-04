@@ -1,6 +1,9 @@
 package fr.univamu.iut;
 
 
+import fr.univamu.iut.Produit.Produits;
+import fr.univamu.iut.Produit.PropositionProduitFermier;
+
 import java.util.*;
 
 

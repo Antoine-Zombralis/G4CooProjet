@@ -1,7 +1,7 @@
 package fr.univamu.iut;
 
 
-import java.util.*;
+import fr.univamu.iut.Produit.ProduitCommercialisable;
 
 public class Negociation {
 

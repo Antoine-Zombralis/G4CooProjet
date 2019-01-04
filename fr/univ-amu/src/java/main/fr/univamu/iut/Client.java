@@ -1,5 +1,7 @@
 package fr.univamu.iut;
 
+import fr.univamu.iut.Produit.ProduitCommercialisable;
+
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package fr.univamu.iut;
 
-import java.util.Date;
+import fr.univamu.iut.Produit.Vegetal;
 
 public class Arbre extends Vegetal {
 
