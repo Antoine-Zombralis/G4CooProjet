@@ -62,8 +62,14 @@ public abstract class Client {
     }
 
     public void acheterProduit(Produits produit){
-        mesProduitsAchetes.add(produit);
-        monComte.debiter(idClient, produit.getPrix());
+        if (!produit.isConforme()){
+            System.out.println("Impossible d'acheter ce produit, il n'est pas conforme à la réglementation !");
+        }
+        else{
+            mesProduitsAchetes.add(produit);
+            monComte.debiter(idClient, produit.getPrix());
+        }
+
     }
 
     public void notifierClient(Client client){
