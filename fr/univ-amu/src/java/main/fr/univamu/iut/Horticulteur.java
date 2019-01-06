@@ -17,12 +17,12 @@ public class Horticulteur extends Fermier {
         mesProductions = new ArrayList<>();
     }
 
-    public void cultiverFruit(Produits fruit) {
+    public void cultiverVegetal(Produits vegetal) {
 
-        mesProductions.add(fruit);
+        mesProductions.add(vegetal);
     }
 
-    public void cultiverLegume(Legume legume) {
+    public void cultiverLegume(Produits legume) {
         mesProductions.add(legume);
     }
 
