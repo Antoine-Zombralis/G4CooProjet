@@ -1,6 +1,5 @@
 package fr.univamu.iut;
 
-import fr.univamu.iut.Produit.ProduitCommercialisable;
 import fr.univamu.iut.Produit.Produits;
 
 import java.util.List;
@@ -9,7 +8,7 @@ public class Fermier extends Client {
 
     private int idVendeur;
 
-    private List<ProduitCommercialisable> mesProduitsCommercialisable;
+    private List<Produits> mesProduitsCommercialisable;
 
 
     public Fermier(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
@@ -33,7 +32,7 @@ public class Fermier extends Client {
     }
 
     @Override
-    public void acheterProduit(ProduitCommercialisable produitvoulu)  {
+    public void acheterProduit(Produits produitvoulu)  {
 //        this.getMonComte().debiter(this.getIdClient(), produitvoulu.getPrix());
         mesProduitsCommercialisable.add(produitvoulu);
     }
@@ -51,7 +50,7 @@ public class Fermier extends Client {
         return idVendeur;
     }
 
-    public List<ProduitCommercialisable> getMesProduitsCommercialisable() {
+    public List<Produits> getMesProduitsCommercialisable() {
         return mesProduitsCommercialisable;
     }
 

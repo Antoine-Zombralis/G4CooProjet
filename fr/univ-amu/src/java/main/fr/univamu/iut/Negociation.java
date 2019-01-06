@@ -1,7 +1,7 @@
 package fr.univamu.iut;
 
 
-import fr.univamu.iut.Produit.ProduitCommercialisable;
+import fr.univamu.iut.Produit.Produits;
 
 public class Negociation {
 
@@ -41,7 +41,7 @@ public class Negociation {
         this.idVendeur = idVendeur;
     }
 
-    public void changerPrix(ProduitCommercialisable produit, int prix) {
+    public void changerPrix(Produits produit, int prix) {
         produit.setPrix(prix);
     }
 

@@ -84,4 +84,27 @@ public class Produits {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
+    public void mettreEnVente(){
+        System.out.println("Je suis le produit " + this.getNom() + " mon stock est de " + this.getQuantite() + " et je coute " + this.getPrix() + "euro");
+    }
+
+    //    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        PropositionProduitFermier that = (PropositionProduitFermier) o;
+//        return isBio() == that.isBio() &&
+//                isConforme() == that.isConforme() &&
+//                getQuantite() == that.getQuantite() &&
+//                getPrix() == that.getPrix() &&
+//                Objects.equals(getProprietaire(), that.getProprietaire()) &&
+//                Objects.equals(getId(), that.getId()) &&
+//                Objects.equals(getDatePeremption(), that.getDatePeremption());
+//    }
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(getProprietaire(), getId(), isBio(), isConforme(), getQuantite(), getPrix(), getDatePeremption());
+//    }
+
 }

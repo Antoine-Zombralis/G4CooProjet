@@ -1,7 +1,7 @@
 package fr.univamu.iut.Produit;
 
 
-public abstract class  Viande extends PropositionProduitFermier {
+public abstract class  Viande extends Produits {
 
     private int poids;
 

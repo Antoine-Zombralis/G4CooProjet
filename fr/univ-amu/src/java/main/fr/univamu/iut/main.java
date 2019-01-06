@@ -16,11 +16,7 @@ public class main {
 
         ((Horticulteur) f1).cultiverFruit((Fruit) poire);
 
-        ProduitCommercialisable poireVente = (ProduitCommercialisable) poire;
-
         Client c1 = new Grossiste("c1", false, 2, new CompteBancaire(2, 1000));
-        c1.acheterProduit(poireVente);
-        poireVente.mettreEnVente();
         System.out.println(c1.getMonComte().getSolde());
         System.out.println("test");
 
