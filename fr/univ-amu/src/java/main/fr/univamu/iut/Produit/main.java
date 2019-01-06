@@ -31,6 +31,14 @@ public class main {
         f1.afficherCommercialisable();
         ((Horticulteur) f1).afficherMesProductions();
 
+        for(Produits vegetale : f1.getMesProduitsCommercialisable()){
+            if(vegetale.getId() == 5){
+                c1.acheterProduit(vegetale);
+                Transaction transac1 = new Transaction(1, f1, c1, vegetale);
+                transac1.addTransaction(transac1);
+            }
+        }
+
         System.out.println(c1.getMonComte().getSolde());
 
     }
