@@ -1,13 +1,15 @@
 package fr.univamu.iut;
 
+import fr.univamu.iut.Produit.Produits;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Fermier extends Client {
 
     private int idVendeur;
 
-    private List<ProduitCommercialisable> mesProduitsCommercialisable;
-
+    private List<Produits> mesProduitsCommercialisable = new ArrayList<>();
 
     public Fermier(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
         super(nom, abonne, idClient, monComte);
@@ -25,12 +27,22 @@ public class Fermier extends Client {
         System.out.println("Je propose le produit " + produit + " à la vente");
     }
 
+    public void ajouterCommercialisable(Produits produit){
+        mesProduitsCommercialisable.add(produit);
+    }
+
+    public void afficherCommercialisable(){
+        for (Produits produit : mesProduitsCommercialisable){
+            System.out.println("Voici les produits de " + this.getNom() + " : " + produit.getNom()  + " | "  + produit.getPrix() + "$");
+        }
+    }
+
     public void alerter(){
         System.out.println("Vous avez recu une sanction");
     }
 
     @Override
-    public void acheterProduit(ProduitCommercialisable produitvoulu)  {
+    public void acheterProduit(Produits produitvoulu)  {
 //        this.getMonComte().debiter(this.getIdClient(), produitvoulu.getPrix());
         mesProduitsCommercialisable.add(produitvoulu);
     }
@@ -48,7 +60,7 @@ public class Fermier extends Client {
         return idVendeur;
     }
 
-    public List<ProduitCommercialisable> getMesProduitsCommercialisable() {
+    public List<Produits> getMesProduitsCommercialisable() {
         return mesProduitsCommercialisable;
     }
 

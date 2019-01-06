@@ -1,6 +1,8 @@
 package fr.univamu.iut;
 
 
+import fr.univamu.iut.Produit.Produits;
+
 import java.util.*;
 
 
@@ -11,7 +13,7 @@ public class Controleur {
 
 
     private List<String> adhérents;
-    public List<PropositionProduitFermier> produitInterdits;
+    public List<Produits> produitInterdits;
 
 
 
@@ -20,20 +22,31 @@ public class Controleur {
     }
 
 
-    public void validerProduit(PropositionProduitFermier produit) {
-        Calendar calendar = Calendar.getInstance();
-        Date date = calendar.getTime();                                  // on obtient la date courante
-        int péremption = date.compareTo(produit.getDatePeremption()) ;   // on compare la date courante avec la date de péremption. Renvoie 1 si date > date péremption
-        for (PropositionProduitFermier produitInter: produitInterdits) {
-            if (produit.equals(produitInter) || péremption > 0)          // produit interdit ou date de péremption dépassée
-            {
-                produit.setConforme(false);
-            }
-            else {produit.setConforme(true);
+//    public void validerProduit(Produits produit) {
+//        Calendar calendar = Calendar.getInstance();
+//        Date date = calendar.getTime();                                  // on obtient la date courante
+//        int péremption = date.compareTo(produit.getDatePeremption()) ;   // on compare la date courante avec la date de péremption. Renvoie 1 si date > date péremption
+//        for (Produits produitInter: produitInterdits) {
+//            if (produit.equals(produitInter) || péremption > 0)          // produit interdit ou date de péremption dépassée
+//            {
+//                produit.setConforme(false);
+//            }
+//            else {produit.setConforme(true);
+//
+//        }
+//        }
+//    }
 
+    public void validerProduit(Produits produit){
+        if(Math.random() > 0.5){
+            produit.setConforme(true);
         }
+        else{
+            produit.setConforme(false);
         }
     }
+
+
 
     /**
      *
