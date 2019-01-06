@@ -32,7 +32,7 @@ public class Horticulteur extends Fermier {
 
     public void afficherMesProductions(){
         for (Produits vegetal : mesProductions){
-            System.out.println("Produit : " + vegetal.getNom() + " Prix : " + vegetal.getPrix() + " ID : " + vegetal.getId());
+            System.out.println("mesProductions : " + vegetal.getNom() + " Prix : " + vegetal.getPrix() + " ID : " + vegetal.getId());
         }
     }
 }

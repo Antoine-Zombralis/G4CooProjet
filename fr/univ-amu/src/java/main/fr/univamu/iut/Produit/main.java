@@ -16,12 +16,19 @@ public class main {
         Fermier f3 = new ProducteurDeViande("f3", false, 3, 3, new CompteBancaire(3, 1000));
         Fermier f4 = new ProducteurLaitier("f4", false, 4, 4, new CompteBancaire(4, 1000));
 
-        Client c1 = new Grossiste("c1", false, 2, new CompteBancaire(2, 1000));
+        Controleur controleur = new Controleur();
 
+        Client c1 = new Grossiste("c1", false, 2, new CompteBancaire(2, 1000));
 
         for(Produits vegetale :  creationProduitHorticulteur()){
             ((Horticulteur) f1).cultiverVegetal(vegetale);
+            controleur.validerProduit(vegetale);
+            if (vegetale.isConforme()){
+                f1.ajouterCommercialisable(vegetale);
+            }
         }
+
+        f1.afficherCommercialisable();
         ((Horticulteur) f1).afficherMesProductions();
 
         System.out.println(c1.getMonComte().getSolde());
