@@ -1,6 +1,5 @@
 package fr.univamu.iut;
 
-import fr.univamu.iut.Produit.BuilderProduits;
 import fr.univamu.iut.Produit.Vegetal;
 
 public class Arbre extends Vegetal {
