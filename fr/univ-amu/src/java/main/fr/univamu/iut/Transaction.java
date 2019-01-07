@@ -11,6 +11,7 @@ public class Transaction {
     private Fermier vendeur;
     private Client acheteur;
     private Produits produits;
+    private GrandLivreDuMarche livreOr ;
 
     List<Transaction> transactions = new ArrayList<>();
 
@@ -24,6 +25,7 @@ public class Transaction {
     public void addTransaction(Transaction transaction){
         transactions.add(transaction);
         System.out.println("Une transaction entre " + vendeur.getNom() + " et " + acheteur.getNom() + " sur le produit " + "-" + produits.getNom() + "-" + " du montant " + produits.getPrix() + "$" + " a été effectuée ! ");
+        livreOr.ajouterTransaction(transaction);
     }
 
     public int getNumero() {
