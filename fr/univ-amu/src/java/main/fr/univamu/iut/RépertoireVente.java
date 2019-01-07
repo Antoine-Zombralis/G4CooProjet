@@ -49,9 +49,40 @@ public class RépertoireVente {
         viandesEnVente.add(viande) ;
     }
 
+    public void supprimerFruit(Fruit fruit) {
+        for (Fruit fruitCourant : fruitsEnVente)
+            if (fruit.equals(fruitCourant))
+                fruitsEnVente.remove(fruitCourant) ;
+    }
+
+    public void su(Fruit fruit) {
+        for (Fruit fruitCourant : fruitsEnVente)
+            if (fruit.equals(fruitCourant))
+                fruitsEnVente.remove(fruitCourant) ;
+    }
+
+    public void supprimerFruit(Fruit fruit) {
+        for (Fruit fruitCourant : fruitsEnVente)
+            if (fruit.equals(fruitCourant))
+                fruitsEnVente.remove(fruitCourant) ;
+    }
+
     public void afficherEtalageViande() {
         for (Viande viande : viandesEnVente)
-            System.out.println("Il reste " + viande.getQuantite() + " de cette " + viande.getNom() + " à " + viande.getPrix() + " le kg.");
-
+            System.out.println("Il reste " + viande.getQuantite() + " kg de cette " + viande.getNom() + " à " + viande.getPrix() + " le kg.");
     }
+
+
+    public void afficherEtalageLegume() {
+        for (Legume legume : legumesEnVente)
+            System.out.println("Il reste " + legume.getQuantite() + " kg de cette cagette de " + legume.getNom() + " à " + legume.getPrix() + " le kg.");
+    }
+
+
+    public void afficherEtalageFruit() {
+        for (Fruit fruit : fruitsEnVente)
+            System.out.println("Il reste " + fruit.getQuantite() + " kg de cette cagette de " + fruit.getNom() + " à " + fruit.getPrix() + " le kg.");
+    }
+
+
 }

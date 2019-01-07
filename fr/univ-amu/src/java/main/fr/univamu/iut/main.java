@@ -21,6 +21,7 @@ public class main {
 
         Client c1 = new Grossiste("c1", false, 2, new CompteBancaire(2, 1000));
 
+
         for(Vegetal vegetal :  creationProduitHorticulteur()){
             ((Horticulteur) f1).cultiverVegetal(vegetal);
             controleur.validerProduit(vegetal);

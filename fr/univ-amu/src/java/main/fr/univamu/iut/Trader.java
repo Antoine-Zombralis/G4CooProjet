@@ -1,6 +1,7 @@
 package fr.univamu.iut;
 
 import fr.univamu.iut.Produit.Produits;
+import fr.univamu.iut.Produit.Viande;
 
 import java.util.List;
 
@@ -26,7 +27,9 @@ public class Trader extends Client {
     }
 
     public void mettreEnVente(Produits produit) {
-        // TODO implement here
+        if (produit instanceof Viande)
+
+
     }
 
 }

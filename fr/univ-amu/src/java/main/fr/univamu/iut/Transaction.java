@@ -8,15 +8,15 @@ import java.util.List;
 
 public class Transaction {
 
-    private int numero;
+    private static int numero = 0;
     private Fermier vendeur;
     private Client acheteur;
     private Produits produits;
 
     private static List<Transaction> transactions = new ArrayList<>();
 
-    public Transaction(int numero, Fermier vendeur, Client acheteur, Produits produits) {
-        this.numero = numero;
+    public Transaction(Fermier vendeur, Client acheteur, Produits produits) {
+        this.numero = ++numero;
         this.vendeur = vendeur;
         this.acheteur = acheteur;
         this.produits = produits;
