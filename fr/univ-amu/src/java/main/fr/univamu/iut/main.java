@@ -22,13 +22,13 @@ public class main {
 
         Client c1 = new Grossiste("c1", false, 2, new CompteBancaire(2, 1000));
 
-//        for(Produits vegetale :  creationProduitHorticulteur()){
-//            ((Horticulteur) f1).cultiverVegetal(vegetale);
-//            controleur.validerProduit(vegetale);
-//            if (vegetale.isConforme()){
-//                f1.ajouterCommercialisable(vegetale);
-//            }
-//        }
+        for(Produits vegetale :  creationProduitHorticulteur()){
+            ((Horticulteur) f1).cultiverVegetal(vegetale);
+            controleur.validerProduit(vegetale);
+            if (vegetale.isConforme()){
+                f1.ajouterCommercialisable(vegetale);
+            }
+        }
 
         f1.afficherCommercialisable();
 
