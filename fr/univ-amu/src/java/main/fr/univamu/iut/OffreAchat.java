@@ -1,5 +1,6 @@
 package fr.univamu.iut;
 
+import fr.univamu.iut.Client.Client;
 import fr.univamu.iut.Produit.Produits;
 
 public class OffreAchat {

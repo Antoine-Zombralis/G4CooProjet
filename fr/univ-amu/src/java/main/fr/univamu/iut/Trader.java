@@ -1,7 +1,7 @@
 package fr.univamu.iut;
 
+import fr.univamu.iut.Client.Client;
 import fr.univamu.iut.Produit.Produits;
-import fr.univamu.iut.Produit.Viande;
 
 import java.util.List;
 
@@ -16,20 +16,20 @@ public class Trader extends Client {
         this.mesProdtuisEnVente = mesProdtuisEnVente;
     }
 
-    @Override
-    public void acheterProduit(Produits produit){
-        getMesProduitsAchetes().add(produit) ;
-    }
+//    @Override
+//    public void acheterProduit(Produits produit){
+//        getMesProduitsAchetes().add(produit) ;
+//    }
 
     @Override
     public void notifierClient(Client client){
         System.out.println("De nouveaux produit ont été mis en vente pour vous " + client.getNom());
     }
 
-    public void mettreEnVente(Produits produit) {
-        if (produit instanceof Viande)
-
-
-    }
+//    public void mettreEnVente(Produits produit) {
+//        if (produit instanceof Viande)
+//
+//
+//    }
 
 }

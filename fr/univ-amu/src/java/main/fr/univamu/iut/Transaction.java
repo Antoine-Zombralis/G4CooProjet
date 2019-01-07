@@ -1,6 +1,7 @@
 package fr.univamu.iut;
 
-import fr.univamu.iut.Fermier.Fermier;
+import fr.univamu.iut.Client.Client;
+import fr.univamu.iut.Client.Fermier.Fermier;
 import fr.univamu.iut.Produit.Produits;
 
 import java.util.ArrayList;
@@ -9,14 +10,14 @@ import java.util.List;
 public class Transaction {
 
     private static int numero = 0;
-    private Fermier vendeur;
+    private Client vendeur;
     private Client acheteur;
     private Produits produits;
 
     private static List<Transaction> transactions = new ArrayList<>();
 
-    public Transaction(Fermier vendeur, Client acheteur, Produits produits) {
-        this.numero = ++numero;
+    public Transaction(Client vendeur, Client acheteur, Produits produits) {
+        ++numero;
         this.vendeur = vendeur;
         this.acheteur = acheteur;
         this.produits = produits;
@@ -35,7 +36,7 @@ public class Transaction {
         this.numero = numero;
     }
 
-    public Fermier getVendeur() {
+    public Client getVendeur() {
         return vendeur;
     }
 

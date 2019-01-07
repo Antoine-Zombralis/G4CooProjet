@@ -1,8 +1,9 @@
-package fr.univamu.iut;
+package fr.univamu.iut.Client;
 
 
 
-import java.util.*;
+import fr.univamu.iut.Client.Client;
+import fr.univamu.iut.CompteBancaire;
 
 
 public class Grossiste extends Client {

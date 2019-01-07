@@ -1,7 +1,8 @@
 package fr.univamu.iut;
 
 
-import fr.univamu.iut.Fermier.Fermier;
+import fr.univamu.iut.Client.Client;
+import fr.univamu.iut.Client.Fermier.Fermier;
 import fr.univamu.iut.Produit.Produits;
 
 import java.util.*;

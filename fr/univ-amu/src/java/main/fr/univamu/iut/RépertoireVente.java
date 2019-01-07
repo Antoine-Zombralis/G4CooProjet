@@ -49,17 +49,17 @@ public class RépertoireVente {
         viandesEnVente.add(viande) ;
     }
 
-    public void supprimerFruit(Fruit fruit) {
-        for (Fruit fruitCourant : fruitsEnVente)
-            if (fruit.equals(fruitCourant))
-                fruitsEnVente.remove(fruitCourant) ;
-    }
-
-    public void su(Fruit fruit) {
-        for (Fruit fruitCourant : fruitsEnVente)
-            if (fruit.equals(fruitCourant))
-                fruitsEnVente.remove(fruitCourant) ;
-    }
+//    public void supprimerFruit(Fruit fruit) {
+//        for (Fruit fruitCourant : fruitsEnVente)
+//            if (fruit.equals(fruitCourant))
+//                fruitsEnVente.remove(fruitCourant) ;
+//    }
+//
+//    public void su(Fruit fruit) {
+//        for (Fruit fruitCourant : fruitsEnVente)
+//            if (fruit.equals(fruitCourant))
+//                fruitsEnVente.remove(fruitCourant) ;
+//    }
 
     public void supprimerFruit(Fruit fruit) {
         for (Fruit fruitCourant : fruitsEnVente)
