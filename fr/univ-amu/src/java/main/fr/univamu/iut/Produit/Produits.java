@@ -88,6 +88,14 @@ public class Produits{
 
         }
 
+        public CagetteChou chouBuilder(){
+         return new CagetteChou(this);
+        }
+
+        public CagetteFraise fraiseBuilder(){
+        return new CagetteFraise(this);
+        }
+
     public Client getProprietaire() {
         return proprietaire;
     }
