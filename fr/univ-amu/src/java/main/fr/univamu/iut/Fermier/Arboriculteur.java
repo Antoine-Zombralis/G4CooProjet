@@ -1,4 +1,7 @@
-package fr.univamu.iut;
+package fr.univamu.iut.Fermier;
+
+import fr.univamu.iut.Arbre;
+import fr.univamu.iut.CompteBancaire;
 
 import java.util.ArrayList;
 import java.util.List;

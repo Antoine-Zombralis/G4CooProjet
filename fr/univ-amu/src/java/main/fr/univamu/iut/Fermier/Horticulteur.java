@@ -1,7 +1,6 @@
-package fr.univamu.iut;
+package fr.univamu.iut.Fermier;
 
-import fr.univamu.iut.Produit.Fruit;
-import fr.univamu.iut.Produit.Legume;
+import fr.univamu.iut.CompteBancaire;
 import fr.univamu.iut.Produit.Produits;
 import fr.univamu.iut.Produit.Vegetal;
 
@@ -10,21 +9,18 @@ import java.util.List;
 
 public class Horticulteur extends Fermier {
 
-    private List<Vegetal> mesProductions;
+    private List<Vegetal> mesProductions = new ArrayList<>();
+
 
     public Horticulteur(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
         super(nom, abonne, idClient, idVendeur, monComte);
-        mesProductions = new ArrayList<>();
     }
 
-    public void cultiverVegetal(Fruit fruit) {
+    public void cultiverVegetal(Vegetal vegetal) {
 
-        mesProductions.add(fruit);
+        mesProductions.add(vegetal);
     }
 
-    public void cultiverLegume(Legume legume) {
-        mesProductions.add(legume);
-    }
 
     public List<Vegetal> getMesProductions() {
         return mesProductions;
