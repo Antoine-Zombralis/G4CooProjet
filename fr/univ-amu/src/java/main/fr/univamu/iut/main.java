@@ -1,4 +1,4 @@
-package fr.univamu.iut.Produit;
+package fr.univamu.iut;
 
 import fr.univamu.iut.*;
 import fr.univamu.iut.Produit.*;
@@ -29,7 +29,6 @@ public class main {
         }
 
         f1.afficherCommercialisable();
-        ((Horticulteur) f1).afficherMesProductions();
 
         for(Produits vegetale : f1.getMesProduitsCommercialisable()){
             if(vegetale.getId() == 5){
@@ -47,12 +46,12 @@ public class main {
 
         List<Produits> vegetales = new ArrayList<>();
 
-        Produits poire = new CagettePoire.BuilderProduits(5, 10, "Cagette de poire")
+        Produits poire = new Produits.BuilderProduits(5, 10, "Cagette de poire")
                 .addConforme(false)
                 .addId(1)
                 .addPrixVegetalUnite(0.50)
                 .addQuantiteVegetalDansCagette(20)
-                .build();
+                .poireBuild();
 
         vegetales.add(poire);
 

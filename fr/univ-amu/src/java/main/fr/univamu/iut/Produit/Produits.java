@@ -78,6 +78,14 @@ public class Produits{
             return new Produits(this);
         }
 
+        public CagettePoire poireBuild(){
+            return new CagettePoire(this);
+        }
+
+        public CagetteAubergine aubergineBuild(){
+            return new CagetteAubergine(this);
+        }
+
         }
 
     public Client getProprietaire() {

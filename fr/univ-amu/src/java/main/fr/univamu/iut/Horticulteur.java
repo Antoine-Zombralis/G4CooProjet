@@ -10,23 +10,23 @@ import java.util.List;
 
 public class Horticulteur extends Fermier {
 
-    private List<Produits> mesProductions;
+    private List<Vegetal> mesProductions;
 
     public Horticulteur(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
         super(nom, abonne, idClient, idVendeur, monComte);
         mesProductions = new ArrayList<>();
     }
 
-    public void cultiverVegetal(Produits vegetal) {
+    public void cultiverVegetal(Fruit fruit) {
 
-        mesProductions.add(vegetal);
+        mesProductions.add(fruit);
     }
 
-    public void cultiverLegume(Produits legume) {
+    public void cultiverLegume(Legume legume) {
         mesProductions.add(legume);
     }
 
-    public List<Produits> getMesProductions() {
+    public List<Vegetal> getMesProductions() {
         return mesProductions;
     }
 
