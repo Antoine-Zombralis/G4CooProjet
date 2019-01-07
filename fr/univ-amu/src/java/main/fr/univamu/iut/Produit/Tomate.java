@@ -1,6 +1,5 @@
-package fr.univamu.iut;
+package fr.univamu.iut.Produit;
 
-fermier;
 
 import java.util.*;
 

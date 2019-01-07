@@ -1,15 +1,17 @@
-package fr.univamu.iut;
+package fr.univamu.iut.Fermier;
 
+import fr.univamu.iut.Client;
+import fr.univamu.iut.CompteBancaire;
+import fr.univamu.iut.Produit.Produits;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Fermier extends Client {
 
     private int idVendeur;
 
-    private List<ProduitCommercialisable> mesProduitsCommercialisable;
-
-    List<Object> mesProductions;
-
+    private List<Produits> mesProduitsCommercialisable = new ArrayList<>();
 
     public Fermier(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
         super(nom, abonne, idClient, monComte);
@@ -17,14 +19,24 @@ public class Fermier extends Client {
     }
 
     public void acheterRessources(int prix) {
-        this.getMonComte().debiter(this.getId(), prix);
+        this.getMonComte().debiter(getIdClient(), prix);
     }
     public int cotiserSomme(int gain, int Taxe) {
         return gain * Taxe;
     }
 
-    public void proposerProduit(PropositionProduitFermier produit) {
+    public void proposerProduit(Produits produit) {
         System.out.println("Je propose le produit " + produit + " à la vente");
+    }
+
+    public void ajouterCommercialisable(Produits produit){
+        mesProduitsCommercialisable.add(produit);
+    }
+
+    public void afficherCommercialisable(){
+        for (Produits produit : mesProduitsCommercialisable){
+            System.out.println("Voici les produits de " + this.getNom() + " : " + produit.getNom()  + " | "  + produit.getPrix() + "$");
+        }
     }
 
     public void alerter(){
@@ -32,7 +44,7 @@ public class Fermier extends Client {
     }
 
     @Override
-    public void acheterProduit(ProduitCommercialisable produitvoulu)  {
+    public void acheterProduit(Produits produitvoulu)  {
 //        this.getMonComte().debiter(this.getIdClient(), produitvoulu.getPrix());
         mesProduitsCommercialisable.add(produitvoulu);
     }
@@ -50,11 +62,8 @@ public class Fermier extends Client {
         return idVendeur;
     }
 
-    public List<ProduitCommercialisable> getMesProduitsCommercialisable() {
+    public List<Produits> getMesProduitsCommercialisable() {
         return mesProduitsCommercialisable;
     }
 
-    public List<Object> getMesProductions() {
-        return mesProductions;
-    }
 }

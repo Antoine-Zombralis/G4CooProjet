@@ -1,15 +1,18 @@
 package fr.univamu.iut;
 
+import fr.univamu.iut.Produit.Produits;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Client {
 
     private String nom;
-    private boolean abonne = false;
-    private int idClient = 0;
-    private CompteBancaire monComte = null;
+    private boolean abonne;
+    private int idClient;
+    private CompteBancaire monComte;
 
-    protected List<ProduitCommercialisable> mesProduitsAchetés = null;
+    private List<Produits> mesProduitsAchetes = new ArrayList<>();
 
     public Client(String nom, boolean abonne, int idClient, CompteBancaire monComte) {
         this.nom = nom;
@@ -42,12 +45,12 @@ public abstract class Client {
         this.monComte = monComte;
     }
 
-    public List<ProduitCommercialisable> getMesProduitsAchetés() {
-        return mesProduitsAchetés;
+    public List<Produits> getMesProduitsAchetes() {
+        return mesProduitsAchetes;
     }
 
-    public void setMesProduitsAchetés(List<ProduitCommercialisable> mesProduitsAchetés) {
-        this.mesProduitsAchetés = mesProduitsAchetés;
+    public void setMesProduitsAchetes(List<Produits> mesProduitsAchetes) {
+        this.mesProduitsAchetes = mesProduitsAchetes;
     }
 
     public String getNom() {
@@ -58,8 +61,15 @@ public abstract class Client {
         this.nom = nom;
     }
 
-    public void acheterProduit(ProduitCommercialisable produit){
-        mesProduitsAchetés.add(produit) ;
+    public void acheterProduit(Produits produit){
+        if (!produit.isConforme()){
+            System.out.println("Impossible d'acheter ce produit, il n'est pas conforme à la réglementation !");
+        }
+        else{
+            mesProduitsAchetes.add(produit);
+            monComte.debiter(idClient, produit.getPrix());
+        }
+
     }
 
     public void notifierClient(Client client){

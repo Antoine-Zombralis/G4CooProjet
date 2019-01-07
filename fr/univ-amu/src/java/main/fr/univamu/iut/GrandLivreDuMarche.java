@@ -1,23 +1,23 @@
 package fr.univamu.iut;
 
-fermier;
-
 import java.util.*;
 
-/**
- * 
- */
-public class GrandLivreDuMarche {
 
-    /**
-     * Default constructor
-     */
+public class GrandLivreDuMarche {
+    private Set<Transaction> lesTransactions ;
+
     public GrandLivreDuMarche() {
     }
 
-    /**
-     * 
-     */
-    public Set<Transaction> mesTransactions;
+    public Set<Transaction> getLesTransactions() {
+        return lesTransactions;
+    }
 
+    public void setLesTransactions(Set<Transaction> lesTransactions) {
+        this.lesTransactions = lesTransactions;
+    }
+
+    public void ajouterTransaction(Transaction transaction) {
+        lesTransactions.add(transaction) ;
+    }
 }
