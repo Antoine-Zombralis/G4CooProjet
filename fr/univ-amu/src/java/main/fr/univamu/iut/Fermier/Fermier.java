@@ -1,5 +1,7 @@
-package fr.univamu.iut;
+package fr.univamu.iut.Fermier;
 
+import fr.univamu.iut.Client;
+import fr.univamu.iut.CompteBancaire;
 import fr.univamu.iut.Produit.Produits;
 
 import java.util.ArrayList;
