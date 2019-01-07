@@ -11,10 +11,8 @@ public class RépertoireVente {
     private ArrayList<Legume> legumesEnVente ;
     private ArrayList<Viande> viandesEnVente ;
 
-    public RépertoireVente(ArrayList<Fruit> fruitsEnVente, ArrayList<Legume> legumesEnVente, ArrayList<Viande> viandesEnVente) {
-        this.fruitsEnVente = fruitsEnVente;
-        this.legumesEnVente = legumesEnVente;
-        this.viandesEnVente = viandesEnVente;
+    public RépertoireVente() {
+
     }
 
     public ArrayList<Fruit> getFruitsEnVente() {
@@ -25,12 +23,12 @@ public class RépertoireVente {
         this.fruitsEnVente = fruitsEnVente;
     }
 
-    public ArrayList<Legume> getLégumesEnVente() {
-        return légumesEnVente;
+    public ArrayList<Legume> getLegumesEnVente() {
+        return legumesEnVente;
     }
 
-    public void setLégumesEnVente(ArrayList<Legume> légumesEnVente) {
-        this.légumesEnVente = légumesEnVente;
+    public void setLegumesEnVente(ArrayList<Legume> legumesEnVente) {
+        this.legumesEnVente = legumesEnVente;
     }
 
     public ArrayList<Viande> getViandesEnVente() {
@@ -49,5 +47,11 @@ public class RépertoireVente {
     }
     public void ajouterViande(Viande viande) {
         viandesEnVente.add(viande) ;
+    }
+
+    public void afficherEtalageViande() {
+        for (Viande viande : viandesEnVente)
+            System.out.println("Il reste " + viande.getQuantite() + " de cette " + viande.getNom() + " à " + viande.getPrix() + " le kg.");
+
     }
 }

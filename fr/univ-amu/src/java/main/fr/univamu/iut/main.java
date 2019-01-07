@@ -17,16 +17,18 @@ public class main {
         Fermier f4 = new ProducteurLaitier("f4", false, 4, 4, new CompteBancaire(4, 1000));
 
         Controleur controleur = new Controleur();
+        GrandLivreDuMarche livreDuMarche = new GrandLivreDuMarche() ;
+        RépertoireVente répertoireVente = new RépertoireVente() ;
 
         Client c1 = new Grossiste("c1", false, 2, new CompteBancaire(2, 1000));
 
-        for(Produits vegetale :  creationProduitHorticulteur()){
-            ((Horticulteur) f1).cultiverVegetal(vegetale);
-            controleur.validerProduit(vegetale);
-            if (vegetale.isConforme()){
-                f1.ajouterCommercialisable(vegetale);
-            }
-        }
+//        for(Produits vegetale :  creationProduitHorticulteur()){
+//            ((Horticulteur) f1).cultiverVegetal(vegetale);
+//            controleur.validerProduit(vegetale);
+//            if (vegetale.isConforme()){
+//                f1.ajouterCommercialisable(vegetale);
+//            }
+//        }
 
         f1.afficherCommercialisable();
 
@@ -63,6 +65,7 @@ public class main {
                 .build();
 
         vegetales.add(pomme);
+        réper
 
         Produits aubergine = new CagetteAubergine.BuilderProduits(10, 4, "Cagette d'aubergine")
                 .addConforme(false)
