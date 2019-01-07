@@ -1,5 +1,7 @@
 package fr.univamu.iut;
 
+import fr.univamu.iut.Fermier.Fermier;
+
 import java.util.*;
 
 

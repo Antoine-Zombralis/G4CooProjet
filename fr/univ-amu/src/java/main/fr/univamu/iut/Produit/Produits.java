@@ -86,15 +86,28 @@ public class Produits{
             return new CagetteAubergine(this);
         }
 
+        public CagetteCarotte carotteBuild(){
+            return new CagetteCarotte(this);
         }
 
-//        public CagetteChou chouBuilder(){
-//         return new CagetteChou(this);
-//        }
+        public CagetteChou chouBuild(){
+            return new CagetteChou(this);
+        }
 
-//        public CagetteFraise fraiseBuilder(){
-//        return new CagetteFraise(this);
-//        }
+        public CagetteFraise fraiseBuild(){
+            return new CagetteFraise(this);
+        }
+
+        public CagettePoire poirebuild(){
+            return new CagettePoire(this);
+        }
+
+        public CagettePomme pommeBuild(){
+            return new CagettePomme(this);
+        }
+
+        }
+
 
     public Client getProprietaire() {
         return proprietaire;

@@ -1,8 +1,7 @@
 package fr.univamu.iut;
 
-import fr.univamu.iut.*;
+import fr.univamu.iut.Fermier.*;
 import fr.univamu.iut.Produit.*;
-import fr.univamu.iut.Produit.Fruit;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,13 +21,13 @@ public class main {
 
         Client c1 = new Grossiste("c1", false, 2, new CompteBancaire(2, 1000));
 
-//        for(Produits vegetale :  creationProduitHorticulteur()){
-//            ((Horticulteur) f1).cultiverVegetal(vegetale);
-//            controleur.validerProduit(vegetale);
-//            if (vegetale.isConforme()){
-//                f1.ajouterCommercialisable(vegetale);
-//            }
-//        }
+        for(Vegetal vegetal :  creationProduitHorticulteur()){
+            ((Horticulteur) f1).cultiverVegetal(vegetal);
+            controleur.validerProduit(vegetal);
+            if (vegetal.isConforme()){
+                f1.ajouterCommercialisable(vegetal);
+            }
+        }
 
         f1.afficherCommercialisable();
 
@@ -44,65 +43,63 @@ public class main {
 
     }
 
-    public static List<Produits> creationProduitHorticulteur(){
+    public static List<Vegetal> creationProduitHorticulteur(){
 
-        List<Produits> vegetales = new ArrayList<>();
+        List<Vegetal> vegetals = new ArrayList<>();
 
-        Produits poire = new Produits.BuilderProduits(5, 10, "Cagette de poire")
+        Vegetal poire = new CagettePoire.BuilderProduits(5, 10, "Cagette de poire")
                 .addConforme(false)
                 .addId(1)
                 .addPrixVegetalUnite(0.50)
                 .addQuantiteVegetalDansCagette(20)
                 .poireBuild();
 
-        vegetales.add(poire);
+        vegetals.add(poire);
 
-        Produits pomme = new CagettePomme.BuilderProduits(10, 4, "Cagette de pomme")
+        Vegetal pomme = new CagettePomme.BuilderProduits(10, 4, "Cagette de pomme")
                 .addConforme(false)
                 .addId(2)
                 .addQuantiteVegetalDansCagette(25)
                 .addPrixVegetalUnite(0.75)
-                .build();
+                .pommeBuild();
 
-        vegetales.add(pomme);
-        réper
+        vegetals.add(pomme);
 
-        Produits aubergine = new CagetteAubergine.BuilderProduits(10, 4, "Cagette d'aubergine")
+        Vegetal aubergine = new CagetteAubergine.BuilderProduits(10, 4, "Cagette d'aubergine")
                 .addConforme(false)
                 .addId(3)
                 .addQuantiteVegetalDansCagette(25)
                 .addPrixVegetalUnite(0.75)
-                .build();
+                .aubergineBuild();
 
-        vegetales.add(aubergine);
+        vegetals.add(aubergine);
 
-        Produits carotte = new CagetteCarotte.BuilderProduits(10, 4, "Cagette de carotte")
+        Vegetal carotte = new CagetteCarotte.BuilderProduits(10, 4, "Cagette de carotte")
                 .addConforme(false)
                 .addId(4)
                 .addQuantiteVegetalDansCagette(25)
                 .addPrixVegetalUnite(0.75)
-                .build();
+                .carotteBuild();
 
-        vegetales.add(carotte);
+        vegetals.add(carotte);
 
-        Produits Chou = new CagetteChou.BuilderProduits(10, 4, "Cagette de Chou")
+        Vegetal Chou = new CagetteChou.BuilderProduits(10, 4, "Cagette de Chou")
                 .addConforme(false)
                 .addId(5)
                 .addQuantiteVegetalDansCagette(25)
                 .addPrixVegetalUnite(0.75)
-                .build();
+                .chouBuild();
 
-        vegetales.add(Chou);
+        vegetals.add(Chou);
 
-        Produits fraise = new CagetteFraise.BuilderProduits(10, 4, "Cagette de Fraise")
+        Vegetal fraise = new CagetteFraise.BuilderProduits(10, 4, "Cagette de Fraise")
                 .addConforme(false)
                 .addId(6)
                 .addQuantiteVegetalDansCagette(25)
                 .addPrixVegetalUnite(0.75)
-                .build();
-
-        vegetales.add(fraise);
-        return vegetales;
+                .fraiseBuild();
+        vegetals.add(fraise);
+        return vegetals;
 
     }
 
