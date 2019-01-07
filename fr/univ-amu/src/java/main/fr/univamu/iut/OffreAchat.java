@@ -1,5 +1,7 @@
 package fr.univamu.iut;
 
+import fr.univamu.iut.Produit.Produits;
+
 public class OffreAchat {
     private Client monCréateur ;
     private Produits produitConcerné ;

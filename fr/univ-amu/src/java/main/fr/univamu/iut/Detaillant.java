@@ -1,7 +1,7 @@
 package fr.univamu.iut;
 
 
-import java.util.List;
+import fr.univamu.iut.Produit.Produits;
 
 public class Detaillant extends Client {
 
@@ -9,7 +9,7 @@ public class Detaillant extends Client {
         super(nom, abonne, idClient, monComte);
     }
 
-    public void acheterProduit(ProduitCommercialisable produit){
+    public void acheterProduit(Produits produit){
         getMesProduitsAchetes().add(produit) ;
     }
 

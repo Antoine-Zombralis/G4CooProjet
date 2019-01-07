@@ -1,5 +1,10 @@
 package fr.univamu.iut;
 
+import fr.univamu.iut.Produit.Cochon;
+import fr.univamu.iut.Produit.Vache;
+import fr.univamu.iut.Produit.Viande;
+import fr.univamu.iut.Produit.Volaille;
+
 import java.util.ArrayList;
 import java.util.List;
 

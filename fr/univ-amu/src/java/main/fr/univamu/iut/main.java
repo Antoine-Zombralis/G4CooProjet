@@ -1,44 +1,105 @@
 package fr.univamu.iut;
 
+import fr.univamu.iut.*;
+import fr.univamu.iut.Produit.*;
+import fr.univamu.iut.Produit.Fruit;
 
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.Date;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 public class main {
 
     public static void main(String[] args) {
 
-      /*  Date date = new Date();
+        Fermier f1 = new Horticulteur("f1", false, 1, 1, new CompteBancaire(1, 1000));
+        Fermier f2 = new Arboriculteur("f2", false, 2, 2, new CompteBancaire(2, 1000));
+        Fermier f3 = new ProducteurDeViande("f3", false, 3, 3, new CompteBancaire(3, 1000));
+        Fermier f4 = new ProducteurLaitier("f4", false, 4, 4, new CompteBancaire(4, 1000));
 
-        Arboriculteur gile = new Arboriculteur("gilou", false, 1, 1, new CompteBancaire(1, 1000));
-        Arbre pin = new Arbre(gile.getNom(), "1", true,true, 1,10, date, 20, "Pin");
-        gile.produireArbre(pin);
+        Controleur controleur = new Controleur();
 
-        PropositionProduitFermier produit = new PropositionProduitFermier("Jean", "8", true, true, 8, 5) ;
-        System.out.println(produit.getDatePéremption()) ;
-        System.out.println(produit.isBio());
+        Client c1 = new Grossiste("c1", false, 2, new CompteBancaire(2, 1000));
 
-        for(Arbre objet: gile.getMesProductions()){
-            System.out.println(objet.getType());
-        }*/
+        for(Produits vegetale :  creationProduitHorticulteur()){
+            ((Horticulteur) f1).cultiverVegetal(vegetale);
+            controleur.validerProduit(vegetale);
+            if (vegetale.isConforme()){
+                f1.ajouterCommercialisable(vegetale);
+            }
+        }
 
-      Produits poire = new CagettePoire.BuilderProduit(2, 10, "Cagette de poire")
-              .addId(1)
-              .addConforme(false)
-              .build();
+        f1.afficherCommercialisable();
 
-      Fermier f1 = new Horticulteur("f1", false, 1, 1, new CompteBancaire(1, 1000));
-      f1.proposerProduit(poire);
+        for(Produits vegetale : f1.getMesProduitsCommercialisable()){
+            if(vegetale.getId() == 5){
+                c1.acheterProduit(vegetale);
+                Transaction transac1 = new Transaction(1, f1, c1, vegetale);
+                transac1.addTransaction(transac1);
+            }
+        }
 
-      ProduitCommercialisable poireVente = (ProduitCommercialisable) poire;
+        System.out.println(c1.getMonComte().getSolde());
 
-      Client c1 = new Grossiste("c1", false, 2, new CompteBancaire(2, 1000));
-      c1.acheterProduit(poireVente);
-      poireVente.mettreEnVente();
-      System.out.println(c1.getMonComte().getSolde());
-        System.out.println("test");
+    }
+
+    public static List<Produits> creationProduitHorticulteur(){
+
+        List<Produits> vegetales = new ArrayList<>();
+
+        Produits poire = new Produits.BuilderProduits(5, 10, "Cagette de poire")
+                .addConforme(false)
+                .addId(1)
+                .addPrixVegetalUnite(0.50)
+                .addQuantiteVegetalDansCagette(20)
+                .poireBuild();
+
+        vegetales.add(poire);
+
+        Produits pomme = new CagettePomme.BuilderProduits(10, 4, "Cagette de pomme")
+                .addConforme(false)
+                .addId(2)
+                .addQuantiteVegetalDansCagette(25)
+                .addPrixVegetalUnite(0.75)
+                .build();
+
+        vegetales.add(pomme);
+
+        Produits aubergine = new CagetteAubergine.BuilderProduits(10, 4, "Cagette d'aubergine")
+                .addConforme(false)
+                .addId(3)
+                .addQuantiteVegetalDansCagette(25)
+                .addPrixVegetalUnite(0.75)
+                .build();
+
+        vegetales.add(aubergine);
+
+        Produits carotte = new CagetteCarotte.BuilderProduits(10, 4, "Cagette de carotte")
+                .addConforme(false)
+                .addId(4)
+                .addQuantiteVegetalDansCagette(25)
+                .addPrixVegetalUnite(0.75)
+                .build();
+
+        vegetales.add(carotte);
+
+        Produits Chou = new CagetteChou.BuilderProduits(10, 4, "Cagette de Chou")
+                .addConforme(false)
+                .addId(5)
+                .addQuantiteVegetalDansCagette(25)
+                .addPrixVegetalUnite(0.75)
+                .build();
+
+        vegetales.add(Chou);
+
+        Produits fraise = new CagetteFraise.BuilderProduits(10, 4, "Cagette de Fraise")
+                .addConforme(false)
+                .addId(6)
+                .addQuantiteVegetalDansCagette(25)
+                .addPrixVegetalUnite(0.75)
+                .build();
+
+        vegetales.add(fraise);
+        return vegetales;
 
     }
 

@@ -1,5 +1,10 @@
 package fr.univamu.iut;
 
+import fr.univamu.iut.Produit.Fruit;
+import fr.univamu.iut.Produit.Legume;
+import fr.univamu.iut.Produit.Produits;
+import fr.univamu.iut.Produit.Vegetal;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +17,7 @@ public class Horticulteur extends Fermier {
         mesProductions = new ArrayList<>();
     }
 
-    public void cultiverFruit(Fruit fruit) {
+    public void cultiverVegetal(Fruit fruit) {
 
         mesProductions.add(fruit);
     }
@@ -21,4 +26,13 @@ public class Horticulteur extends Fermier {
         mesProductions.add(legume);
     }
 
+    public List<Vegetal> getMesProductions() {
+        return mesProductions;
+    }
+
+    public void afficherMesProductions(){
+        for (Produits vegetal : mesProductions){
+            System.out.println("mesProductions : " + vegetal.getNom() + " Prix : " + vegetal.getPrix() + " ID : " + vegetal.getId());
+        }
+    }
 }
