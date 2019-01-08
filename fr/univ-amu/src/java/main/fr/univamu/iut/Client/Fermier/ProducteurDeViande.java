@@ -11,11 +11,10 @@ import java.util.List;
 
 public class ProducteurDeViande extends Fermier {
 
-    private List<Viande> mesProductions;
+    private List<Viande> mesProductions = new ArrayList<>();
 
     public ProducteurDeViande(String nom, boolean abonne, CompteBancaire monComte) {
         super(nom, abonne, monComte);
-        mesProductions = new ArrayList<>();
     }
 
     public void produireVache(Vache vache){
