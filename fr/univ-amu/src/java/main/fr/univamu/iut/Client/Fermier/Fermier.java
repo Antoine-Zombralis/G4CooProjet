@@ -31,11 +31,7 @@ public abstract class Fermier extends Client {
         mesProduitsCommercialisable.add(produit);
     }
 
-    public void afficherCommercialisable(){
-        for (Produits produit : mesProduitsCommercialisable){
-            System.out.println("Voici les produits de " + this.getNom() + " : " + produit.getNom()  + " | "  + produit.getPrix() + "$");
-        }
-    }
+    public abstract void afficherCommercialisable();
 
     public void alerter(){
         System.out.println("Vous avez recu une sanction");
@@ -50,4 +46,5 @@ public abstract class Fermier extends Client {
         return mesProduitsCommercialisable;
     }
 
+    public abstract void afficherMesProductions() ;
 }
