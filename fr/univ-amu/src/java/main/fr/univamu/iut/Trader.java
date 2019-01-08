@@ -1,30 +1,35 @@
 package fr.univamu.iut;
 
+import fr.univamu.iut.Client.Client;
+import fr.univamu.iut.Produit.Produits;
+
 import java.util.List;
 
 public class Trader extends Client {
 
-    private Boolean travaillerSurMarché;
-    private List<ProduitCommercialisable> mesProdtuisEnVente = null;
+    private Boolean travaillerSurMarche;
+    private List<Produits> mesProdtuisEnVente = null;
 
-    public Trader(String nom, boolean abonne, int id, CompteBancaire monComte, List<ProduitCommercialisable> mesProduitsAchetés, Boolean travaillerSurMarché, List<ProduitCommercialisable> mesProdtuisEnVente) {
-        super(nom, abonne, id, monComte, mesProduitsAchetés);
-        this.travaillerSurMarché = travaillerSurMarché;
+    public Trader(String nom, boolean abonne, CompteBancaire monComte, Boolean travaillerSurMarche, List<Produits> mesProdtuisEnVente) {
+        super(nom, abonne, monComte);
+        this.travaillerSurMarche = travaillerSurMarche;
         this.mesProdtuisEnVente = mesProdtuisEnVente;
     }
 
-    @Override
-    public void acheterProduit(ProduitCommercialisable produit){
-        mesProduitsAchetés.add(produit) ;
-    }
+//    @Override
+//    public void acheterProduit(Produits produit){
+//        getMesProduitsAchetes().add(produit) ;
+//    }
 
     @Override
     public void notifierClient(Client client){
         System.out.println("De nouveaux produit ont été mis en vente pour vous " + client.getNom());
     }
 
-    public void mettreEnVente(ProduitCommercialisable produit) {
-        // TODO implement here
-    }
+//    public void mettreEnVente(Produits produit) {
+//        if (produit instanceof Viande)
+//
+//
+//    }
 
 }
