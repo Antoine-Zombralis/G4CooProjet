@@ -122,8 +122,27 @@ public class main {
     public List<Produits> GenerationProduitAléatoire(int nbDeProduitsAGénérer, Fermier fermier) {
         List<Produits> produits = new ArrayList<>() ;
         if (fermier instanceof Arboriculteur) {
+            int cpt = 1 ;
             for (int i = 0; i < nbDeProduitsAGénérer; i++) {
                 double alea = Math.random() ;
+                if (alea < 0.25) {
+
+                    boolean dejaDansLaListe = false;
+                    for (Produits produit : produits) {
+                        if (produit instanceof Rosier) {
+                            dejaDansLaListe = true;
+                        }
+                    }
+                    if (!dejaDansLaListe) {
+                        Vegetal rosier = new Rosier.BuilderProduits(1, 45, "Rosier fleurie")
+                                .rosierBuild();
+                        produits.add(rosier);
+                    }
+                    else{
+                        rosier.setQuantité(++cpt) ;
+                    }
+
+                }
 
 
             }
