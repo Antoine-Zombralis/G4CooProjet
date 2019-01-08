@@ -3,6 +3,50 @@
   <component name="ChangeListManager">
     <list default="true" id="c2b868c9-fb09-48f3-8801-dbe0df1521b6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/CentraleAchat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Detaillant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Fermier/Arboriculteur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Fermier/Fermier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Fermier/Horticulteur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Fermier/ProducteurDeViande.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Fermier/ProducteurLaitier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Grossiste.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/CompteBancaire.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Controleur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Negociation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/OffreAchat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Arbres/Arbre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Arbres/Banzai.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Arbres/Pommier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Arbres/Rosier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Arbres/Sapin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Enum/CategorieCochon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Enum/CategorieVache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Enum/CategorieVolaille.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Enum/EnumLabel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/FruitEtLegume/CagetteAubergine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/FruitEtLegume/CagetteCarotte.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/FruitEtLegume/CagetteChou.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/FruitEtLegume/CagetteFraise.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/FruitEtLegume/CagettePoire.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/FruitEtLegume/CagettePomme.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/FruitEtLegume/Fruit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/FruitEtLegume/Legume.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Produits.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/ProduitsLaitier/Beurre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/ProduitsLaitier/Fromage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/ProduitsLaitier/Lait.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/ProduitsLaitier/ProduitLaitier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Vegetal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Viande/Cochon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Viande/Vache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Viande/Viande.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Viande/Volaille.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/RépertoireVente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Trader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Transaction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/main.java" beforeDir="false" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,60 +55,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Produits.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Produits.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProducteurDeViande.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Fermier/ProducteurDeViande.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="33" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Rosier.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Arbres/Rosier.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-              <folding>
-                <element signature="e#119#120#0" expanded="true" />
-                <element signature="e#149#150#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategorieCochon.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Enum/CategorieCochon.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,7 +64,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/ProduitsLaitier/Lait.java" />
-        <option value="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Fermier/ProducteurLaitier.java" />
         <option value="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Enum/CategorieCochon.java" />
         <option value="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Fermier/ProducteurDeViande.java" />
         <option value="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Arbre/Banzai.java" />
@@ -81,6 +71,7 @@
         <option value="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/main.java" />
         <option value="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Produits.java" />
         <option value="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Arbres/Rosier.java" />
+        <option value="$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Fermier/ProducteurLaitier.java" />
       </list>
     </option>
   </component>
@@ -112,76 +103,6 @@
             <path>
               <item name="G4CooProjet" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="G4CooProjet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="G4CooProjet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="G4CooProjet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="iut" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="G4CooProjet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="iut" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="G4CooProjet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="iut" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="Fermier" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="G4CooProjet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="iut" type="462c0819:PsiDirectoryNode" />
-              <item name="Produit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="G4CooProjet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="iut" type="462c0819:PsiDirectoryNode" />
-              <item name="Produit" type="462c0819:PsiDirectoryNode" />
-              <item name="Arbres" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="G4CooProjet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="iut" type="462c0819:PsiDirectoryNode" />
-              <item name="Produit" type="462c0819:PsiDirectoryNode" />
-              <item name="Enum" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="G4CooProjet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="iut" type="462c0819:PsiDirectoryNode" />
-              <item name="Produit" type="462c0819:PsiDirectoryNode" />
-              <item name="Viande" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -252,11 +173,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3227000" />
+    <option name="totallyTimeSpent" value="3552000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32897604" />
@@ -269,10 +189,10 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32897604" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32897604" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3267974" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3267974" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18923241" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18923241" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -438,13 +358,6 @@
     <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/CagettePomme.java" />
     <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Marche.java" />
     <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/GrandLivreDuMarche.java" />
-    <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Fermier/Arboriculteur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Trader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
@@ -461,17 +374,6 @@
           <caret line="51" selection-start-line="51" selection-end-line="51" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Fermier/Fermier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="e#1903#1904#0" expanded="true" />
-            <element signature="e#1953#1954#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -540,27 +442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Fermier/Horticulteur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Fermier/ProducteurLaitier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
-          <folding>
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#483#484#0" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#693#694#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/ProduitsLaitier/Beurre.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -607,10 +488,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Produits.java">
+    <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Fermier/Arboriculteur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Fermier/Horticulteur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Fermier/Fermier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Fermier/ProducteurLaitier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#652#653#0" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -621,6 +530,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Produit/Produits.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
         </state>
       </provider>
     </entry>
