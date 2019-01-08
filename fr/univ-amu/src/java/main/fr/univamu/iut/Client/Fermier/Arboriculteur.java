@@ -1,4 +1,4 @@
-package fr.univamu.iut.Fermier;
+package fr.univamu.iut.Client.Fermier;
 
 import fr.univamu.iut.Arbre;
 import fr.univamu.iut.CompteBancaire;

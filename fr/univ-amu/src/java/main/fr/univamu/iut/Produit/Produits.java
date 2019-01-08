@@ -1,6 +1,6 @@
 package fr.univamu.iut.Produit;
 
-import fr.univamu.iut.Client;
+import fr.univamu.iut.Client.Client;
 
 import java.util.Calendar;
 import java.util.Date;

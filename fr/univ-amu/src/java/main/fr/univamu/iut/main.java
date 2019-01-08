@@ -1,6 +1,8 @@
 package fr.univamu.iut;
 
-import fr.univamu.iut.Fermier.*;
+import fr.univamu.iut.Client.Client;
+import fr.univamu.iut.Client.Grossiste;
+import fr.univamu.iut.Client.Fermier.*;
 import fr.univamu.iut.Produit.*;
 
 import java.util.ArrayList;
@@ -16,15 +18,15 @@ public class main {
         Fermier f4 = new ProducteurLaitier("f4", false, 4, 4, new CompteBancaire(4, 1000));
 
         Controleur controleur = new Controleur();
-        GrandLivreDuMarche livreDuMarche = new GrandLivreDuMarche() ;
-        RépertoireVente répertoireVente = new RépertoireVente() ;
+
+        RépertoireVente repertoireVente = new RépertoireVente() ;
 
         Client c1 = new Grossiste("c1", false, 2, new CompteBancaire(2, 1000));
 
 
         for(Vegetal vegetal :  creationProduitHorticulteur()){
             ((Horticulteur) f1).cultiverVegetal(vegetal);
-            controleur.validerProduit(vegetal);
+            controleur.conformerProduit(vegetal);
             if (vegetal.isConforme()){
                 f1.ajouterCommercialisable(vegetal);
             }
@@ -34,9 +36,7 @@ public class main {
 
         for(Produits vegetale : f1.getMesProduitsCommercialisable()){
             if(vegetale.getId() == 5){
-                c1.acheterProduit(vegetale);
-                Transaction transac1 = new Transaction(1, f1, c1, vegetale);
-                transac1.addTransaction(transac1);
+                c1.acheterProduit(vegetale, f1);
             }
         }
 
