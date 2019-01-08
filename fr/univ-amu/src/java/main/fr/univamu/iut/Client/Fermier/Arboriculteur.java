@@ -1,6 +1,6 @@
 package fr.univamu.iut.Client.Fermier;
 
-import fr.univamu.iut.Produit.Arbre;
+import fr.univamu.iut.Produit.Arbre.Arbre;
 import fr.univamu.iut.CompteBancaire;
 
 import java.util.ArrayList;
