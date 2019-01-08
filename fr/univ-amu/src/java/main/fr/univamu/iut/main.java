@@ -26,9 +26,13 @@ public class main {
 
         for(Vegetal vegetal :  creationProduitHorticulteur()){
             ((Horticulteur) f1).cultiverVegetal(vegetal);
-            controleur.conformerProduit(vegetal);
+            controleur.validerProduit(vegetal);
             if (vegetal.isConforme()){
                 f1.ajouterCommercialisable(vegetal);
+                if (vegetal instanceof Legume)
+                    repertoireVente.ajouterLegume(vegetal);
+                else if (vegetal instanceof Fruit)
+                    repertoireVente.ajouterFruit(vegetal);
             }
         }
 
@@ -99,6 +103,7 @@ public class main {
                 .addQuantiteVegetalDansCagette(25)
                 .addPrixVegetalUnite(0.75)
                 .fraiseBuild();
+
         vegetals.add(fraise);
         return vegetals;
 
