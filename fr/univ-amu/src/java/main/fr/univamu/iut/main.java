@@ -4,7 +4,9 @@ import fr.univamu.iut.Client.Client;
 import fr.univamu.iut.Client.Grossiste;
 import fr.univamu.iut.Client.Fermier.*;
 import fr.univamu.iut.Produit.*;
+import fr.univamu.iut.Produit.Enum.EnumLabel;
 import fr.univamu.iut.Produit.FruitEtLegume.*;
+import fr.univamu.iut.Produit.Viande.Vache;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +62,7 @@ public class main {
                 .carotteBuild();
 
         System.out.println(carotte.getDatePeremption());
+
     }
 
     public static List<Vegetal> creationProduitHorticulteur(){

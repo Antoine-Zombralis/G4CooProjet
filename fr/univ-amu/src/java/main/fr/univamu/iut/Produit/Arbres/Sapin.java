@@ -1,4 +1,4 @@
-package fr.univamu.iut.Produit.Arbre;
+package fr.univamu.iut.Produit.Arbres;
 
 
 public class Sapin extends Arbre {

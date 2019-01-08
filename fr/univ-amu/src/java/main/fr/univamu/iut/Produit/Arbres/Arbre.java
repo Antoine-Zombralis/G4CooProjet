@@ -1,4 +1,4 @@
-package fr.univamu.iut.Produit.Arbre;
+package fr.univamu.iut.Produit.Arbres;
 
 import fr.univamu.iut.Produit.Vegetal;
 

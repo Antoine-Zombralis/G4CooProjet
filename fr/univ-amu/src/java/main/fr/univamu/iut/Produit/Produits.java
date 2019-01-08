@@ -1,14 +1,21 @@
 package fr.univamu.iut.Produit;
 
 import fr.univamu.iut.Client.Client;
-import fr.univamu.iut.Produit.Arbre.Banzai;
-import fr.univamu.iut.Produit.Arbre.Pommier;
-import fr.univamu.iut.Produit.Arbre.Rosier;
-import fr.univamu.iut.Produit.Arbre.Sapin;
+import fr.univamu.iut.Produit.Arbres.Banzai;
+import fr.univamu.iut.Produit.Arbres.Pommier;
+import fr.univamu.iut.Produit.Arbres.Rosier;
+import fr.univamu.iut.Produit.Arbres.Sapin;
+import fr.univamu.iut.Produit.Enum.CategorieCochon;
+import fr.univamu.iut.Produit.Enum.CategorieVache;
+import fr.univamu.iut.Produit.Enum.CategorieVolaille;
+import fr.univamu.iut.Produit.Enum.EnumLabel;
 import fr.univamu.iut.Produit.FruitEtLegume.*;
 import fr.univamu.iut.Produit.ProduitsLaitier.Beurre;
 import fr.univamu.iut.Produit.ProduitsLaitier.Fromage;
 import fr.univamu.iut.Produit.ProduitsLaitier.Lait;
+import fr.univamu.iut.Produit.Viande.Cochon;
+import fr.univamu.iut.Produit.Viande.Vache;
+import fr.univamu.iut.Produit.Viande.Volaille;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -17,12 +24,17 @@ public abstract class Produits{
 
     private Client proprietaire;
     private boolean bio, conforme;
-    private int quantite, prix, id;
+    private int quantite, id;
+    private double prix;
     private static int cpt = 0;
     private Date datePeremption;
     private String nom;
     private double prixVegetalUnite;
     private int quantiteVegetalDansCagette;
+    private EnumLabel label;
+    private CategorieVache categorieVache;
+    private CategorieCochon categorieCochon;
+    private CategorieVolaille categorieVolaille;
 
     public Produits (BuilderProduits builder) {
         proprietaire = builder.proprietaire;
@@ -38,16 +50,26 @@ public abstract class Produits{
         datePeremption = date ;
         prixVegetalUnite = builder.prixVegetalUnite;
         quantiteVegetalDansCagette = builder.quantiteVegetalDansCagette;
+        label = builder.label;
+        categorieCochon = builder.categorieCochon;
+        categorieVache = builder.categorieVache;
+        categorieVolaille = builder.categorieVolaille;
     }
 
     public static class BuilderProduits {
         private Client proprietaire;
         private boolean bio, conforme;
-        private int quantite, prix;
+        private int quantite;
+        private double prix;
         private Date datePeremption;
         private String nom;
         private double prixVegetalUnite;
         private int quantiteVegetalDansCagette;
+        private EnumLabel label;
+        private CategorieVache categorieVache;
+        private CategorieCochon categorieCochon;
+        private CategorieVolaille categorieVolaille;
+
 
         public BuilderProduits(int quantite, int prix, String nom){
             this.quantite = quantite;
@@ -78,6 +100,22 @@ public abstract class Produits{
 
         public BuilderProduits addQuantiteVegetalDansCagette(int quantite){
             quantiteVegetalDansCagette = quantite; return this;
+        }
+
+        public BuilderProduits addLabel(EnumLabel label){
+            this.label = label; return this;
+        }
+
+        public BuilderProduits addCategorieVache(CategorieVache categorieVache){
+             this.categorieVache = categorieVache; return this;
+        }
+
+        public BuilderProduits addCategorieVolaille(CategorieVolaille categorieVolaille){
+            this.categorieVolaille = categorieVolaille; return this;
+        }
+
+        public BuilderProduits addCategorieCochon(CategorieCochon categorieCochon){
+            this.categorieCochon = categorieCochon; return this;
         }
 
         public CagettePoire poireBuild(){
@@ -129,6 +167,12 @@ public abstract class Produits{
 
         public Lait laitBuild(){return new Lait(this);}
 
+        public Vache vacheBuild(){return new Vache(this);}
+
+        public Cochon cochonBuild(){return new Cochon(this);}
+
+        public Volaille volailleBuild(){return new Volaille(this);}
+
         }
 
 
@@ -164,11 +208,11 @@ public abstract class Produits{
         this.quantite = quantite;
     }
 
-    public int getPrix() {
+    public double getPrix() {
         return prix;
     }
 
-    public void setPrix(int prix) {
+    public void setPrix(double prix) {
         this.prix = prix;
     }
 
@@ -214,6 +258,38 @@ public abstract class Produits{
 
     public void setQuantiteVegetalDansCagette(int quantiteVegetalDansCagette) {
         this.quantiteVegetalDansCagette = quantiteVegetalDansCagette;
+    }
+
+    public EnumLabel getLabel() {
+        return label;
+    }
+
+    public void setLabel(EnumLabel label) {
+        this.label = label;
+    }
+
+    public CategorieVache getCategorieVache() {
+        return categorieVache;
+    }
+
+    public void setCategorieVache(CategorieVache categorieVache) {
+        this.categorieVache = categorieVache;
+    }
+
+    public CategorieCochon getCategorieCochon() {
+        return categorieCochon;
+    }
+
+    public void setCategorieCochon(CategorieCochon categorieCochon) {
+        this.categorieCochon = categorieCochon;
+    }
+
+    public CategorieVolaille getCategorieVolaille() {
+        return categorieVolaille;
+    }
+
+    public void setCategorieVolaille(CategorieVolaille categorieVolaille) {
+        this.categorieVolaille = categorieVolaille;
     }
 
     //    @Override

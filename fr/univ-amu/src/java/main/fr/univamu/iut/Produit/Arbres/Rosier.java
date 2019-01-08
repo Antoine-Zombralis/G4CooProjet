@@ -1,6 +1,4 @@
-package fr.univamu.iut.Produit.Arbre;
-
-import fr.univamu.iut.Produit.Arbre.Arbre;
+package fr.univamu.iut.Produit.Arbres;
 
 public class Rosier extends Arbre {
     public Rosier(BuilderProduits builder) {
