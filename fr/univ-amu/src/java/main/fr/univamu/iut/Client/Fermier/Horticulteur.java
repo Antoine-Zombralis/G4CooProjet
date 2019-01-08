@@ -1,6 +1,7 @@
 package fr.univamu.iut.Client.Fermier;
 
 import fr.univamu.iut.CompteBancaire;
+import fr.univamu.iut.Produit.Arbre.Arbre;
 import fr.univamu.iut.Produit.Produits;
 import fr.univamu.iut.Produit.Vegetal;
 
@@ -10,6 +11,7 @@ import java.util.List;
 public class Horticulteur extends Fermier {
 
     private List<Vegetal> mesProductions = new ArrayList<>();
+    private List<Vegetal> mesProduitsCommercialisables = new ArrayList<>() ;
 
 
     public Horticulteur(String nom, boolean abonne, CompteBancaire monComte) {
@@ -26,9 +28,20 @@ public class Horticulteur extends Fermier {
         return mesProductions;
     }
 
-    public void afficherMesProductions(){
-        for (Produits vegetal : mesProductions){
-            System.out.println("mesProductions : " + vegetal.getNom() + " Prix : " + vegetal.getPrix() + " ID : " + vegetal.getId());
+    @Override
+    public void afficherMesProductions() {
+        System.out.println("Voici les produits de " + this.getNom() + ": ");
+        for (Produits produit : mesProductions){
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " kg disponibles "  + " | "  + produit.getPrix() + "$");
         }
     }
+
+    @Override
+    public void afficherCommercialisable() {
+        System.out.println("Voici les produits commercialisables de " + this.getNom() + ": ");
+        for (Produits produit : mesProduitsCommercialisables){
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " kg disponibles "  + " | "  + produit.getPrix() + "$");
+        }
+    }
+
 }
