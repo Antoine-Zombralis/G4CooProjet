@@ -1,4 +1,6 @@
-package fr.univamu.iut;
+package fr.univamu.iut.Client;
+
+import fr.univamu.iut.CompteBancaire;
 
 import java.util.List;
 

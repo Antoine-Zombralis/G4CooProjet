@@ -1,6 +1,8 @@
-package fr.univamu.iut;
+package fr.univamu.iut.Client;
 
+import fr.univamu.iut.CompteBancaire;
 import fr.univamu.iut.Produit.Produits;
+import fr.univamu.iut.Transaction;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +13,7 @@ public abstract class Client {
     private boolean abonne;
     private int idClient;
     private CompteBancaire monComte;
+    private Transaction transaction;
 
     private List<Produits> mesProduitsAchetes = new ArrayList<>();
 
@@ -61,13 +64,15 @@ public abstract class Client {
         this.nom = nom;
     }
 
-    public void acheterProduit(Produits produit){
+    public void acheterProduit(Produits produit, Client vendeur){
         if (!produit.isConforme()){
             System.out.println("Impossible d'acheter ce produit, il n'est pas conforme à la réglementation !");
         }
         else{
             mesProduitsAchetes.add(produit);
             monComte.debiter(idClient, produit.getPrix());
+            transaction = new Transaction(vendeur, this, produit);
+            transaction.addTransaction(transaction);
         }
 
     }

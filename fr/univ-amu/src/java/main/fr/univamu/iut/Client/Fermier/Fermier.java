@@ -1,6 +1,6 @@
-package fr.univamu.iut.Fermier;
+package fr.univamu.iut.Client.Fermier;
 
-import fr.univamu.iut.Client;
+import fr.univamu.iut.Client.Client;
 import fr.univamu.iut.CompteBancaire;
 import fr.univamu.iut.Produit.Produits;
 
@@ -43,11 +43,6 @@ public class Fermier extends Client {
         System.out.println("Vous avez recu une sanction");
     }
 
-    @Override
-    public void acheterProduit(Produits produitvoulu)  {
-//        this.getMonComte().debiter(this.getIdClient(), produitvoulu.getPrix());
-        mesProduitsCommercialisable.add(produitvoulu);
-    }
 
     @Override
     public void notifierClient(Client client) {
