@@ -54,7 +54,6 @@ public class main {
 
         Vegetal carotte = new CagetteCarotte.BuilderProduits(10, 4, "Cagette de carotte")
                 .addConforme(false)
-                .addId(4)
                 .addQuantiteVegetalDansCagette(25)
                 .addPrixVegetalUnite(0.75)
                 .carotteBuild();
@@ -115,6 +114,20 @@ public class main {
         vegetals.add(fraise);
         return vegetals;
 
+
+
+
+    }
+    public List<Produits> GenerationProduitAléatoire(int nbDeProduitsAGénérer, Fermier fermier) {
+        List<Produits> produits = new ArrayList<>() ;
+        if (fermier instanceof Arboriculteur) {
+            for (int i = 0; i < nbDeProduitsAGénérer; i++) {
+                double alea = Math.random() ;
+
+
+            }
+        }
+        return produits ;
     }
 
 }
