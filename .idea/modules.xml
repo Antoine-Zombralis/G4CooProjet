@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/fr/univ-amu/src/univ-amu.iml" filepath="$PROJECT_DIR$/fr/univ-amu/src/univ-amu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fr/univ-amu/src/java/univ-amu.iml" filepath="$PROJECT_DIR$/fr/univ-amu/src/java/univ-amu.iml" />
     </modules>
   </component>
 </project>

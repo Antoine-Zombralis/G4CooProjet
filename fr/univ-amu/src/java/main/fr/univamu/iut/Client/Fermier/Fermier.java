@@ -45,12 +45,6 @@ public abstract class Fermier extends Client {
         return getIdClient();
     }
 
-    public int getIdVendeur() {
-        return idVendeur;
-    @Override
-    public void notifierClient(Client client) {
-        System.out.println("De nouveau produit ont été mis en vente pour vous" + client.getNom());
-    }
 
     public List<Produits> getMesProduitsCommercialisable() {
         return mesProduitsCommercialisable;
