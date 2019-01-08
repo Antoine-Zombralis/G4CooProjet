@@ -1,6 +1,10 @@
 package fr.univamu.iut.Produit;
 
 import fr.univamu.iut.Client.Client;
+import fr.univamu.iut.Produit.Arbre.Banzai;
+import fr.univamu.iut.Produit.Arbre.Pommier;
+import fr.univamu.iut.Produit.Arbre.Rosier;
+import fr.univamu.iut.Produit.Arbre.Sapin;
 import fr.univamu.iut.Produit.Arbres.Banzai;
 import fr.univamu.iut.Produit.Arbres.Pommier;
 import fr.univamu.iut.Produit.Arbres.Rosier;
@@ -71,7 +75,7 @@ public abstract class Produits{
         private CategorieVolaille categorieVolaille;
 
 
-        public BuilderProduits(int quantite, int prix, String nom){
+        public BuilderProduits(int quantite, double prix, String nom){
             this.quantite = quantite;
             this.prix = prix;
             this.nom = nom;
