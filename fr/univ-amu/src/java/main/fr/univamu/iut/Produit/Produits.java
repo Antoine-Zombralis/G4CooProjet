@@ -69,6 +69,10 @@ public abstract class Produits{
             datePeremption = fin; return this;
         }
 
+        public BuilderProduits addQuantite(int quantite){
+            this.quantite = quantite; return this;
+        }
+
         public BuilderProduits addPrixVegetalUnite(double prix){
             prixVegetalUnite = prix; return this;
         }
