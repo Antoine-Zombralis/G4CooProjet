@@ -1,7 +1,7 @@
 package fr.univamu.iut.Client.Fermier;
 
 import fr.univamu.iut.CompteBancaire;
-import Cochon;
+import fr.univamu.iut.Produit.Viande.Cochon;
 import fr.univamu.iut.Produit.Viande.Vache;
 import fr.univamu.iut.Produit.Viande.Viande;
 import fr.univamu.iut.Produit.Viande.Volaille;
