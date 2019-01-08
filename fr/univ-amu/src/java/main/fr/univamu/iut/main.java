@@ -21,6 +21,7 @@ import fr.univamu.iut.Produit.Viande.Volaille;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class main {
 
@@ -42,12 +43,28 @@ public class main {
         Client c1 = new Grossiste("c1", false, null);
         c1.setMonComte(new CompteBancaire(c1.getIdClient(), 5000));
 
-        ((Horticulteur) f1).cultiverVegetal(generationVegetalAleatoire(100));
-        ((Arboriculteur) f2).produireArbre(generationArbreAleatoire(200));
-        ((ProducteurDeViande) f3).produireViande(generationViandeAleatoire(150, EnumLabel.ROUGE, CategorieCochon.LANDRACE_FRANCAIS, CategorieVolaille.CHAPON, CategorieVache.NORMANDE));
-        ((ProducteurLaitier) f4).produireProduitsLaitier(generationProduitLaitierAleatoire(425));
-
         Controleur controleur = new Controleur();
+
+        List<Vegetal> vegetals = generationVegetalAleatoire(100);
+        List<Arbre> arbres = generationArbreAleatoire(200);
+        List<Viande> viandes = generationViandeAleatoire(150, EnumLabel.ROUGE, CategorieCochon.LANDRACE_FRANCAIS, CategorieVolaille.CHAPON, CategorieVache.NORMANDE);
+        List<ProduitLaitier> produitLaitiers = generationProduitLaitierAleatoire(425);
+
+        ((Horticulteur) f1).cultiverVegetal(vegetals);
+        ((Arboriculteur) f2).produireArbre(arbres);
+        ((ProducteurDeViande) f3).produireViande(viandes);
+        ((ProducteurLaitier) f4).produireProduitsLaitier(produitLaitiers);
+
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("1 - Consulter les produits en vente\n" + "2 - Consulter les transactions \n");
+        String str = sc.nextLine();
+
+        if(str.equals("1")){
+            ((Horticulteur) f1).afficherMesProductions();
+        }
+
+
         RépertoireVente repertoireVente = new RépertoireVente() ;
 
 
