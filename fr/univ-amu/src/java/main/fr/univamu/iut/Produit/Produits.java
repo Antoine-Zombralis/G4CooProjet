@@ -84,8 +84,7 @@ public class Produits{
             return new CagetteAubergine(this);
         }
 
-        public CagetteCarotte carotteBuild(){
-            return new CagetteCarotte(this);
+        public CagetteCarotte carotteBuild(){return new CagetteCarotte(this);
         }
 
         public CagetteChou chouBuild(){
