@@ -16,9 +16,9 @@ public class Horticulteur extends Fermier {
         super(nom, abonne, monComte);
     }
 
-    public void cultiverVegetal(Vegetal vegetal) {
+    public void cultiverVegetal(List<Vegetal> vegetal) {
 
-        mesProductions.add(vegetal);
+        mesProductions.addAll(vegetal);
     }
 
 

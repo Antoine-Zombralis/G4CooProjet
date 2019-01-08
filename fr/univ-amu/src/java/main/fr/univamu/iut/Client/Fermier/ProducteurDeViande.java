@@ -17,15 +17,8 @@ public class ProducteurDeViande extends Fermier {
         super(nom, abonne, monComte);
     }
 
-    public void produireVache(Vache vache){
-        mesProductions.add(vache);
-    }
-
-    public void produireCochon(Cochon cochon){
-        mesProductions.add(cochon);
-    }
-    public void produireVolaille(Volaille volaille){
-        mesProductions.add(volaille);
+    public void produireViande(List<Viande> viandes){
+        mesProductions.addAll(viandes);
     }
 
     public List<Viande> getMesProductions() {

@@ -14,8 +14,8 @@ public class ProducteurLaitier extends Fermier {
         super(nom, abonne, monComte);
     }
 
-    public void produiretLait(ProduitLaitier produitLaitier) {
-        mesProductions.add(produitLaitier);
+    public void produireProduitsLaitier(List <ProduitLaitier> produitLaitier) {
+        mesProductions.addAll(produitLaitier);
     }
 
     public List<ProduitLaitier> getMesProductions() {
