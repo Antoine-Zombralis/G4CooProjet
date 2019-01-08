@@ -1,9 +1,14 @@
-package fr.univamu.iut.Produit;
+package fr.univamu.iut.Produit.FruitEtLegume;
 
 import java.util.Calendar;
 import java.util.Date;
 
 public class CagetteFraise extends Fruit {
+
+    /**
+     * @param builder : Correspond au design patern builder
+     * Date correspond à la date de péremption du produit
+     */
     public CagetteFraise(BuilderProduits builder) {
         super(builder);
         Calendar calendar = Calendar.getInstance();

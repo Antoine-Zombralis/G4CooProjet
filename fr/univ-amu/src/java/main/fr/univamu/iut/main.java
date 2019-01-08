@@ -4,6 +4,7 @@ import fr.univamu.iut.Client.Client;
 import fr.univamu.iut.Client.Grossiste;
 import fr.univamu.iut.Client.Fermier.*;
 import fr.univamu.iut.Produit.*;
+import fr.univamu.iut.Produit.FruitEtLegume.*;
 
 import java.util.ArrayList;
 import java.util.List;

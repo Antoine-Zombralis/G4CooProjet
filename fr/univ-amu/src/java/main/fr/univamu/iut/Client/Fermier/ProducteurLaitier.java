@@ -1,7 +1,7 @@
 package fr.univamu.iut.Client.Fermier;
 
 import fr.univamu.iut.CompteBancaire;
-import fr.univamu.iut.Produit.Vache;
+import fr.univamu.iut.Produit.Viande.Vache;
 
 import java.util.ArrayList;
 import java.util.List;
