@@ -5,6 +5,10 @@ import java.util.Date;
 
 public class CagettePoire extends Fruit {
 
+    /**
+     * @param builder : Correspond au design patern builder
+     * Date correspond à la date de péremption du produit
+     */
     public CagettePoire(BuilderProduits builder) {
         super(builder);
         Calendar calendar = Calendar.getInstance();
