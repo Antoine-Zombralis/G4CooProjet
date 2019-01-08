@@ -27,7 +27,6 @@ public class main {
 
     public static void main(String[] args) {
 
-
         Fermier f1 = new Horticulteur("f1", false, null);
         f1.setMonComte(new CompteBancaire(f1.getIdClient(),1000));
 
@@ -67,6 +66,9 @@ public class main {
 
         RépertoireVente repertoireVente = new RépertoireVente() ;
 
+
+        ((Horticulteur) f1).afficherMesProductions();
+//        OffreAchat offreAchat = new OffreAchat() ;
 
     }
 
