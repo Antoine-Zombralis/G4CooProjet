@@ -21,10 +21,7 @@ public class Trader extends Client {
 //        getMesProduitsAchetes().add(produit) ;
 //    }
 
-    @Override
-    public void notifierClient(Client client){
-        System.out.println("De nouveaux produit ont été mis en vente pour vous " + client.getNom());
-    }
+
 
 //    public void mettreEnVente(Produits produit) {
 //        if (produit instanceof Viande)

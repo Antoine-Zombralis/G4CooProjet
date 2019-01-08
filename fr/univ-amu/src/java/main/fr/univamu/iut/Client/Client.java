@@ -78,8 +78,8 @@ public abstract class Client {
 
     }
 
-    public void notifierClient(Client client){
-        System.out.println("De nouveaux produit ont été mis en vente pour vous " + client.getNom());
+    public String notifierClient(Client client){
+        return "De nouveaux produits ont été mis en vente pour vous " + client.getNom();
     }
 
 }
