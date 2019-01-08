@@ -15,8 +15,8 @@ public class Arboriculteur extends Fermier {
         mesProductions = new ArrayList<>();
     }
 
-    public void produireArbre(Arbre arbre){
-        mesProductions.add(arbre);
+    public void produireArbre(List<Arbre> arbre){
+        mesProductions.addAll(arbre);
     }
 
     public List<Arbre> getMesProductions() {
