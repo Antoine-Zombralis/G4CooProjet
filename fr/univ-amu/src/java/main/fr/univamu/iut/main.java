@@ -140,34 +140,91 @@ public class main {
             int cptPommier = 0 ;
             for (int i = 0; i < nbDeProduitsAGenerer; i++) {
                 double alea = Math.random() ;
-                if (alea < 0.25) {
+                if (alea < 0.25)
                     ++cptRosier ;
-                }
-                else if (alea > 0.25 && alea <0.5) {
+                else if (alea > 0.25 && alea <0.5)
                     ++cptBanzai ;
-                }
-                else if (alea > 0.50 && alea <0.75) {
+                else if (alea > 0.50 && alea <0.75)
                     ++cptSapin ;
-                }
                 else
                     ++cptPommier ;
-
-
-
-
             }
             Rosier rosier = new Rosier.BuilderProduits(cptRosier, 45, "Rosier fleurie")
                     .rosierBuid();
-            Pommier pommier = new Pommier.BuilderProduits(cptPommier, 45, "Pommier d'Alsace")
+            Pommier pommier = new Pommier.BuilderProduits(cptPommier, 250, "Pommier d'Alsace")
                     .pommierBuild();
-            Sapin sapin = new Sapin.BuilderProduits(cptSapin, 45, "Sapin de Noel")
+            Sapin sapin = new Sapin.BuilderProduits(cptSapin, 25, "Sapin de Noel")
                     .sapinBuild();
-            Banzai banzai = new Banzai.BuilderProduits(cptBanzai, 45, "Banzai")
+            Banzai banzai = new Banzai.BuilderProduits(cptBanzai, 15, "Banzai")
                     .banzaiBuild();
             produits.add(rosier) ;
             produits.add(pommier) ;
             produits.add(sapin) ;
             produits.add(banzai) ;
+        }
+        else if (fermier instanceof ProducteurLaitier) {
+            int cptLait = 0 ;
+            int cptFromage = 0 ;
+            int cptBeurre = 0 ;
+            for (int i = 0; i < nbDeProduitsAGenerer; i++) {
+                double alea = Math.random() ;
+                if (alea < 0.33)
+                    ++cptLait ;
+                else if (alea > 0.33 && alea <0.66)
+                    ++cptBeurre ;
+                else
+                    ++cptFromage ;
+            }
+            Lait lait = new Lait.BuilderProduits(cptLait, 1.33, "Lait demi-écrémé")
+                    .laitBuild();
+            Beurre beurre = new Beurre.BuilderProduits(ecptBeurre, 2, "Barquette de beurre")
+                    .beurreBuild();
+            Fromage fromage = new Fromage.BuilderProduits(cptFromage, 45, "Fromage de brebis")
+                    .fromageBuild();
+            produits.add(lait) ;
+            produits.add(beurre) ;
+            produits.add(fromage) ;
+        }
+        else if (fermier instanceof ProducteurLaitier) {
+            int cptAubergine = 0 ;
+            int cptCarotte = 0 ;
+            int cptChou = 0 ;
+            int cptFraise = 0 ;
+            int cptPoire = 0 ;
+            int cptPomme = 0 ;
+            for (int i = 0; i < nbDeProduitsAGenerer; i++) {
+                double alea = Math.random() ;
+                if (alea < 0.166)
+                    ++cptAubergine ;
+                else if (alea > 0.166 && alea < 0.333)
+                    ++cptCarotte ;
+                else if (alea > 0.333 && alea < 0.5)
+                    ++cptChou ;
+                else if (alea > 0.5 && alea < 0.666)
+                    ++cptFraise ;
+                else if (alea > 0.666 && alea < 0.833)
+                    ++cptPoire ;
+                else
+                    ++cptPomme ;
+            }
+            CagetteAubergine aubergine = new CagetteAubergine.BuilderProduits(cptAubergine, 2, "Cagette d'aubergines")
+                    .aubergineBuild();
+            CagetteCarotte carotte = new CagetteCarotte.BuilderProduits(cptCarotte, 2, "Cagette de carottes")
+                    .carotteBuild();
+            CagetteChou chou = new CagetteChou.BuilderProduits(cptChou, 1.25, "Cagette de chou")
+                    .chouBuild();
+            CagetteFraise fraise = new CagetteFraise.BuilderProduits(cptFraise, 13, "Cagette de fraises")
+                    .fraiseBuild();
+            CagettePoire poire = new CagettePoire.BuilderProduits(cptPoire, 8, "Cagette de poires")
+                    .poireBuild() ;
+            CagettePomme pomme = new CagettePomme.BuilderProduits(cptPomme, 5, "Cagette de pommes")
+                    .pommeBuild() ;
+            produits.add(aubergine) ;
+            produits.add(carotte) ;
+            produits.add(chou) ;
+            produits.add(fraise) ;
+            produits.add(poire) ;
+            produits.add(pomme) ;
         }
 
 
