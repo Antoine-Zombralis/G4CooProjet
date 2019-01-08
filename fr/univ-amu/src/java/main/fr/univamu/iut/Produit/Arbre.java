@@ -2,7 +2,7 @@ package fr.univamu.iut.Produit;
 
 import fr.univamu.iut.Produit.Vegetal;
 
-public class Arbre extends Vegetal {
+public abstract class Arbre extends Vegetal {
 
     String type;
 
@@ -13,10 +13,7 @@ public class Arbre extends Vegetal {
 
     public Arbre(BuilderProduits builder, String type) {
         super(builder);
-        this.type = type;
+
     }
 
-    public String getType() {
-        return type;
-    }
 }
