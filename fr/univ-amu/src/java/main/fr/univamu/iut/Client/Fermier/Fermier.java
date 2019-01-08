@@ -44,11 +44,6 @@ public class Fermier extends Client {
     }
 
 
-    @Override
-    public void notifierClient(Client client) {
-        System.out.println("De nouveau produit ont été mis en vente pour vous" + client.getNom());
-    }
-
     public int getId() {
         return getIdClient();
     }
