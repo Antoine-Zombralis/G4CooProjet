@@ -46,6 +46,14 @@ public class main {
 
         System.out.println(c1.getMonComte().getSolde());
 
+        Vegetal carotte = new CagetteCarotte.BuilderProduits(10, 4, "Cagette de carotte")
+                .addConforme(false)
+                .addId(4)
+                .addQuantiteVegetalDansCagette(25)
+                .addPrixVegetalUnite(0.75)
+                .carotteBuild();
+
+        System.out.println(carotte.getDatePeremption());
     }
 
     public static List<Vegetal> creationProduitHorticulteur(){
