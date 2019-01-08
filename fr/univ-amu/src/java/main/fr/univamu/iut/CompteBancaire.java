@@ -1,5 +1,8 @@
 package fr.univamu.iut;
 
+import fr.univamu.iut.Client.Client;
+import fr.univamu.iut.Client.Fermier.Fermier;
+
 import java.util.*;
 
 
@@ -13,6 +16,10 @@ public class CompteBancaire {
     private int idClient;
 
     private int solde;
+
+    public int getSolde() {
+        return solde;
+    }
 
     private List<Fermier> mesFermiers;
 
@@ -30,5 +37,12 @@ public class CompteBancaire {
         }
     }
 
+    public void ajouterClient(Client client) {
+        mesClients.add(client) ;
+    }
+
+    public void ajouterFermier(Fermier fermier) {
+        mesFermiers.add(fermier) ;
+    }
 
 }

@@ -1,43 +1,48 @@
 package fr.univamu.iut;
 
-fermier;
 
-import java.util.*;
+import fr.univamu.iut.Produit.Produits;
 
-/**
- * 
- */
 public class Negociation {
 
-    /**
-     * Default constructor
-     */
-    public Negociation() {
+
+    public Negociation(int idClient, int idProduit, int idVendeur) {
+        this.idClient = idClient;
+        this.idProduit = idProduit;
+        this.idVendeur = idVendeur;
     }
 
-    /**
-     * 
-     */
     private int idClient;
-
-    /**
-     * 
-     */
     private int idProduit;
-
-    /**
-     * 
-     */
     private int idVendeur;
 
 
+    public int getIdClient() {
+        return idClient;
+    }
 
+    public void setIdClient(int idClient) {
+        this.idClient = idClient;
+    }
 
-    /**
-     * @param ProduitCommercialisable produit
-     */
-    public void void changerPrix(void ProduitCommercialisable produit) {
-        // TODO implement here
+    public int getIdProduit() {
+        return idProduit;
+    }
+
+    public void setIdProduit(int idProduit) {
+        this.idProduit = idProduit;
+    }
+
+    public int getIdVendeur() {
+        return idVendeur;
+    }
+
+    public void setIdVendeur(int idVendeur) {
+        this.idVendeur = idVendeur;
+    }
+
+    public void changerPrix(Produits produit, int prix) {
+        produit.setPrix(prix);
     }
 
 }
