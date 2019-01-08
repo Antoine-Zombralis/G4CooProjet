@@ -9,7 +9,8 @@ import java.util.List;
 
 public class Transaction {
 
-    private static int numero = 0;
+    private int numero;
+    private static int cpt = 0;
     private Client vendeur;
     private Client acheteur;
     private Produits produits;
@@ -17,7 +18,7 @@ public class Transaction {
     private static List<Transaction> transactions = new ArrayList<>();
 
     public Transaction(Client vendeur, Client acheteur, Produits produits) {
-        ++numero;
+        setNumero(++cpt);
         this.vendeur = vendeur;
         this.acheteur = acheteur;
         this.produits = produits;

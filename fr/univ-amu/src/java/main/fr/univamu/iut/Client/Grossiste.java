@@ -8,8 +8,8 @@ import fr.univamu.iut.CompteBancaire;
 
 public class Grossiste extends Client {
 
-    public Grossiste(String nom, boolean abonne, int idClient, CompteBancaire monComte) {
-        super(nom, abonne, idClient, monComte);
+    public Grossiste(String nom, boolean abonne, CompteBancaire monComte) {
+        super(nom, abonne, monComte);
         //this.monGérantAchat = monGérantAchat;
     }
 
