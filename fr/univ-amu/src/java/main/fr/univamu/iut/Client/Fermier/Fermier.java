@@ -9,13 +9,11 @@ import java.util.List;
 
 public class Fermier extends Client {
 
-    private int idVendeur;
 
     private List<Produits> mesProduitsCommercialisable = new ArrayList<>();
 
-    public Fermier(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
-        super(nom, abonne, idClient, monComte);
-        this.idVendeur = idVendeur;
+    public Fermier(String nom, boolean abonne, CompteBancaire monComte) {
+        super(nom, abonne, monComte);
     }
 
     public void acheterRessources(int prix) {
@@ -47,14 +45,6 @@ public class Fermier extends Client {
     @Override
     public void notifierClient(Client client) {
         System.out.println("De nouveau produit ont été mis en vente pour vous" + client.getNom());
-    }
-
-    public int getId() {
-        return getIdClient();
-    }
-
-    public int getIdVendeur() {
-        return idVendeur;
     }
 
     public List<Produits> getMesProduitsCommercialisable() {

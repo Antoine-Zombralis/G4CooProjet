@@ -12,8 +12,8 @@ public class Horticulteur extends Fermier {
     private List<Vegetal> mesProductions = new ArrayList<>();
 
 
-    public Horticulteur(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
-        super(nom, abonne, idClient, idVendeur, monComte);
+    public Horticulteur(String nom, boolean abonne, CompteBancaire monComte) {
+        super(nom, abonne, monComte);
     }
 
     public void cultiverVegetal(Vegetal vegetal) {

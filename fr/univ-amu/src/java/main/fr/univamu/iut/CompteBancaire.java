@@ -8,22 +8,17 @@ import java.util.*;
 
 public class CompteBancaire {
 
+    private int idClient;
+    private int solde;
+
     public CompteBancaire(int idClient, int solde) {
         this.idClient = idClient;
         this.solde = solde;
     }
 
-    private int idClient;
-
-    private int solde;
-
     public int getSolde() {
         return solde;
     }
-
-    private List<Fermier> mesFermiers;
-
-    private List<Client> mesClients;
 
     public void crediter(int idClient, int solde) {
         if(this.idClient == idClient){
@@ -37,12 +32,11 @@ public class CompteBancaire {
         }
     }
 
-    public void ajouterClient(Client client) {
-        mesClients.add(client) ;
+    public void setIdClient(int idClient) {
+        this.idClient = idClient;
     }
 
-    public void ajouterFermier(Fermier fermier) {
-        mesFermiers.add(fermier) ;
+    public void setSolde(int solde) {
+        this.solde = solde;
     }
-
 }
