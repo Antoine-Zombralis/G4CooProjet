@@ -12,8 +12,8 @@ public class Controleur {
 
     public Controleur() {}
 
-    private List<String> adhérents;
-    public List<Produits> produitInterdits;
+    private List<Client> adhérents = new ArrayList<Client>();
+    public List<Produits> produitInterdits = new ArrayList<Produits>() ;
 
 
     public void sanctionner(Fermier fermier) {

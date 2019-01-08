@@ -1,15 +1,21 @@
 package fr.univamu.iut.Produit;
 
 import fr.univamu.iut.Client.Client;
+import fr.univamu.iut.Produit.Arbre.Banzai;
+import fr.univamu.iut.Produit.Arbre.Pommier;
+import fr.univamu.iut.Produit.Arbre.Rosier;
+import fr.univamu.iut.Produit.Arbre.Sapin;
+import fr.univamu.iut.Produit.FruitEtLegume.*;
 
 import java.util.Calendar;
 import java.util.Date;
 
-public class Produits{
+public abstract class Produits{
 
     private Client proprietaire;
     private boolean bio, conforme;
     private int quantite, prix, id;
+    private static int cpt = 0;
     private Date datePeremption;
     private String nom;
     private double prixVegetalUnite;
@@ -21,7 +27,7 @@ public class Produits{
         bio = builder.bio;
         conforme = builder.conforme;
         quantite = builder.quantite;
-        id = builder.id;
+        setId(++cpt);
         prix = builder.prix;
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DAY_OF_YEAR, 7) ;
@@ -34,7 +40,7 @@ public class Produits{
     public static class BuilderProduits {
         private Client proprietaire;
         private boolean bio, conforme;
-        private int quantite, prix, id;
+        private int quantite, prix;
         private Date datePeremption;
         private String nom;
         private double prixVegetalUnite;
@@ -46,9 +52,6 @@ public class Produits{
             this.nom = nom;
         }
 
-        public BuilderProduits addId(int id){
-            this.id = id; return this;
-        }
 
         public BuilderProduits addProprio(Client proprietaire){
             this.proprietaire = proprietaire; return this;
@@ -74,10 +77,6 @@ public class Produits{
             quantiteVegetalDansCagette = quantite; return this;
         }
 
-        public Produits build(){
-            return new Produits(this);
-        }
-
         public CagettePoire poireBuild(){
             return new CagettePoire(this);
         }
@@ -86,8 +85,7 @@ public class Produits{
             return new CagetteAubergine(this);
         }
 
-        public CagetteCarotte carotteBuild(){
-            return new CagetteCarotte(this);
+        public CagetteCarotte carotteBuild(){return new CagetteCarotte(this);
         }
 
         public CagetteChou chouBuild(){
@@ -104,6 +102,22 @@ public class Produits{
 
         public CagettePomme pommeBuild(){
             return new CagettePomme(this);
+        }
+
+        public Banzai banzaiBuild(){
+            return new Banzai(this);
+        }
+
+        public Pommier pommierBuild(){
+            return new Pommier(this);
+        }
+
+        public Rosier rosierBuid(){
+            return new Rosier(this);
+        }
+
+        public Sapin sapinBuild(){
+            return new Sapin(this);
         }
 
         }

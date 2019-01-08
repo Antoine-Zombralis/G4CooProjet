@@ -12,15 +12,16 @@ public abstract class Client {
     private String nom;
     private boolean abonne;
     private int idClient;
+    private static int cpt = 0;
     private CompteBancaire monComte;
     private Transaction transaction;
 
     private List<Produits> mesProduitsAchetes = new ArrayList<>();
 
-    public Client(String nom, boolean abonne, int idClient, CompteBancaire monComte) {
+    public Client(String nom, boolean abonne, CompteBancaire monComte) {
         this.nom = nom;
         this.abonne = abonne;
-        this.idClient = idClient;
+        setId(++cpt);
         this.monComte = monComte;
     }
 

@@ -7,8 +7,8 @@ import fr.univamu.iut.Produit.Produits;
 
 public class Detaillant extends Client {
 
-    public Detaillant(String nom, boolean abonne, int idClient, CompteBancaire monComte) {
-        super(nom, abonne, idClient, monComte);
+    public Detaillant(String nom, boolean abonne, CompteBancaire monComte) {
+        super(nom, abonne, monComte);
     }
 
     public void acheterProduit(Produits produit){

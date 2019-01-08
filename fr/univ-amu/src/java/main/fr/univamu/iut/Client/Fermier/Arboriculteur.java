@@ -1,6 +1,6 @@
 package fr.univamu.iut.Client.Fermier;
 
-import fr.univamu.iut.Arbre;
+import fr.univamu.iut.Produit.Arbre.Arbre;
 import fr.univamu.iut.CompteBancaire;
 
 import java.util.ArrayList;
@@ -10,8 +10,8 @@ public class Arboriculteur extends Fermier {
 
     private List<Arbre> mesProductions;
 
-    public Arboriculteur(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
-        super(nom, abonne, idClient, idVendeur, monComte);
+    public Arboriculteur(String nom, boolean abonne, CompteBancaire monComte) {
+        super(nom, abonne, monComte);
         mesProductions = new ArrayList<>();
     }
 

@@ -1,33 +1,34 @@
 package fr.univamu.iut;
 
-import fr.univamu.iut.Produit.Fruit;
-import fr.univamu.iut.Produit.Legume;
-import fr.univamu.iut.Produit.Viande;
+import fr.univamu.iut.Produit.FruitEtLegume.Fruit;
+import fr.univamu.iut.Produit.FruitEtLegume.Legume;
+import fr.univamu.iut.Produit.Vegetal;
+import fr.univamu.iut.Produit.Viande.Viande;
 
 import java.util.ArrayList;
 
 public class RépertoireVente {
-    private ArrayList<Fruit> fruitsEnVente ;
-    private ArrayList<Legume> legumesEnVente ;
+    private ArrayList<Vegetal> fruitsEnVente ;
+    private ArrayList<Vegetal> legumesEnVente ;
     private ArrayList<Viande> viandesEnVente ;
 
     public RépertoireVente() {
 
     }
 
-    public ArrayList<Fruit> getFruitsEnVente() {
+    public ArrayList<Vegetal> getFruitsEnVente() {
         return fruitsEnVente;
     }
 
-    public void setFruitsEnVente(ArrayList<Fruit> fruitsEnVente) {
+    public void setFruitsEnVente(ArrayList<Vegetal> fruitsEnVente) {
         this.fruitsEnVente = fruitsEnVente;
     }
 
-    public ArrayList<Legume> getLegumesEnVente() {
+    public ArrayList<Vegetal> getLegumesEnVente() {
         return legumesEnVente;
     }
 
-    public void setLegumesEnVente(ArrayList<Legume> legumesEnVente) {
+    public void setLegumesEnVente(ArrayList<Vegetal> legumesEnVente) {
         this.legumesEnVente = legumesEnVente;
     }
 
@@ -39,10 +40,10 @@ public class RépertoireVente {
         this.viandesEnVente = viandesEnVente;
     }
 
-    public void ajouterFruit(Fruit fruit) {
+    public void ajouterFruit(Vegetal fruit) {
         fruitsEnVente.add(fruit) ;
     }
-    public void ajouterLegume(Legume legume) {
+    public void ajouterLegume(Vegetal legume) {
         legumesEnVente.add(legume) ;
     }
     public void ajouterViande(Viande viande) {
@@ -50,7 +51,7 @@ public class RépertoireVente {
     }
 
     public void supprimerFruit(Fruit fruit) {
-        for (Fruit fruitCourant : fruitsEnVente)
+        for (Vegetal fruitCourant : fruitsEnVente)
             if (fruit.equals(fruitCourant))
                 fruitsEnVente.remove(fruitCourant) ;
     }
@@ -62,7 +63,7 @@ public class RépertoireVente {
     }
 
     public void supprimerLegume(Legume legume) {
-        for (Legume legumeCourant : legumesEnVente)
+        for (Vegetal legumeCourant : legumesEnVente)
             if (legume.equals(legumeCourant))
                 fruitsEnVente.remove(legumeCourant) ;
     }
@@ -74,13 +75,13 @@ public class RépertoireVente {
 
 
     public void afficherEtalageLegume() {
-        for (Legume legume : legumesEnVente)
+        for (Vegetal legume : legumesEnVente)
             System.out.println("Il reste " + legume.getQuantite() + " kg de cette cagette de " + legume.getNom() + " à " + legume.getPrix() + " le kg.");
     }
 
 
     public void afficherEtalageFruit() {
-        for (Fruit fruit : fruitsEnVente)
+        for (Vegetal fruit : fruitsEnVente)
             System.out.println("Il reste " + fruit.getQuantite() + " kg de cette cagette de " + fruit.getNom() + " à " + fruit.getPrix() + " le kg.");
     }
 

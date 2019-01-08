@@ -1,7 +1,7 @@
 package fr.univamu.iut.Client.Fermier;
 
 import fr.univamu.iut.CompteBancaire;
-import fr.univamu.iut.Produit.Vache;
+import fr.univamu.iut.Produit.Viande.Vache;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,8 +10,8 @@ public class ProducteurLaitier extends Fermier {
 
     private List<Vache> mesProductions;
 
-    public ProducteurLaitier(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
-        super(nom, abonne, idClient, idVendeur, monComte);
+    public ProducteurLaitier(String nom, boolean abonne, CompteBancaire monComte) {
+        super(nom, abonne, monComte);
         mesProductions = new ArrayList<>();
     }
 
