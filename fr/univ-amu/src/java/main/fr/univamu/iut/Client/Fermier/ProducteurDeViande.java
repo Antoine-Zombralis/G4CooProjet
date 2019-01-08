@@ -13,8 +13,8 @@ public class ProducteurDeViande extends Fermier {
 
     private List<Viande> mesProductions;
 
-    public ProducteurDeViande(String nom, boolean abonne, int idClient, int idVendeur, CompteBancaire monComte) {
-        super(nom, abonne, idClient, idVendeur, monComte);
+    public ProducteurDeViande(String nom, boolean abonne, CompteBancaire monComte) {
+        super(nom, abonne, monComte);
         mesProductions = new ArrayList<>();
     }
 
