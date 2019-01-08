@@ -9,24 +9,24 @@ import java.util.*;
 public class CompteBancaire {
 
     private int idClient;
-    private int solde;
+    private double solde;
 
     public CompteBancaire(int idClient, int solde) {
         this.idClient = idClient;
         this.solde = solde;
     }
 
-    public int getSolde() {
+    public double getSolde() {
         return solde;
     }
 
-    public void crediter(int idClient, int solde) {
+    public void crediter(int idClient,double solde) {
         if(this.idClient == idClient){
             this.solde = this.solde + solde;
         }
     }
 
-    public void debiter(int idClient, int solde) {
+    public void debiter(int idClient, double solde) {
         if(this.idClient == idClient){
             this.solde = this.solde - solde;
         }

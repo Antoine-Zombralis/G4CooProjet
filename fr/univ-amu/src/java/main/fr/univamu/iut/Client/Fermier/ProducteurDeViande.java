@@ -1,7 +1,7 @@
 package fr.univamu.iut.Client.Fermier;
 
 import fr.univamu.iut.CompteBancaire;
-import Cochon;
+import fr.univamu.iut.Produit.Viande.Cochon;
 import fr.univamu.iut.Produit.Viande.Vache;
 import fr.univamu.iut.Produit.Viande.Viande;
 import fr.univamu.iut.Produit.Viande.Volaille;
@@ -11,22 +11,14 @@ import java.util.List;
 
 public class ProducteurDeViande extends Fermier {
 
-    private List<Viande> mesProductions;
+    private List<Viande> mesProductions = new ArrayList<>();
 
     public ProducteurDeViande(String nom, boolean abonne, CompteBancaire monComte) {
         super(nom, abonne, monComte);
-        mesProductions = new ArrayList<>();
     }
 
-    public void produireVache(Vache vache){
-        mesProductions.add(vache);
-    }
-
-    public void produireCochon(Cochon cochon){
-        mesProductions.add(cochon);
-    }
-    public void produireVolaille(Volaille volaille){
-        mesProductions.add(volaille);
+    public void produireViande(List<Viande> viandes){
+        mesProductions.addAll(viandes);
     }
 
     public List<Viande> getMesProductions() {
