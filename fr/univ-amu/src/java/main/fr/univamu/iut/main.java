@@ -9,6 +9,9 @@ import fr.univamu.iut.Produit.Arbre.Pommier;
 import fr.univamu.iut.Produit.Arbre.Rosier;
 import fr.univamu.iut.Produit.Arbre.Sapin;
 import fr.univamu.iut.Produit.FruitEtLegume.*;
+import fr.univamu.iut.Produit.Viande.Cochon;
+import fr.univamu.iut.Produit.Viande.Vache;
+import fr.univamu.iut.Produit.Viande.Volaille;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +69,7 @@ public class main {
 //        System.out.println(carotte.getDatePeremption());
 //
         List<Produits> tests = new ArrayList<Produits>() ;
-        for(Produits produit : GenerationProduitAleatoire(50, f2)){
+        for(Produits produit : GenerationProduitAleatoire(50, f1)){
             System.out.println(produit.getNom() + " : " + produit.getQuantite());
         }
 
@@ -177,7 +180,7 @@ public class main {
             }
             Lait lait = new Lait.BuilderProduits(cptLait, 1.33, "Lait demi-écrémé")
                     .laitBuild();
-            Beurre beurre = new Beurre.BuilderProduits(ecptBeurre, 2, "Barquette de beurre")
+            Beurre beurre = new Beurre.BuilderProduits(cptBeurre, 2, "Barquette de beurre")
                     .beurreBuild();
             Fromage fromage = new Fromage.BuilderProduits(cptFromage, 45, "Fromage de brebis")
                     .fromageBuild();
@@ -185,7 +188,7 @@ public class main {
             produits.add(beurre) ;
             produits.add(fromage) ;
         }
-        else if (fermier instanceof ProducteurLaitier) {
+        else if (fermier instanceof Horticulteur) {
             int cptAubergine = 0 ;
             int cptCarotte = 0 ;
             int cptChou = 0 ;
@@ -225,6 +228,29 @@ public class main {
             produits.add(fraise) ;
             produits.add(poire) ;
             produits.add(pomme) ;
+        }
+        else if (fermier instanceof ProducteurDeViande) {
+            int cptCochon = 0 ;
+            int cptVolaille = 0 ;
+            int cptVache = 0 ;
+            for (int i = 0; i < nbDeProduitsAGenerer; i++) {
+                double alea = Math.random() ;
+                if (alea < 0.33)
+                    ++cptCochon ;
+                else if (alea > 0.33 && alea <0.66)
+                    ++cptVache ;
+                else
+                    ++cptVolaille ;
+            }
+            Cochon cochon = new Cochon.BuilderProduits(cptCochon, 24, "Entrecote de porc")
+                    .cochonBuild();
+            Vache vache = new Vache.BuilderProduits(cptVache, 36, "Steack de vache")
+                    .vacheBuild();
+            Volaille volaille = new Volaille.BuilderProduits(cptVolaille, 15, "Poulet fermier")
+                    .volailleBuild();
+            produits.add(cochon) ;
+            produits.add(vache) ;
+            produits.add(volaille) ;
         }
 
 
