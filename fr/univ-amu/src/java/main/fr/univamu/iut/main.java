@@ -115,6 +115,16 @@ public class main {
         vegetals.add(fraise);
         return vegetals;
 
+
+
+
+    }
+    public List<Produits> GenerationProduitAléatoire(int nbDeProduitsAGénérer, Fermier fermier) {
+        List<Produits> produits = new ArrayList<>() ;
+        for (int i = 0 ; i < nbDeProduitsAGénérer ; i ++) {
+
+        }
+        return produits ;
     }
 
 }
