@@ -1,4 +1,4 @@
-package fr.univamu.iut.Produit;
+package fr.univamu.iut.Produit.FruitEtLegume;
 
 import java.util.Calendar;
 import java.util.Date;

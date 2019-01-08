@@ -1,10 +1,10 @@
 package fr.univamu.iut.Client.Fermier;
 
 import fr.univamu.iut.CompteBancaire;
-import fr.univamu.iut.Produit.Cochon;
-import fr.univamu.iut.Produit.Vache;
-import fr.univamu.iut.Produit.Viande;
-import fr.univamu.iut.Produit.Volaille;
+import Cochon;
+import fr.univamu.iut.Produit.Viande.Vache;
+import fr.univamu.iut.Produit.Viande.Viande;
+import fr.univamu.iut.Produit.Viande.Volaille;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -7,7 +7,7 @@ import fr.univamu.iut.Produit.Produits;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Fermier extends Client {
+public abstract class Fermier extends Client {
 
 
     private List<Produits> mesProduitsCommercialisable = new ArrayList<>();

@@ -1,4 +1,6 @@
-package fr.univamu.iut.Produit;
+package fr.univamu.iut.Produit.FruitEtLegume;
+
+import fr.univamu.iut.Produit.Vegetal;
 
 public abstract class Fruit extends Vegetal {
 

@@ -1,11 +1,16 @@
 package fr.univamu.iut.Produit;
 
 import fr.univamu.iut.Client.Client;
+import fr.univamu.iut.Produit.Arbre.Banzai;
+import fr.univamu.iut.Produit.Arbre.Pommier;
+import fr.univamu.iut.Produit.Arbre.Rosier;
+import fr.univamu.iut.Produit.Arbre.Sapin;
+import fr.univamu.iut.Produit.FruitEtLegume.*;
 
 import java.util.Calendar;
 import java.util.Date;
 
-public class Produits{
+public abstract class Produits{
 
     private Client proprietaire;
     private boolean bio, conforme;
@@ -72,10 +77,6 @@ public class Produits{
             quantiteVegetalDansCagette = quantite; return this;
         }
 
-        public Produits build(){
-            return new Produits(this);
-        }
-
         public CagettePoire poireBuild(){
             return new CagettePoire(this);
         }
@@ -101,6 +102,22 @@ public class Produits{
 
         public CagettePomme pommeBuild(){
             return new CagettePomme(this);
+        }
+
+        public Banzai banzaiBuild(){
+            return new Banzai(this);
+        }
+
+        public Pommier pommierBuild(){
+            return new Pommier(this);
+        }
+
+        public Rosier rosierBuid(){
+            return new Rosier(this);
+        }
+
+        public Sapin sapinBuild(){
+            return new Sapin(this);
         }
 
         }
