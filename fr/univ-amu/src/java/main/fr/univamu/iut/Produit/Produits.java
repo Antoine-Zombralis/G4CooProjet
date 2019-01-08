@@ -10,6 +10,7 @@ public class Produits{
     private Client proprietaire;
     private boolean bio, conforme;
     private int quantite, prix, id;
+    private static int cpt = 0;
     private Date datePeremption;
     private String nom;
     private double prixVegetalUnite;
@@ -21,7 +22,7 @@ public class Produits{
         bio = builder.bio;
         conforme = builder.conforme;
         quantite = builder.quantite;
-        id = builder.id;
+        setId(++cpt);
         prix = builder.prix;
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DAY_OF_YEAR, 7) ;
@@ -34,7 +35,7 @@ public class Produits{
     public static class BuilderProduits {
         private Client proprietaire;
         private boolean bio, conforme;
-        private int quantite, prix, id;
+        private int quantite, prix;
         private Date datePeremption;
         private String nom;
         private double prixVegetalUnite;
@@ -46,9 +47,6 @@ public class Produits{
             this.nom = nom;
         }
 
-        public BuilderProduits addId(int id){
-            this.id = id; return this;
-        }
 
         public BuilderProduits addProprio(Client proprietaire){
             this.proprietaire = proprietaire; return this;

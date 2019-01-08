@@ -10,8 +10,8 @@ public class Trader extends Client {
     private Boolean travaillerSurMarche;
     private List<Produits> mesProdtuisEnVente = null;
 
-    public Trader(String nom, boolean abonne, int idClient, CompteBancaire monComte, Boolean travaillerSurMarche, List<Produits> mesProdtuisEnVente) {
-        super(nom, abonne, idClient, monComte);
+    public Trader(String nom, boolean abonne, CompteBancaire monComte, Boolean travaillerSurMarche, List<Produits> mesProdtuisEnVente) {
+        super(nom, abonne, monComte);
         this.travaillerSurMarche = travaillerSurMarche;
         this.mesProdtuisEnVente = mesProdtuisEnVente;
     }

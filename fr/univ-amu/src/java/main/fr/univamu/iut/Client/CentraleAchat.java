@@ -8,8 +8,8 @@ public class CentraleAchat extends Client {
     private List<Client> affiliés ;
     private Grossiste mesGrossistes ;
 
-    public CentraleAchat(String nom, boolean abonne, int idClient, CompteBancaire monComte, List<Client> affiliés) {
-        super(nom, abonne, idClient, monComte);
+    public CentraleAchat(String nom, boolean abonne, CompteBancaire monComte, List<Client> affiliés) {
+        super(nom, abonne, monComte);
         this.affiliés = affiliés;
     }
 }
