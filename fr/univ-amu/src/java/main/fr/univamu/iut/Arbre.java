@@ -1,13 +1,17 @@
 package fr.univamu.iut;
 
-import java.util.Date;
+import fr.univamu.iut.Produit.Vegetal;
 
 public class Arbre extends Vegetal {
 
     String type;
 
-    public Arbre(String propriétaire, String id, boolean bio, boolean conforme, int quantité, int prix, Date datePéremption, int poids, String type) {
-        super(propriétaire, id, bio, conforme, quantité, prix, datePéremption, poids);
+    public Arbre(BuilderProduits builder, String type) {
+        super(builder);
         this.type = type;
+    }
+
+    public String getType() {
+        return type;
     }
 }
