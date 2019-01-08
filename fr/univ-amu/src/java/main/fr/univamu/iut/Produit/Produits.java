@@ -6,6 +6,9 @@ import fr.univamu.iut.Produit.Arbre.Pommier;
 import fr.univamu.iut.Produit.Arbre.Rosier;
 import fr.univamu.iut.Produit.Arbre.Sapin;
 import fr.univamu.iut.Produit.FruitEtLegume.*;
+import fr.univamu.iut.Produit.ProduitsLaitier.Beurre;
+import fr.univamu.iut.Produit.ProduitsLaitier.Fromage;
+import fr.univamu.iut.Produit.ProduitsLaitier.Lait;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -119,6 +122,12 @@ public abstract class Produits{
         public Sapin sapinBuild(){
             return new Sapin(this);
         }
+
+        public Beurre beurreBuild(){return new Beurre(this);}
+
+        public Fromage fromageBuild(){return new Fromage(this);}
+
+        public Lait laitBuild(){return new Lait(this);}
 
         }
 
