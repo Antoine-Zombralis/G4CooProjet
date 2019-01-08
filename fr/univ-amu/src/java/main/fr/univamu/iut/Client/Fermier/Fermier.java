@@ -41,7 +41,12 @@ public abstract class Fermier extends Client {
         System.out.println("Vous avez recu une sanction");
     }
 
+    public int getId() {
+        return getIdClient();
+    }
 
+    public int getIdVendeur() {
+        return idVendeur;
     @Override
     public void notifierClient(Client client) {
         System.out.println("De nouveau produit ont été mis en vente pour vous" + client.getNom());
