@@ -40,7 +40,7 @@ public abstract class Produits{
         proprietaire = builder.proprietaire;
         nom = builder.nom;
         bio = builder.bio;
-        conforme = builder.conforme;
+        conforme = false;
         quantite = builder.quantite;
         setId(++cpt);
         prix = builder.prix;
@@ -58,7 +58,7 @@ public abstract class Produits{
 
     public static class BuilderProduits {
         private Client proprietaire;
-        private boolean bio, conforme;
+        private boolean bio;
         private int quantite;
         private double prix;
         private Date datePeremption;
@@ -84,10 +84,6 @@ public abstract class Produits{
 
         public BuilderProduits addBio(boolean bio){
             this.bio = bio; return this;
-        }
-
-        public BuilderProduits addConforme(boolean conforme){
-            this.conforme = conforme; return this;
         }
 
         public BuilderProduits addDatePeremption(Date fin){
