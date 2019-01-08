@@ -1,50 +1,69 @@
 package fr.univamu.iut;
 
-fermier;
+
+import fr.univamu.iut.Client.Client;
+import fr.univamu.iut.Client.Fermier.Fermier;
+import fr.univamu.iut.Produit.Produits;
 
 import java.util.*;
 
-/**
- * 
- */
+
 public class Controleur {
 
-    /**
-     * Default constructor
-     */
-    public Controleur() {
+    public Controleur() {}
+
+    private List<String> adhérents;
+    public List<Produits> produitInterdits;
+
+
+    public void sanctionner(Fermier fermier) {
+        fermier.alerter() ;
     }
 
-    /**
-     * 
-     */
-    private array<string> adhérents;
+    public void validerProduit(Produits produit) {
+        Calendar calendar = Calendar.getInstance();
+        Date date = calendar.getTime();                                  // on obtient la date courante
+        int péremption = date.compareTo(produit.getDatePeremption()) ;   // on compare la date courante avec la date de péremption. Renvoie 1 si date > date péremption
+        for (Produits produitInter: produitInterdits) {
+            if (produit.equals(produitInter) || péremption > 0)          // produit interdit ou date de péremption dépassée
+            {
+                produit.setConforme(false);
+            }
+            else {produit.setConforme(true);
 
-    /**
-     * 
-     */
-    public array<PropositionProduitFermier> produitInterdits;
-
-
-    /**
-     * @param Fermier fermier
-     */
-    public void void sanctionner(void Fermier fermier) {
-        // TODO implement here
+        }
+        }
     }
 
-    /**
-     * @param ProduitFermier produit
-     */
-    public void void validerProduit(void ProduitFermier produit) {
-        // TODO implement here
+    public void conformerProduit(Produits produit){
+        if(Math.random() > 0.5){
+            produit.setConforme(true);
+        }
+        else{
+            produit.setConforme(false);
+        }
     }
 
-    /**
-     * 
-     */
-    public void Client choisirActeur() {
-        // TODO implement here
+    public Client choisirAcheteur(Produits produit, ArrayList<Client> intéréssés) {
+        int n = (int)Math.random() * intéréssés.size() ; // récupération d'un entier aléatoire entre  et intéréssés.size()
+        Client acheteur = intéréssés.get(n) ;
+        return acheteur ;
     }
 
+    public List<Produits> getProduitInterdits() {
+        return produitInterdits;
+    }
+
+
+    public void ajouterProduitInterdits(Produits produit){
+        produitInterdits.add(produit) ;
+    }
+
+    public void supprimerProduitInterfits(Produits produitAutorisé) {
+        for (Produits produit : produitInterdits)
+        {
+            if (produit.equals(produitAutorisé))
+                produitInterdits.remove(produit) ;
+        }
+    }
 }
