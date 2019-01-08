@@ -26,9 +26,13 @@ public class main {
 
         for(Vegetal vegetal :  creationProduitHorticulteur()){
             ((Horticulteur) f1).cultiverVegetal(vegetal);
-            controleur.conformerProduit(vegetal);
+            controleur.validerProduit(vegetal);
             if (vegetal.isConforme()){
                 f1.ajouterCommercialisable(vegetal);
+                if (vegetal instanceof Legume)
+                    repertoireVente.ajouterLegume(vegetal);
+                else if (vegetal instanceof Fruit)
+                    repertoireVente.ajouterFruit(vegetal);
             }
         }
 
@@ -42,6 +46,14 @@ public class main {
 
         System.out.println(c1.getMonComte().getSolde());
 
+        Vegetal carotte = new CagetteCarotte.BuilderProduits(10, 4, "Cagette de carotte")
+                .addConforme(false)
+                .addId(4)
+                .addQuantiteVegetalDansCagette(25)
+                .addPrixVegetalUnite(0.75)
+                .carotteBuild();
+
+        System.out.println(carotte.getDatePeremption());
     }
 
     public static List<Vegetal> creationProduitHorticulteur(){
@@ -99,6 +111,7 @@ public class main {
                 .addQuantiteVegetalDansCagette(25)
                 .addPrixVegetalUnite(0.75)
                 .fraiseBuild();
+
         vegetals.add(fraise);
         return vegetals;
 
