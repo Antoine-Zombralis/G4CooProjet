@@ -26,7 +26,6 @@ public class Transaction {
 
     public void addTransaction(Transaction transaction){
         transactions.add(transaction);
-        System.out.println("Une transaction entre " + vendeur.getNom() + " et " + acheteur.getNom() + " sur le produit " + "-" + produits.getNom() + "-" + " du montant " + produits.getPrix() + "$" + " a été effectuée ! ");
     }
 
     public int getNumero() {

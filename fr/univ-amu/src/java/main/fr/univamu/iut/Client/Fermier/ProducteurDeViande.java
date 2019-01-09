@@ -2,6 +2,10 @@ package fr.univamu.iut.Client.Fermier;
 
 import fr.univamu.iut.CompteBancaire;
 import fr.univamu.iut.Produit.Arbre.Arbre;
+import fr.univamu.iut.Produit.Enum.CategorieCochon;
+import fr.univamu.iut.Produit.Enum.CategorieVache;
+import fr.univamu.iut.Produit.Enum.CategorieVolaille;
+import fr.univamu.iut.Produit.Enum.EnumLabel;
 import fr.univamu.iut.Produit.Produits;
 import fr.univamu.iut.Produit.Vegetal;
 import fr.univamu.iut.Produit.Viande.Cochon;
@@ -55,8 +59,43 @@ public class ProducteurDeViande extends Fermier {
 
     @Override
     public void supprimerProduit(Produits viande) {
-        for (Viande viandeCourant : mesProduitsCommercialisables)
-            if (viande.equals(viandeCourant))
-                mesProduitsCommercialisables.remove(viandeCourant) ;
+                mesProduitsCommercialisables.remove(viande) ;
+    }
+
+    public List<Viande> generationViandeAleatoire(int nbDeProduitsAGenerer, EnumLabel label, CategorieCochon categorieCochon, CategorieVolaille categorieVolaille, CategorieVache categorieVache) {
+        List<Viande> produits = new ArrayList<>();
+
+        int cptCochon = 0 ;
+        int cptVolaille = 0 ;
+        int cptVache = 0 ;
+        for (int i = 0; i < nbDeProduitsAGenerer; i++) {
+            double alea = Math.random() ;
+            if (alea < 0.33)
+                ++cptCochon ;
+            else if (alea > 0.33 && alea <0.66)
+                ++cptVache ;
+            else
+                ++cptVolaille ;
+        }
+        Cochon cochon = new Cochon.BuilderProduits(cptCochon, 24, "Entrecote de porc")
+                .addLabel(label)
+                .addCategorieCochon(categorieCochon)
+                .addProprio(this)
+                .cochonBuild();
+        Vache vache = new Vache.BuilderProduits(cptVache, 36 , "Steack de vache")
+                .addLabel(label)
+                .addCategorieVache(categorieVache)
+                .addProprio(this)
+                .vacheBuild();
+        Volaille volaille = new Volaille.BuilderProduits(cptVolaille, 15, "Poulet fermier")
+                .addLabel(label)
+                .addCategorieVolaille(categorieVolaille)
+                .addProprio(this)
+                .volailleBuild();
+
+        produits.add(cochon) ;
+        produits.add(vache) ;
+        produits.add(volaille) ;
+        return produits;
     }
 }
