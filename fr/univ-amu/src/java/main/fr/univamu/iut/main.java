@@ -52,6 +52,8 @@ public class main {
 
 
         Controleur controleur = new Controleur();
+        RépertoireVente repertoireVente = new RépertoireVente();
+
 //        OffreAchat offreAchat = new OffreAchat() ;
 
 
@@ -86,7 +88,7 @@ public class main {
         }
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("1 - Consulter les produits en vente\n" + "2 - Consulter les transactions \n");
+        System.out.println("1 - Consulter les produits en vente \n" + "2 - Consulter les transactions \n" + "3 - Consulter les répertoires de vente");
         String str = sc.nextLine();
 
         if(str.equals("1")){
@@ -95,8 +97,21 @@ public class main {
             f3.afficherCommercialisable();
             f4.afficherCommercialisable();
         }
+        else if (str.equals("3")) {
+            System.out.println("1 - Consulter les légumes à la vente \n" + "2 - Consulter les fruits à la vente \n" + "3 - Consulter les viandes à la vente \n ");
+            String choix = sc.nextLine();
+            if (choix.equals("1")) {
+                repertoireVente.afficherEtalageFruit();
+            }
+            else if (choix.equals("2")) {
+                repertoireVente.afficherEtalageLegume();
 
-        RépertoireVente repertoireVente = new RépertoireVente() ;
+            }
+            else if (choix.equals("3"))
+                repertoireVente.afficherEtalageViande();
+
+
+        }
 
     }
 
