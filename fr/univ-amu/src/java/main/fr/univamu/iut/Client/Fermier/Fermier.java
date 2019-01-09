@@ -8,22 +8,14 @@ import fr.univamu.iut.Produit.Produits;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * classe abstraite fermier qui permet d'ajouter des méthodes qui seront redefinis dans ses classes filles
+ */
 public abstract class Fermier extends Client {
-
 
     public Fermier(String nom, boolean abonne, CompteBancaire monComte) {
         super(nom, abonne, monComte);
     }
-
-    public int cotiserSomme(int gain, int Taxe) {
-        return gain * Taxe;
-    }
-
-    public void proposerProduit(Produits produit) {
-        System.out.println("Je propose le produit " + produit + " à la vente");
-    }
-
-
 
     public abstract void ajouterCommercialisable(Produits produit);
 
@@ -34,7 +26,6 @@ public abstract class Fermier extends Client {
     }
 
     public abstract void afficherMesProductions() ;
-
 
 
     public abstract void supprimerProduit(Produits produits);
