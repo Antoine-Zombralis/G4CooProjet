@@ -1,5 +1,6 @@
 package fr.univamu.iut.Client;
 
+import fr.univamu.iut.Client.Fermier.Fermier;
 import fr.univamu.iut.CompteBancaire;
 import fr.univamu.iut.OffreAchat;
 import fr.univamu.iut.Produit.Produits;
@@ -69,7 +70,6 @@ public abstract class Client {
     public void accepterOffre(boolean accepter) {
         if (accepter) {
             offreAchat.setConforme(accepter);
-
         }
     }
 
@@ -91,20 +91,30 @@ public abstract class Client {
         }
         else{
             int newQuantite = produit.getQuantite() - quantite;
+            Produits nouveau = new Produits.BuilderProduits(quantite, produit.getPrix(), produit.getNom()).build();
             produit.setQuantite(newQuantite);
-            mesProduitsAchetes.add(produit);
+            mesProduitsAchetes.add(nouveau);
             monComte.debiter(idClient, produit.getPrix() * quantite);
             produit.getProprietaire().getMonComte().crediter(produit.getProprietaire().getIdClient(), produit.getPrix() * quantite);
-            produit.getProprietaire().supprimerProduit(produit);
             transaction = new Transaction(vendeur, this, produit);
             transaction.addTransaction(transaction);
-        }
 
+            if(produit.getQuantite() <= 0){
+                produit.getProprietaire().supprimerProduit(produit);
+            }
+
+        }
 
     }
 
     public String notifierClient(Client client) {
         return "De nouveaux produits ont été mis en vente pour vous " + client.getNom();
+    }
+
+    public void afficherMesProduits(){
+        for(Produits produit: mesProduitsAchetes){
+            System.out.println("Produit : " + produit.getNom() + " - quantité : " + produit.getQuantite());
+        }
     }
 
     public Transaction getTransaction() {

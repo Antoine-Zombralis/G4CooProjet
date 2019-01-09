@@ -20,7 +20,7 @@ import fr.univamu.iut.Produit.Viande.Volaille;
 import java.util.Calendar;
 import java.util.Date;
 
-public abstract class Produits{
+public class Produits{
 
     private Client proprietaire;
     private boolean bio, conforme;
@@ -168,6 +168,8 @@ public abstract class Produits{
         public Cochon cochonBuild(){return new Cochon(this);}
 
         public Volaille volailleBuild(){return new Volaille(this);}
+
+        public Produits build(){return new Produits(this);}
 
         }
 
