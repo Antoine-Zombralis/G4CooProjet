@@ -1,6 +1,7 @@
 package fr.univamu.iut.Client.Fermier;
 
 import fr.univamu.iut.CompteBancaire;
+import fr.univamu.iut.Controleur;
 import fr.univamu.iut.Produit.Arbre.Arbre;
 import fr.univamu.iut.Produit.Produits;
 import fr.univamu.iut.Produit.ProduitsLaitier.Beurre;
@@ -8,6 +9,7 @@ import fr.univamu.iut.Produit.ProduitsLaitier.Fromage;
 import fr.univamu.iut.Produit.ProduitsLaitier.Lait;
 import fr.univamu.iut.Produit.ProduitsLaitier.ProduitLaitier;
 import fr.univamu.iut.Produit.Vegetal;
+import fr.univamu.iut.RépertoireVente;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +22,6 @@ public class ProducteurLaitier extends Fermier {
 
     public ProducteurLaitier(String nom, boolean abonne, CompteBancaire monComte) {
         super(nom, abonne, monComte);
-    }
-
-    public void produireProduitsLaitier(List<ProduitLaitier> produitLaitier) {
-        mesProductions.addAll(produitLaitier);
     }
 
     public List<ProduitLaitier> getMesProductions() {
@@ -84,7 +82,20 @@ public class ProducteurLaitier extends Fermier {
         produits.add(lait) ;
         produits.add(beurre) ;
         produits.add(fromage) ;
+        mesProductions.addAll(produits) ;
+
         return produits;
+    }
+
+    public void ajouterDansRépertoire(List<ProduitLaitier> produits, RépertoireVente répertoireVente)
+    {
+        Controleur controleur = new Controleur();
+        for (ProduitLaitier produit : produits) {
+            controleur.validerProduit(produit);
+            this.ajouterCommercialisable(produit);
+            répertoireVente.ajouterProduit(produit);
+        }
+
     }
 
 }

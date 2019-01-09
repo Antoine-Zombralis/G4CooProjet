@@ -1,10 +1,12 @@
 package fr.univamu.iut.Client.Fermier;
 
 import fr.univamu.iut.CompteBancaire;
+import fr.univamu.iut.Controleur;
 import fr.univamu.iut.Produit.Arbre.Arbre;
 import fr.univamu.iut.Produit.FruitEtLegume.*;
 import fr.univamu.iut.Produit.Produits;
 import fr.univamu.iut.Produit.Vegetal;
+import fr.univamu.iut.RépertoireVente;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,11 +19,6 @@ public class Horticulteur extends Fermier {
 
     public Horticulteur(String nom, boolean abonne, CompteBancaire monComte) {
         super(nom, abonne, monComte);
-    }
-
-    public void cultiverVegetal(List<Vegetal> vegetal) {
-
-        mesProductions.addAll(vegetal);
     }
 
 
@@ -106,6 +103,18 @@ public class Horticulteur extends Fermier {
         produits.add(poire) ;
         produits.add(pomme) ;
 
+        mesProductions.addAll(produits);
         return produits;
+    }
+
+    public void ajouterDansRépertoire(List<Vegetal> produits, RépertoireVente répertoireVente)
+    {
+        Controleur controleur = new Controleur();
+        for (Vegetal produit : produits) {
+            controleur.validerProduit(produit);
+            this.ajouterCommercialisable(produit);
+            répertoireVente.ajouterProduit(produit);
+        }
+
     }
 }

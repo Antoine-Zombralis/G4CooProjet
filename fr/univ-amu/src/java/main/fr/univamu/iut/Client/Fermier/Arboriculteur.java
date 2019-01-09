@@ -1,9 +1,11 @@
 package fr.univamu.iut.Client.Fermier;
 
+import fr.univamu.iut.Controleur;
 import fr.univamu.iut.Produit.Arbre.*;
 import fr.univamu.iut.CompteBancaire;
 import fr.univamu.iut.Produit.Produits;
 import fr.univamu.iut.Produit.Vegetal;
+import fr.univamu.iut.RépertoireVente;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -46,10 +48,6 @@ public class Arboriculteur extends Fermier {
                 mesProduitsCommercialisables.remove(arbre) ;
     }
 
-    public void produireArbre(List<Arbre> arbre){
-        mesProductions.addAll(arbre);
-    }
-
     public  List<Arbre> generationArbreAleatoire(int nbDeProduitsAGenerer) {
         List<Arbre> produits = new ArrayList<>();
         int cptRosier = 0;
@@ -77,13 +75,26 @@ public class Arboriculteur extends Fermier {
                 .addProprio(this)
                 .sapinBuild();
         Banzai banzai = new Banzai.BuilderProduits(cptBanzai, 15, "Banzai")
+                .addProprio(this)
                 .banzaiBuild();
         produits.add(rosier);
         produits.add(pommier);
         produits.add(sapin);
         produits.add(banzai);
+        mesProductions.addAll(produits) ;
 
         return produits;
+    }
+
+    public void ajouterDansRépertoire(List<Arbre> produits, RépertoireVente répertoireVente)
+    {
+        Controleur controleur = new Controleur();
+        for (Arbre produit : produits) {
+            controleur.validerProduit(produit);
+            this.ajouterCommercialisable(produit);
+            répertoireVente.ajouterProduit(produit);
+        }
+
     }
 
     public List<Arbre> getMesProductions() {
