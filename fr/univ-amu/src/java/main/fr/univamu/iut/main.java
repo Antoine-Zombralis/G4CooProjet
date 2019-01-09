@@ -226,6 +226,7 @@ public class main {
 
             return produits;
         }
+
     public static List<Viande> generationViandeAleatoire(int nbDeProduitsAGenerer, EnumLabel label, CategorieCochon categorieCochon, CategorieVolaille categorieVolaille, CategorieVache categorieVache) {
         List<Viande> produits = new ArrayList<>();
 

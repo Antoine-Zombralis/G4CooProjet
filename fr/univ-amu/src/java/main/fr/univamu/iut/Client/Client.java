@@ -57,6 +57,9 @@ public abstract class Client {
         this.mesProduitsAchetes = mesProduitsAchetes;
     }
 
+    public abstract void supprimerProduit(Produits produits);
+
+
     public String getNom() {
         return nom;
     }
@@ -69,7 +72,7 @@ public abstract class Client {
             mesProduitsAchetes.add(produit);
             monComte.debiter(idClient, produit.getPrix());
             produit.getProprietaire().getMonComte().crediter(produit.getProprietaire().getIdClient(), produit.getPrix());
-            produit.getProprietaire();
+            produit.getProprietaire().supprimerProduit(produit);
             transaction = new Transaction(vendeur, this, produit);
             transaction.addTransaction(transaction);
 
@@ -78,5 +81,6 @@ public abstract class Client {
     public String notifierClient(Client client){
         return "De nouveaux produits ont été mis en vente pour vous " + client.getNom();
     }
+
 
 }

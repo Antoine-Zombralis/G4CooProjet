@@ -33,5 +33,4 @@ public abstract class Fermier extends Client {
 
     public abstract void afficherMesProductions() ;
 
-    public abstract void supprimerProduit(Produits produits);
 }
