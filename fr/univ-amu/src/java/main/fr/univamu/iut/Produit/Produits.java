@@ -29,7 +29,7 @@ public abstract class Produits{
     private static int cpt = 0;
     private Date datePeremption;
     private String nom;
-    private double prixVegetalUnite;
+    private double prixUnite;
     private int quantiteVegetalDansCagette;
     private EnumLabel label;
     private CategorieVache categorieVache;
@@ -48,7 +48,7 @@ public abstract class Produits{
         calendar.add(Calendar.DAY_OF_YEAR, 7) ;
         Date date = calendar.getTime();
         datePeremption = date ;
-        prixVegetalUnite = builder.prixVegetalUnite;
+        prixUnite = builder.prixUnite;
         quantiteVegetalDansCagette = builder.quantiteVegetalDansCagette;
         label = builder.label;
         categorieCochon = builder.categorieCochon;
@@ -63,7 +63,7 @@ public abstract class Produits{
         private double prix;
         private Date datePeremption;
         private String nom;
-        private double prixVegetalUnite;
+        private double prixUnite;
         private int quantiteVegetalDansCagette;
         private EnumLabel label;
         private CategorieVache categorieVache;
@@ -90,8 +90,8 @@ public abstract class Produits{
             datePeremption = fin; return this;
         }
 
-        public BuilderProduits addPrixVegetalUnite(double prix){
-            prixVegetalUnite = prix; return this;
+        public BuilderProduits addPrixUnite(double prix){
+            prixUnite = prix; return this;
         }
 
         public BuilderProduits addQuantiteVegetalDansCagette(int quantite){
@@ -240,12 +240,12 @@ public abstract class Produits{
         this.id = id;
     }
 
-    public double getPrixVegetalUnite() {
-        return prixVegetalUnite;
+    public double getPrixUnite() {
+        return prixUnite;
     }
 
-    public void setPrixVegetalUnite(double prixVegetalUnite) {
-        this.prixVegetalUnite = prixVegetalUnite;
+    public void setPrixUnite(double prixUnite) {
+        this.prixUnite = prixUnite;
     }
 
     public int getQuantiteVegetalDansCagette() {

@@ -15,6 +15,13 @@ public class Trader extends Client {
         super(nom, abonne, monComte);
     }
 
+    @Override
+    public void supprimerProduit(Produits produit) {
+        for (Produits produitCourant : getMesProduitsAchetes())
+            if (produit.equals(produitCourant))
+                getMesProduitsAchetes().remove(produitCourant) ;
+    }
+
 //    @Override
 //    public void acheterProduit(Produits produit){
 //        getMesProduitsAchetes().add(produit) ;

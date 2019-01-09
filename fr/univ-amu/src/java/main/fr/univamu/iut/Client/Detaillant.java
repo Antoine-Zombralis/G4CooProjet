@@ -11,6 +11,13 @@ public class Detaillant extends Client {
         super(nom, abonne, monComte);
     }
 
+    @Override
+    public void supprimerProduit(Produits produit) {
+        for (Produits produitCourant : getMesProduitsAchetes())
+            if (produit.equals(produitCourant))
+                getMesProduitsAchetes().remove(produitCourant) ;
+    }
+
     public void acheterProduit(Produits produit){
         getMesProduitsAchetes().add(produit) ;
     }
