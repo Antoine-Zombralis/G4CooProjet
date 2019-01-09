@@ -52,4 +52,11 @@ public class ProducteurDeViande extends Fermier {
             System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles "  + " | "  + produit.getPrix() + "$");
         }
     }
+
+    @Override
+    public void supprimerProduit(Produits viande) {
+        for (Viande viandeCourant : mesProduitsCommercialisables)
+            if (viande.equals(viandeCourant))
+                mesProduitsCommercialisables.remove(viandeCourant) ;
+    }
 }

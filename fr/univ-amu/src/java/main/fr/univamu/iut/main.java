@@ -1,7 +1,6 @@
 package fr.univamu.iut;
 
-import fr.univamu.iut.Client.Client;
-import fr.univamu.iut.Client.Grossiste;
+import fr.univamu.iut.Client.*;
 import fr.univamu.iut.Client.Fermier.*;
 import fr.univamu.iut.Produit.*;
 import fr.univamu.iut.Produit.Arbre.*;
@@ -39,10 +38,22 @@ public class main {
         Fermier f4 = new ProducteurLaitier("f4", false, null);
         f4.setMonComte(new CompteBancaire(f4.getIdClient(), 1000));
 
-        Client c1 = new Grossiste("c1", false, null);
-        c1.setMonComte(new CompteBancaire(c1.getIdClient(), 5000));
+        Client grossiste = new Grossiste("grossiste", false, null);
+        grossiste.setMonComte(new CompteBancaire(grossiste.getIdClient(), 5000));
+
+        Client detaillant = new Detaillant("detaillant", false, null);
+        detaillant.setMonComte(new CompteBancaire(detaillant.getIdClient(), 2000));
+
+        Client centrale = new CentraleAchat("centrale d'achat", false, null);
+        centrale.setMonComte(new CompteBancaire(centrale.getIdClient(), 6000));
+
+        Client trader = new Trader("Trader", false, null);
+        trader.setMonComte(new CompteBancaire(trader.getIdClient(), 2500));
+
 
         Controleur controleur = new Controleur();
+//        OffreAchat offreAchat = new OffreAchat() ;
+
 
         List<Vegetal> vegetals = generationVegetalAleatoire(100);
         List<Arbre> arbres = generationArbreAleatoire(200);
@@ -86,8 +97,6 @@ public class main {
         }
 
         RépertoireVente repertoireVente = new RépertoireVente() ;
-
-        //        OffreAchat offreAchat = new OffreAchat() ;
 
     }
 
