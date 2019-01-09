@@ -1,6 +1,7 @@
 package fr.univamu.iut.Client.Fermier;
 
 import fr.univamu.iut.CompteBancaire;
+import fr.univamu.iut.Controleur;
 import fr.univamu.iut.Produit.Arbre.Arbre;
 import fr.univamu.iut.Produit.Enum.CategorieCochon;
 import fr.univamu.iut.Produit.Enum.CategorieVache;
@@ -12,6 +13,7 @@ import fr.univamu.iut.Produit.Viande.Cochon;
 import fr.univamu.iut.Produit.Viande.Vache;
 import fr.univamu.iut.Produit.Viande.Viande;
 import fr.univamu.iut.Produit.Viande.Volaille;
+import fr.univamu.iut.RépertoireVente;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,9 +28,6 @@ public class ProducteurDeViande extends Fermier {
         super(nom, abonne, monComte);
     }
 
-    public void produireViande(List<Viande> viandes){
-        mesProductions.addAll(viandes);
-    }
 
     public List<Viande> getMesProductions() {
         return mesProductions;
@@ -96,6 +95,18 @@ public class ProducteurDeViande extends Fermier {
         produits.add(cochon) ;
         produits.add(vache) ;
         produits.add(volaille) ;
+        mesProductions.addAll(produits) ;
         return produits;
+    }
+
+    public void ajouterDansRépertoire(List<Viande> produits, RépertoireVente répertoireVente)
+    {
+        Controleur controleur = new Controleur();
+        for (Viande produit : produits) {
+            controleur.validerProduit(produit);
+            this.ajouterCommercialisable(produit);
+            répertoireVente.ajouterProduit(produit);
+        }
+
     }
 }
