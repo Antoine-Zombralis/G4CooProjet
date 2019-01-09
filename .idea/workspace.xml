@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a6f7efd9-7282-4a77-9f0b-5cf6248881a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fr/univ-amu/src/java/univ-amu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fr/univ-amu/src/java/univ-amu.iml" afterDir="false" />
-    </list>
+    <list default="true" id="a6f7efd9-7282-4a77-9f0b-5cf6248881a6" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,12 +21,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="693" />
+          <entry key="java" value="730" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="693" />
+          <entry key="JAVA" value="730" />
         </counts>
       </usages-collector>
     </session>
@@ -39,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Test/ClientTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+            <state relative-caret-position="240">
+              <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -60,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="93" column="18" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
+            <state relative-caret-position="163">
+              <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -194,7 +191,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547043690673" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547043958821" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -329,26 +326,11 @@
       <updated>1544428550501</updated>
       <workItem from="1544428553909" duration="483000" />
       <workItem from="1544798545232" duration="3612000" />
-      <workItem from="1547038863761" duration="4807000" />
+      <workItem from="1547038863761" duration="5085000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ClientTest_accepterOffre - 2019.01.09 at 14h 53m 26s.xml">
-      <configuration name="ClientTest.accepterOffre" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ClientTest_accepterOffre - 2019.01.09 at 14h 55m 58s.xml">
-      <configuration name="ClientTest.accepterOffre" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ClientTest_validerOffre - 2019.01.09 at 14h 56m 11s.xml">
-      <configuration name="ClientTest.validerOffre" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ClientTest_notifierClient - 2019.01.09 at 14h 56m 20s.xml">
-      <configuration name="ClientTest.notifierClient" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ClientTest_accepterOffre - 2019.01.09 at 15h 02m 26s.xml">
-      <configuration name="ClientTest.accepterOffre" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ClientTest_accepterOffre - 2019.01.09 at 15h 03m 00s.xml">
       <configuration name="ClientTest.accepterOffre" configurationId="JUnit" />
     </history-entry>
@@ -364,9 +346,24 @@
     <history-entry file="ClientTest_acheterProduit - 2019.01.09 at 15h 20m 06s.xml">
       <configuration name="ClientTest.acheterProduit" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ClientTest_acheterProduit - 2019.01.09 at 15h 21m 13s.xml">
+      <configuration name="ClientTest.acheterProduit" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClientTest_acheterProduit - 2019.01.09 at 15h 21m 32s.xml">
+      <configuration name="ClientTest.acheterProduit" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClientTest_acheterProduit - 2019.01.09 at 15h 21m 52s.xml">
+      <configuration name="ClientTest.acheterProduit" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClientTest_acheterProduit - 2019.01.09 at 15h 23m 45s.xml">
+      <configuration name="ClientTest.acheterProduit" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClientTest_acheterProduit - 2019.01.09 at 15h 24m 03s.xml">
+      <configuration name="ClientTest.acheterProduit" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4503000" />
+    <option name="totallyTimeSpent" value="4781000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="26" width="1690" height="1005" extended-state="6" />
@@ -648,15 +645,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="93" column="18" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
+        <state relative-caret-position="163">
+          <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fr/univ-amu/src/java/main/fr/univamu/iut/Test/ClientTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+        <state relative-caret-position="240">
+          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
         </state>
       </provider>
     </entry>

@@ -15,13 +15,16 @@ class ClientTest {
 
     @Test
     final void acheterProduit() {
-        CompteBancaire compteVendeur = new CompteBancaire(2222,10000);
+        CompteBancaire compteVendeur = new CompteBancaire(2222,1000);
         Client vendeur = new Detaillant("gégé", true, compteVendeur);
         CompteBancaire compteClient = new CompteBancaire(2222, 1000);
         Client client = new Detaillant("dédé", true, compteClient);
         double SoldeAvantAchat = client.getMonComte().getSolde();
-        Produits poulet = new Volaille.BuilderProduits(12, 22, "chicken").volailleBuild();
+        Produits poulet = new Volaille.BuilderProduits(12, 22, "chicken")
+                .addProprio(vendeur)
+                .volailleBuild();
         client.acheterProduit(poulet,vendeur,3);
+        System.out.println(poulet.getQuantite());
         if(SoldeAvantAchat == client.getMonComte().getSolde()) {
             fail("L'achat n'a pas eu lieu");
         }
