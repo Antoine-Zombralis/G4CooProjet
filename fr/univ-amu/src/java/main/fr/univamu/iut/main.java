@@ -245,7 +245,7 @@ public class main {
                     .addLabel(label)
                     .addCategorieCochon(categorieCochon)
                     .cochonBuild();
-            Vache vache = new Vache.BuilderProduits(cptVache, 36 * cptVache, "Steack de vache")
+            Vache vache = new Vache.BuilderProduits(cptVache, 36 * cptVache, "Steak de vache")
                     .addLabel(label)
                     .addCategorieVache(categorieVache)
                     .vacheBuild();
