@@ -43,15 +43,15 @@ public class Trader extends Client {
     public void mettreEnVente(ArrayList<Produits> produits, RépertoireVente répertoireVente) {
         for (Produits produit : produits){
             if (produit instanceof Legume)
-                répertoireVente.ajouterLegume((Legume)produit);
+                répertoireVente.ajouterProduit((Legume)produit);
             else if (produit instanceof Fruit)
-                répertoireVente.ajouterFruit((Fruit)produit);
+                répertoireVente.ajouterProduit((Fruit)produit);
             else if (produit instanceof Viande)
-                répertoireVente.ajouterViande((Viande)produit);
+                répertoireVente.ajouterProduit((Viande)produit);
             else if (produit instanceof Arbre)
-                répertoireVente.ajouterArbre((Arbre)produit);
+                répertoireVente.ajouterProduit((Arbre)produit);
             else if (produit instanceof ProduitLaitier)
-                répertoireVente.ajouterProduitLaitier((ProduitLaitier)produit) ;
+                répertoireVente.ajouterProduit((ProduitLaitier)produit); ;
         }
 
 
@@ -60,3 +60,4 @@ public class Trader extends Client {
     }
 
 }
+
