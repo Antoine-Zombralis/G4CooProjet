@@ -71,7 +71,7 @@ public class RépertoireVente {
 
     /**
      * @param produit
-     * Cette fonction ajoute un projduit dans la liste des produits en vente. Pour cela, la fonction verifie le type de l'objet et l'intègre dans
+     * Cette fonction ajoute un produit dans la liste des produits en vente. Pour cela, la fonction verifie le type de l'objet et l'intègre dans
      * la liste qui correspond à son type.
      */
     public void ajouterProduit(Produits produit) {
