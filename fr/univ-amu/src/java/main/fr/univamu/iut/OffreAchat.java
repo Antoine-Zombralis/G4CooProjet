@@ -6,6 +6,9 @@ import fr.univamu.iut.Produit.Produits;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Permet de créer une offre d'achat qui sera accepté ou refusée
+ */
 public class OffreAchat {
     private Client monCreateur ;
     private Produits produitConcerne ;
@@ -13,6 +16,12 @@ public class OffreAchat {
     private int quantite;
     private boolean accepter = false ;
 
+    /**
+     * @param monCreateur
+     * @param produitConcerne
+     * @param montant
+     * @param quantite
+     */
     public OffreAchat(Client monCreateur, Produits produitConcerne, double montant, int quantite) {
         this.monCreateur = monCreateur;
         this.produitConcerne = produitConcerne;

@@ -7,6 +7,9 @@ import fr.univamu.iut.Produit.Produits;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Quand un achat est efféctué une transaction est créée
+ */
 public class Transaction {
 
     private int numero;
@@ -18,6 +21,13 @@ public class Transaction {
 
     private List<Transaction> transactions = new ArrayList<>();
 
+    /**
+     * @param vendeur
+     * @param acheteur
+     * @param produits
+     * @param montant
+     * L'identifiant est généré automatiquement
+     */
     public Transaction(Client vendeur, Client acheteur, Produits produits, double montant) {
         setNumero(++cpt);
         this.vendeur = vendeur;
