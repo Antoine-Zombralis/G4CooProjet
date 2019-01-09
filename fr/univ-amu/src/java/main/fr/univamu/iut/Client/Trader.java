@@ -2,9 +2,11 @@ package fr.univamu.iut.Client;
 
 import fr.univamu.iut.Client.Client;
 import fr.univamu.iut.CompteBancaire;
+import fr.univamu.iut.Produit.Arbre.Arbre;
 import fr.univamu.iut.Produit.FruitEtLegume.Fruit;
 import fr.univamu.iut.Produit.FruitEtLegume.Legume;
 import fr.univamu.iut.Produit.Produits;
+import fr.univamu.iut.Produit.ProduitsLaitier.ProduitLaitier;
 import fr.univamu.iut.Produit.Vegetal;
 import fr.univamu.iut.Produit.Viande.Viande;
 import fr.univamu.iut.RépertoireVente;
@@ -46,6 +48,10 @@ public class Trader extends Client {
                 répertoireVente.ajouterFruit((Fruit)produit);
             else if (produit instanceof Viande)
                 répertoireVente.ajouterViande((Viande)produit);
+            else if (produit instanceof Arbre)
+                répertoireVente.ajouterArbre((Arbre)produit);
+            else if (produit instanceof ProduitLaitier)
+                répertoireVente.ajouterProduitLaitier((ProduitLaitier)produit) ;
         }
 
 
