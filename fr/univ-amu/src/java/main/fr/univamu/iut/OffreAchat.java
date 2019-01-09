@@ -3,6 +3,9 @@ package fr.univamu.iut;
 import fr.univamu.iut.Client.Client;
 import fr.univamu.iut.Produit.Produits;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OffreAchat {
     private Client monCreateur ;
     private Produits produitConcerne ;
@@ -16,8 +19,6 @@ public class OffreAchat {
         this.montant = montant;
         this.quantite = quantite;
     }
-
-
 
     public Client getMonCreateur() {
         return monCreateur;
