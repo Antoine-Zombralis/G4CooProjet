@@ -54,13 +54,11 @@ public class main {
         Controleur controleur = new Controleur();
         RépertoireVente repertoireVente = new RépertoireVente();
 
-//        OffreAchat offreAchat = new OffreAchat() ;
 
-
-        List<Vegetal> vegetals = generationVegetalAleatoire(100);
-        List<Arbre> arbres = generationArbreAleatoire(200);
-        List<Viande> viandes = generationViandeAleatoire(150, EnumLabel.ROUGE, CategorieCochon.LANDRACE_FRANCAIS, CategorieVolaille.CHAPON, CategorieVache.NORMANDE);
-        List<ProduitLaitier> produitLaitiers = generationProduitLaitierAleatoire(425);
+        List<Vegetal> vegetals = ((Horticulteur) f1).generationVegetalAleatoire(100);
+        List<Arbre> arbres = ((Arboriculteur) f2).generationArbreAleatoire(200);
+        List<Viande> viandes = ((ProducteurDeViande)f3).generationViandeAleatoire(150, EnumLabel.ROUGE, CategorieCochon.LANDRACE_FRANCAIS, CategorieVolaille.CHAPON, CategorieVache.NORMANDE);
+        List<ProduitLaitier> produitLaitiers = ((ProducteurLaitier) f4).generationProduitLaitierAleatoire(425);
 
         ((Horticulteur) f1).cultiverVegetal(vegetals);
         ((Arboriculteur) f2).produireArbre(arbres);
@@ -68,24 +66,31 @@ public class main {
         ((ProducteurLaitier) f4).produireProduitsLaitier(produitLaitiers);
 
         for(Vegetal vegetal:  vegetals){
-            controleur.conformerProduit(vegetal);
+            controleur.validerProduit(vegetal);
             f1.ajouterCommercialisable(vegetal);
         }
 
         for(Arbre arbre : arbres){
-            controleur.conformerProduit(arbre);
+            controleur.validerProduit(arbre);
             f2.ajouterCommercialisable(arbre);
         }
 
         for(Viande viande : viandes){
-            controleur.conformerProduit(viande);
+            controleur.validerProduit(viande);
             f3.ajouterCommercialisable(viande);
         }
 
         for(ProduitLaitier produitLaitier : produitLaitiers){
-            controleur.conformerProduit(produitLaitier);
+            controleur.validerProduit(produitLaitier);
             f4.ajouterCommercialisable(produitLaitier);
         }
+
+        OffreAchat offreAchatVegetal = new OffreAchat(detaillant, vegetals.get(0), vegetals.get(0).getPrix(), 10) ;
+        f1.setOffreAchat(offreAchatVegetal);
+        f1.accepterOffre(true);
+        f1.validerOffre();
+
+        System.out.println(detaillant.getMonComte().getSolde());
 
         Scanner sc = new Scanner(System.in);
         System.out.println("1 - Consulter les produits en vente \n" + "2 - Consulter les transactions \n" + "3 - Consulter les répertoires de vente");
@@ -110,155 +115,9 @@ public class main {
             else if (choix.equals("3"))
                 repertoireVente.afficherEtalageViande();
 
-
         }
 
     }
-
-
-    public static List<Arbre> generationArbreAleatoire(int nbDeProduitsAGenerer) {
-        List<Arbre> produits = new ArrayList<>();
-        int cptRosier = 0;
-        int cptBanzai = 0;
-        int cptSapin = 0;
-        int cptPommier = 0;
-        for (int i = 0; i < nbDeProduitsAGenerer; i++) {
-            double alea = Math.random();
-            if (alea < 0.25)
-                ++cptRosier;
-            else if (alea > 0.25 && alea < 0.5)
-                ++cptBanzai;
-            else if (alea > 0.50 && alea < 0.75)
-                ++cptSapin;
-            else
-                ++cptPommier;
-        }
-        Rosier rosier = new Rosier.BuilderProduits(cptRosier, 45 * cptRosier, "Rosier fleurie")
-                .rosierBuid();
-        Pommier pommier = new Pommier.BuilderProduits(cptPommier, 250 * cptPommier, "Pommier d'Alsace")
-                .pommierBuild();
-        Sapin sapin = new Sapin.BuilderProduits(cptSapin, 25 * cptSapin, "Sapin de Noel")
-                .sapinBuild();
-        Banzai banzai = new Banzai.BuilderProduits(cptBanzai, 15 * cptBanzai, "Banzai")
-                .banzaiBuild();
-        produits.add(rosier);
-        produits.add(pommier);
-        produits.add(sapin);
-        produits.add(banzai);
-
-        return produits;
-    }
-
-    public static List<ProduitLaitier> generationProduitLaitierAleatoire(int nbDeProduitsAGenerer) {
-            List<ProduitLaitier> produits = new ArrayList<>();
-            int cptLait = 0 ;
-            int cptFromage = 0 ;
-            int cptBeurre = 0 ;
-            for (int i = 0; i < nbDeProduitsAGenerer; i++) {
-                double alea = Math.random() ;
-                if (alea < 0.33)
-                    ++cptLait ;
-                else if (alea > 0.33 && alea <0.66)
-                    ++cptBeurre ;
-                else
-                    ++cptFromage ;
-            }
-            Lait lait = new Lait.BuilderProduits(cptLait, 1.33 * cptLait, "Lait demi-écrémé")
-                    .laitBuild();
-            Beurre beurre = new Beurre.BuilderProduits(cptBeurre, 2 * cptBeurre, "Barquette de beurre")
-                    .beurreBuild();
-            Fromage fromage = new Fromage.BuilderProduits(cptFromage, 45 * cptFromage, "Fromage de brebis")
-                    .fromageBuild();
-            produits.add(lait) ;
-            produits.add(beurre) ;
-            produits.add(fromage) ;
-            return produits;
-        }
-
-    public static List<Vegetal> generationVegetalAleatoire(int nbDeProduitsAGenerer) {
-        List<Vegetal> produits = new ArrayList<>();
-
-        int cptAubergine = 0 ;
-            int cptCarotte = 0 ;
-            int cptChou = 0 ;
-            int cptFraise = 0 ;
-            int cptPoire = 0 ;
-            int cptPomme = 0 ;
-            for (int i = 0; i < nbDeProduitsAGenerer; i++) {
-                double alea = Math.random() ;
-                if (alea < 0.166)
-                    ++cptAubergine ;
-                else if (alea > 0.166 && alea < 0.333)
-                    ++cptCarotte ;
-                else if (alea > 0.333 && alea < 0.5)
-                    ++cptChou ;
-                else if (alea > 0.5 && alea < 0.666)
-                    ++cptFraise ;
-                else if (alea > 0.666 && alea < 0.833)
-                    ++cptPoire ;
-                else
-                    ++cptPomme ;
-            }
-            CagetteAubergine aubergine = new CagetteAubergine.BuilderProduits(cptAubergine, 2 * cptAubergine, "Cagette d'aubergines")
-                    .addPrixVegetalUnite(2)
-                    .aubergineBuild();
-            CagetteCarotte carotte = new CagetteCarotte.BuilderProduits(cptCarotte, 2 * cptCarotte, "Cagette de carottes")
-                    .addPrixVegetalUnite(2)
-                    .carotteBuild();
-            CagetteChou chou = new CagetteChou.BuilderProduits(cptChou, 1.25 * cptChou, "Cagette de chou")
-                    .addPrixVegetalUnite(1.25)
-                    .chouBuild();
-            CagetteFraise fraise = new CagetteFraise.BuilderProduits(cptFraise, 13 * cptFraise, "Cagette de fraises")
-                    .addPrixVegetalUnite(13)
-                    .fraiseBuild();
-            CagettePoire poire = new CagettePoire.BuilderProduits(cptPoire, 8 * cptPoire, "Cagette de poires")
-                    .addPrixVegetalUnite(8)
-                    .poireBuild() ;
-            CagettePomme pomme = new CagettePomme.BuilderProduits(cptPomme, 5 * cptPomme, "Cagette de pommes")
-                    .addPrixVegetalUnite(5)
-                    .pommeBuild() ;
-            produits.add(aubergine) ;
-            produits.add(carotte) ;
-            produits.add(chou) ;
-            produits.add(fraise) ;
-            produits.add(poire) ;
-            produits.add(pomme) ;
-
-            return produits;
-        }
-    public static List<Viande> generationViandeAleatoire(int nbDeProduitsAGenerer, EnumLabel label, CategorieCochon categorieCochon, CategorieVolaille categorieVolaille, CategorieVache categorieVache) {
-        List<Viande> produits = new ArrayList<>();
-
-        int cptCochon = 0 ;
-            int cptVolaille = 0 ;
-            int cptVache = 0 ;
-            for (int i = 0; i < nbDeProduitsAGenerer; i++) {
-                double alea = Math.random() ;
-                if (alea < 0.33)
-                    ++cptCochon ;
-                else if (alea > 0.33 && alea <0.66)
-                    ++cptVache ;
-                else
-                    ++cptVolaille ;
-            }
-            Cochon cochon = new Cochon.BuilderProduits(cptCochon, 24 * cptCochon, "Entrecote de porc")
-                    .addLabel(label)
-                    .addCategorieCochon(categorieCochon)
-                    .cochonBuild();
-            Vache vache = new Vache.BuilderProduits(cptVache, 36 * cptVache, "Steack de vache")
-                    .addLabel(label)
-                    .addCategorieVache(categorieVache)
-                    .vacheBuild();
-            Volaille volaille = new Volaille.BuilderProduits(cptVolaille, 15 * cptVolaille, "Poulet fermier")
-                    .addLabel(label)
-                    .addCategorieVolaille(categorieVolaille)
-                    .volailleBuild();
-
-            produits.add(cochon) ;
-            produits.add(vache) ;
-            produits.add(volaille) ;
-            return produits;
-        }
 
 
 

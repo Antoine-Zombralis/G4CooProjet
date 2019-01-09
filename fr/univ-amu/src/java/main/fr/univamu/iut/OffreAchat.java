@@ -7,26 +7,16 @@ public class OffreAchat {
     private Client monCreateur ;
     private Produits produitConcerne ;
     private double montant ;
+    private int quantite;
     private boolean accepter = false ;
 
-    public OffreAchat(Client monCreateur, Produits produitConcerne, double montant) {
+    public OffreAchat(Client monCreateur, Produits produitConcerne, double montant, int quantite) {
         this.monCreateur = monCreateur;
         this.produitConcerne = produitConcerne;
         this.montant = montant;
+        this.quantite = quantite;
     }
 
-    public void conformerOffreAchat() {
-        if (monCreateur.getMonComte().getSolde() > montant)
-            setConforme(true);
-        else
-            System.out.println("Vous n'avez pas assaez d'argent pour effectuer la transaction");
-    }
-
-    public void validerOffre(){
-        if(accepter){
-            monCreateur.acheterProduit(produitConcerne, produitConcerne.getProprietaire());
-        }
-    }
 
 
     public Client getMonCreateur() {
@@ -59,5 +49,13 @@ public class OffreAchat {
 
     public void setConforme(boolean accepter) {
         this.accepter = accepter;
+    }
+
+    public int getQuantite() {
+        return quantite;
+    }
+
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
     }
 }

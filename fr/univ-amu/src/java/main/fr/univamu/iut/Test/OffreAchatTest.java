@@ -21,7 +21,7 @@ class OffreAchatTest {
         Produits produits = (new BuilderProduits(12, 23.9, "chicken")).volailleBuild();
         OffreAchat offre = new OffreAchat(monCreateur, produits, 12);
         offre.conformerOffreAchat();
-        if (!offre.isConforme()) {
+        if (!offre.isAccepter()) {
             fail("Vous n'avez pas assez d'argent pour effectuer la transaction");
         }
 
