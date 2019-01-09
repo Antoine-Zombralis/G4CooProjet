@@ -1,6 +1,7 @@
 package fr.univamu.iut.Client.Fermier;
 
 import fr.univamu.iut.CompteBancaire;
+import fr.univamu.iut.Produit.Arbre.Arbre;
 import fr.univamu.iut.Produit.Produits;
 import fr.univamu.iut.Produit.ProduitsLaitier.ProduitLaitier;
 import fr.univamu.iut.Produit.Vegetal;
@@ -27,10 +28,17 @@ public class ProducteurLaitier extends Fermier {
     }
 
     @Override
+    public void ajouterCommercialisable(Produits produit) {
+        if(produit.isConforme()){
+            mesProduitsCommercialisables.add((ProduitLaitier) produit);
+        }
+    }
+
+    @Override
     public void afficherMesProductions() {
         System.out.println("Voici les produits de " + this.getNom() + ": ");
         for (Produits produit : mesProductions){
-            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " kg disponibles "  + " | "  + produit.getPrix() + "$");
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles "  + " | "  + produit.getPrix() + "$");
         }
     }
 
@@ -38,7 +46,14 @@ public class ProducteurLaitier extends Fermier {
     public void afficherCommercialisable() {
         System.out.println("Voici les produits commercialisables de " + this.getNom() + ": ");
         for (Produits produit : mesProduitsCommercialisables){
-            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " kg disponibles "  + " | "  + produit.getPrix() + "$");
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles "  + " | "  + produit.getPrix() + "$");
         }
+    }
+
+    @Override
+    public void supprimerProduit(Produits produitLaitier) {
+        for (ProduitLaitier produitLaitierCourant: mesProduitsCommercialisables)
+            if (produitLaitier.equals(produitLaitierCourant))
+                mesProduitsCommercialisables.remove(produitLaitier) ;
     }
 }

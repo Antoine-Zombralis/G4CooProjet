@@ -29,10 +29,17 @@ public class Horticulteur extends Fermier {
     }
 
     @Override
+    public void ajouterCommercialisable(Produits produit) {
+        if(produit.isConforme()){
+            mesProduitsCommercialisables.add((Vegetal) produit);
+        }
+    }
+
+    @Override
     public void afficherMesProductions() {
         System.out.println("Voici les produits de " + this.getNom() + ": ");
         for (Produits produit : mesProductions){
-            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " kg disponibles "  + " | "  + produit.getPrix() + "$");
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles "  + " | "  + produit.getPrix() + "$");
         }
     }
 
@@ -40,8 +47,15 @@ public class Horticulteur extends Fermier {
     public void afficherCommercialisable() {
         System.out.println("Voici les produits commercialisables de " + this.getNom() + ": ");
         for (Produits produit : mesProduitsCommercialisables){
-            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " kg disponibles "  + " | "  + produit.getPrix() + "$");
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles "  + " | "  + produit.getPrix() + "$");
         }
+    }
+
+    @Override
+    public void supprimerProduit(Produits vegetal) {
+        for (Vegetal vegetalCourant : mesProduitsCommercialisables)
+            if (vegetal.equals(vegetalCourant))
+                mesProduitsCommercialisables.remove(vegetalCourant) ;
     }
 
 }

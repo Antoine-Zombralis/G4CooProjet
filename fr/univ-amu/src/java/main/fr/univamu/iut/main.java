@@ -1,7 +1,6 @@
 package fr.univamu.iut;
 
-import fr.univamu.iut.Client.Client;
-import fr.univamu.iut.Client.Grossiste;
+import fr.univamu.iut.Client.*;
 import fr.univamu.iut.Client.Fermier.*;
 import fr.univamu.iut.Produit.*;
 import fr.univamu.iut.Produit.Arbre.*;
@@ -39,10 +38,24 @@ public class main {
         Fermier f4 = new ProducteurLaitier("f4", false, null);
         f4.setMonComte(new CompteBancaire(f4.getIdClient(), 1000));
 
-        Client c1 = new Grossiste("c1", false, null);
-        c1.setMonComte(new CompteBancaire(c1.getIdClient(), 5000));
+        Client grossiste = new Grossiste("grossiste", false, null);
+        grossiste.setMonComte(new CompteBancaire(grossiste.getIdClient(), 5000));
+
+        Client detaillant = new Detaillant("detaillant", false, null);
+        detaillant.setMonComte(new CompteBancaire(detaillant.getIdClient(), 2000));
+
+        Client centrale = new CentraleAchat("centrale d'achat", false, null);
+        centrale.setMonComte(new CompteBancaire(centrale.getIdClient(), 6000));
+
+        Client trader = new Trader("Trader", false, null);
+        trader.setMonComte(new CompteBancaire(trader.getIdClient(), 2500));
+
 
         Controleur controleur = new Controleur();
+        RépertoireVente repertoireVente = new RépertoireVente();
+
+//        OffreAchat offreAchat = new OffreAchat() ;
+
 
         List<Vegetal> vegetals = generationVegetalAleatoire(100);
         List<Arbre> arbres = generationArbreAleatoire(200);
@@ -54,21 +67,51 @@ public class main {
         ((ProducteurDeViande) f3).produireViande(viandes);
         ((ProducteurLaitier) f4).produireProduitsLaitier(produitLaitiers);
 
+        for(Vegetal vegetal:  vegetals){
+            controleur.conformerProduit(vegetal);
+            f1.ajouterCommercialisable(vegetal);
+        }
+
+        for(Arbre arbre : arbres){
+            controleur.conformerProduit(arbre);
+            f2.ajouterCommercialisable(arbre);
+        }
+
+        for(Viande viande : viandes){
+            controleur.conformerProduit(viande);
+            f3.ajouterCommercialisable(viande);
+        }
+
+        for(ProduitLaitier produitLaitier : produitLaitiers){
+            controleur.conformerProduit(produitLaitier);
+            f4.ajouterCommercialisable(produitLaitier);
+        }
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("1 - Consulter les produits en vente\n" + "2 - Consulter les transactions \n");
+        System.out.println("1 - Consulter les produits en vente \n" + "2 - Consulter les transactions \n" + "3 - Consulter les répertoires de vente");
         String str = sc.nextLine();
 
         if(str.equals("1")){
-            ((Horticulteur) f1).afficherMesProductions();
+            f1.afficherCommercialisable();
+            f2.afficherCommercialisable();
+            f3.afficherCommercialisable();
+            f4.afficherCommercialisable();
         }
+        else if (str.equals("3")) {
+            System.out.println("1 - Consulter les légumes à la vente \n" + "2 - Consulter les fruits à la vente \n" + "3 - Consulter les viandes à la vente \n ");
+            String choix = sc.nextLine();
+            if (choix.equals("1")) {
+                repertoireVente.afficherEtalageFruit();
+            }
+            else if (choix.equals("2")) {
+                repertoireVente.afficherEtalageLegume();
+
+            }
+            else if (choix.equals("3"))
+                repertoireVente.afficherEtalageViande();
 
 
-        RépertoireVente repertoireVente = new RépertoireVente() ;
-
-
-        ((Horticulteur) f1).afficherMesProductions();
-//        OffreAchat offreAchat = new OffreAchat() ;
+        }
 
     }
 

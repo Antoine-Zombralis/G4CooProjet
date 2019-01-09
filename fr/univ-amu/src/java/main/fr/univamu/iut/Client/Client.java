@@ -66,15 +66,12 @@ public abstract class Client {
     }
 
     public void acheterProduit(Produits produit, Client vendeur){
-        if (!produit.isConforme()){
-            System.out.println("Impossible d'acheter ce produit, il n'est pas conforme à la réglementation !");
-        }
-        else{
             mesProduitsAchetes.add(produit);
             monComte.debiter(idClient, produit.getPrix());
+            produit.getProprietaire().getMonComte().crediter(produit.getProprietaire().getIdClient(), produit.getPrix());
+            produit.getProprietaire();
             transaction = new Transaction(vendeur, this, produit);
             transaction.addTransaction(transaction);
-        }
 
     }
 
