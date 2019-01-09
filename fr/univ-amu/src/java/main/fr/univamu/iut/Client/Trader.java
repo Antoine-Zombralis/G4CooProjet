@@ -57,6 +57,11 @@ public class Trader extends Client {
         }
     }
 
+    /**
+     * @param offre
+     * @param montant
+     * fonction qui permet au trader de negocier le prix des produits qu'il achete sur le marché au vendeur du produit
+     */
     public void Negocier(OffreAchat offre, double montant){
         offre.setMontant(montant);
     }
