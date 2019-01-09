@@ -9,7 +9,7 @@ import fr.univamu.iut.Produit.Vegetal;
 import java.util.*;
 
 
-public class Controleur <T>{
+public class Controleur {
 
     public Controleur() {}
 
@@ -22,19 +22,24 @@ public class Controleur <T>{
 
     public void validerProduit(Produits produit) {
 
+
             Calendar calendar = Calendar.getInstance();
-            Date date = calendar.getTime();                                  // on obtient la date courante
-            int peremption = date.compareTo(produit.getDatePeremption()) ;   // on compare la date courante avec la date de péremption. Renvoie 1 si date > date péremption
+            Date date = calendar.getTime();                                     // on obtient la date courante
+            int peremption = date.compareTo(produit.getDatePeremption()) ;      // on compare la date courante avec la date de péremption. Renvoie 1 si date > date péremption
             for (Produits produitInter: produitInterdits) {
-                if (produit.equals(produitInter) || peremption == 0)          // produit interdit ou date de péremption dépassée
+                if (produit.equals(produitInter))                               // produit interdit 
                 {
                     produit.setConforme(false);
                 }
-                else {produit.setConforme(true);
-                }
-        }
+            }
+            if (peremption > 0)                                                 // date de péremption dépassée
+                produit.setConforme(false);
+            else
+                produit.setConforme(true);
+    }
 
-        }
+
+
 
 
     public void conformerProduit(Produits produit){
