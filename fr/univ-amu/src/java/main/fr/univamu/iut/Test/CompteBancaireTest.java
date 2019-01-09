@@ -1,10 +1,9 @@
 package fr.univamu.iut.Test;
 
-import static com.sun.tools.internal.ws.wsdl.parser.Util.fail;
-
-
 import fr.univamu.iut.CompteBancaire;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.fail;
 
 class CompteBancaireTest {
 
