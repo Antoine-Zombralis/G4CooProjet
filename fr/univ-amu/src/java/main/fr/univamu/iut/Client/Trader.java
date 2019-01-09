@@ -1,6 +1,7 @@
 package fr.univamu.iut.Client;
 
 import fr.univamu.iut.CompteBancaire;
+import fr.univamu.iut.OffreAchat;
 import fr.univamu.iut.Produit.Arbre.Arbre;
 import fr.univamu.iut.Produit.FruitEtLegume.Fruit;
 import fr.univamu.iut.Produit.FruitEtLegume.Legume;
@@ -54,6 +55,10 @@ public class Trader extends Client {
         for (Produits produit : getMesProduitsAchetes()){
             System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles : \n \t Prix à l'unité : " + produit.getPrix() + "$ \n \t Prix total : " + produit.getPrix() * produit.getQuantite() + "$\n");
         }
+    }
+
+    public void Negocier(OffreAchat offre, double montant){
+        offre.setMontant(montant);
     }
 
 
