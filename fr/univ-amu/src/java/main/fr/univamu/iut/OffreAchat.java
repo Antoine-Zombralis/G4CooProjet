@@ -4,42 +4,48 @@ import fr.univamu.iut.Client.Client;
 import fr.univamu.iut.Produit.Produits;
 
 public class OffreAchat {
-    private Client monCréateur ;
-    private Produits produitConcerné ;
-    private int montant ;
-    private boolean conforme = false ;
+    private Client monCreateur ;
+    private Produits produitConcerne ;
+    private double montant ;
+    private boolean accepter = false ;
 
-    public OffreAchat(Client monCréateur, Produits produitConcerné, int montant) {
-        this.monCréateur = monCréateur;
-        this.produitConcerné = produitConcerné;
+    public OffreAchat(Client monCreateur, Produits produitConcerne, double montant) {
+        this.monCreateur = monCreateur;
+        this.produitConcerne = produitConcerne;
         this.montant = montant;
     }
 
     public void conformerOffreAchat() {
-        if (monCréateur.getMonComte().getSolde() > montant)
+        if (monCreateur.getMonComte().getSolde() > montant)
             setConforme(true);
         else
             System.out.println("Vous n'avez pas assaez d'argent pour effectuer la transaction");
     }
 
-
-    public Client getMonCréateur() {
-        return monCréateur;
+    public void validerOffre(){
+        if(accepter){
+            monCreateur.acheterProduit(produitConcerne, produitConcerne.getProprietaire());
+        }
     }
 
-    public void setMonCréateur(Client monCréateur) {
-        this.monCréateur = monCréateur;
+
+    public Client getMonCreateur() {
+        return monCreateur;
     }
 
-    public Produits getProduitConcerné() {
-        return produitConcerné;
+    public void setMonCreateur(Client monCreateur) {
+        this.monCreateur = monCreateur;
     }
 
-    public void setProduitConcerné(Produits produitConcerné) {
-        this.produitConcerné = produitConcerné;
+    public Produits getProduitConcerne() {
+        return produitConcerne;
     }
 
-    public int getMontant() {
+    public void setProduitConcerne(Produits produitConcerne) {
+        this.produitConcerne = produitConcerne;
+    }
+
+    public double getMontant() {
         return montant;
     }
 
@@ -47,11 +53,11 @@ public class OffreAchat {
         this.montant = montant;
     }
 
-    public boolean isConforme() {
-        return conforme;
+    public boolean isAccepter() {
+        return accepter;
     }
 
-    public void setConforme(boolean conforme) {
-        this.conforme = conforme;
+    public void setConforme(boolean accepter) {
+        this.accepter = accepter;
     }
 }

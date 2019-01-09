@@ -7,18 +7,13 @@ import fr.univamu.iut.Produit.Produits;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Fermier extends Client {
+public abstract class Fermier extends Client {
 
-
-    private List<Produits> mesProduitsCommercialisable = new ArrayList<>();
 
     public Fermier(String nom, boolean abonne, CompteBancaire monComte) {
         super(nom, abonne, monComte);
     }
 
-    public void acheterRessources(int prix) {
-        this.getMonComte().debiter(getIdClient(), prix);
-    }
     public int cotiserSomme(int gain, int Taxe) {
         return gain * Taxe;
     }
@@ -27,28 +22,16 @@ public class Fermier extends Client {
         System.out.println("Je propose le produit " + produit + " à la vente");
     }
 
-    public void ajouterCommercialisable(Produits produit){
-        mesProduitsCommercialisable.add(produit);
-    }
 
-    public void afficherCommercialisable(){
-        for (Produits produit : mesProduitsCommercialisable){
-            System.out.println("Voici les produits de " + this.getNom() + " : " + produit.getNom()  + " | "  + produit.getPrix() + "$");
-        }
-    }
+    public abstract void ajouterCommercialisable(Produits produit);
+
+    public abstract void afficherCommercialisable();
 
     public void alerter(){
         System.out.println("Vous avez recu une sanction");
     }
 
+    public abstract void afficherMesProductions() ;
 
-    @Override
-    public void notifierClient(Client client) {
-        System.out.println("De nouveau produit ont été mis en vente pour vous" + client.getNom());
-    }
-
-    public List<Produits> getMesProduitsCommercialisable() {
-        return mesProduitsCommercialisable;
-    }
-
+    public abstract void supprimerProduit(Produits produits);
 }

@@ -66,20 +66,17 @@ public abstract class Client {
     }
 
     public void acheterProduit(Produits produit, Client vendeur){
-        if (!produit.isConforme()){
-            System.out.println("Impossible d'acheter ce produit, il n'est pas conforme à la réglementation !");
-        }
-        else{
             mesProduitsAchetes.add(produit);
             monComte.debiter(idClient, produit.getPrix());
+            produit.getProprietaire().getMonComte().crediter(produit.getProprietaire().getIdClient(), produit.getPrix());
+            produit.getProprietaire();
             transaction = new Transaction(vendeur, this, produit);
             transaction.addTransaction(transaction);
-        }
 
     }
 
-    public void notifierClient(Client client){
-        System.out.println("De nouveaux produit ont été mis en vente pour vous " + client.getNom());
+    public String notifierClient(Client client){
+        return "De nouveaux produits ont été mis en vente pour vous " + client.getNom();
     }
 
 }

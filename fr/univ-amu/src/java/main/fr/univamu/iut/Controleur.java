@@ -4,6 +4,7 @@ package fr.univamu.iut;
 import fr.univamu.iut.Client.Client;
 import fr.univamu.iut.Client.Fermier.Fermier;
 import fr.univamu.iut.Produit.Produits;
+import fr.univamu.iut.Produit.Vegetal;
 
 import java.util.*;
 
@@ -12,28 +13,34 @@ public class Controleur {
 
     public Controleur() {}
 
-    private List<Client> adhérents = new ArrayList<Client>();
-    public List<Produits> produitInterdits = new ArrayList<Produits>() ;
-
+    private List<Client> adhérents = new ArrayList();
+    public List<Produits> produitInterdits = new ArrayList() ;
 
     public void sanctionner(Fermier fermier) {
         fermier.alerter() ;
     }
 
     public void validerProduit(Produits produit) {
-        Calendar calendar = Calendar.getInstance();
-        Date date = calendar.getTime();                                  // on obtient la date courante
-        int péremption = date.compareTo(produit.getDatePeremption()) ;   // on compare la date courante avec la date de péremption. Renvoie 1 si date > date péremption
-        for (Produits produitInter: produitInterdits) {
-            if (produit.equals(produitInter) || péremption > 0)          // produit interdit ou date de péremption dépassée
-            {
-                produit.setConforme(false);
-            }
-            else {produit.setConforme(true);
 
-        }
-        }
+
+            Calendar calendar = Calendar.getInstance();
+            Date date = calendar.getTime();                                     // on obtient la date courante
+            int peremption = date.compareTo(produit.getDatePeremption()) ;      // on compare la date courante avec la date de péremption. Renvoie 1 si date > date péremption
+            for (Produits produitInter: produitInterdits) {
+                if (produit.equals(produitInter))                               // produit interdit 
+                {
+                    produit.setConforme(false);
+                }
+            }
+            if (peremption > 0)                                                 // date de péremption dépassée
+                produit.setConforme(false);
+            else
+                produit.setConforme(true);
     }
+
+
+
+
 
     public void conformerProduit(Produits produit){
         if(Math.random() > 0.5){

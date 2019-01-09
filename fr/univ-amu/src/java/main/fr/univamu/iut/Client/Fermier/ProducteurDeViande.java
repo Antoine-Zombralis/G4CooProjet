@@ -1,35 +1,62 @@
 package fr.univamu.iut.Client.Fermier;
 
 import fr.univamu.iut.CompteBancaire;
-import fr.univamu.iut.Produit.Cochon;
-import fr.univamu.iut.Produit.Vache;
-import fr.univamu.iut.Produit.Viande;
-import fr.univamu.iut.Produit.Volaille;
+import fr.univamu.iut.Produit.Arbre.Arbre;
+import fr.univamu.iut.Produit.Produits;
+import fr.univamu.iut.Produit.Vegetal;
+import fr.univamu.iut.Produit.Viande.Cochon;
+import fr.univamu.iut.Produit.Viande.Vache;
+import fr.univamu.iut.Produit.Viande.Viande;
+import fr.univamu.iut.Produit.Viande.Volaille;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProducteurDeViande extends Fermier {
 
-    private List<Viande> mesProductions;
+    private List<Viande> mesProductions = new ArrayList<>();
+    private List<Viande> mesProduitsCommercialisables = new ArrayList<>() ;
+
 
     public ProducteurDeViande(String nom, boolean abonne, CompteBancaire monComte) {
         super(nom, abonne, monComte);
-        mesProductions = new ArrayList<>();
     }
 
-    public void produireVache(Vache vache){
-        mesProductions.add(vache);
-    }
-
-    public void produireCochon(Cochon cochon){
-        mesProductions.add(cochon);
-    }
-    public void produireVolaille(Volaille volaille){
-        mesProductions.add(volaille);
+    public void produireViande(List<Viande> viandes){
+        mesProductions.addAll(viandes);
     }
 
     public List<Viande> getMesProductions() {
         return mesProductions;
+    }
+
+    @Override
+    public void ajouterCommercialisable(Produits produit) {
+        if(produit.isConforme()){
+            mesProduitsCommercialisables.add((Viande) produit);
+        }
+    }
+
+    @Override
+    public void afficherMesProductions() {
+        System.out.println("Voici les produits de " + this.getNom() + ": ");
+        for (Produits produit : mesProductions){
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles "  + " | "  + produit.getPrix() + "$");
+        }
+    }
+
+    @Override
+    public void afficherCommercialisable() {
+        System.out.println("Voici les produits commercialisables de " + this.getNom() + ": ");
+        for (Produits produit : mesProduitsCommercialisables){
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles "  + " | "  + produit.getPrix() + "$");
+        }
+    }
+
+    @Override
+    public void supprimerProduit(Produits viande) {
+        for (Viande viandeCourant : mesProduitsCommercialisables)
+            if (viande.equals(viandeCourant))
+                mesProduitsCommercialisables.remove(viandeCourant) ;
     }
 }
