@@ -17,7 +17,7 @@ class RépertoireVenteTest {
     void supprimerViande() {
         RépertoireVenteTest répertoire = new RépertoireVenteTest();
         Viande viande = new Viande.BuilderProduits(12,25,"poulet").volailleBuild();
-        répertoire.supprimerViande(viande);
+//        répertoire.supprimerViande(viande);
     }
 
     @Test
