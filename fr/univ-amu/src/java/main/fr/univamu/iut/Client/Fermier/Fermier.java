@@ -10,6 +10,7 @@ import java.util.List;
 
 public abstract class Fermier extends Client {
 
+
     public Fermier(String nom, boolean abonne, CompteBancaire monComte) {
         super(nom, abonne, monComte);
     }
