@@ -39,25 +39,25 @@ public class Trader extends Client {
     }
 
 
-
-    public void mettreEnVente(ArrayList<Produits> produits, RépertoireVente répertoireVente) {
-        for (Produits produit : produits){
-            if (produit instanceof Legume)
-                répertoireVente.ajouterLegume((Legume)produit);
-            else if (produit instanceof Fruit)
-                répertoireVente.ajouterFruit((Fruit)produit);
-            else if (produit instanceof Viande)
-                répertoireVente.ajouterViande((Viande)produit);
-            else if (produit instanceof Arbre)
-                répertoireVente.ajouterArbre((Arbre)produit);
-            else if (produit instanceof ProduitLaitier)
-                répertoireVente.ajouterProduitLaitier((ProduitLaitier)produit) ;
-        }
-
-
-
-
-    }
+//
+//    public void mettreEnVente(ArrayList<Produits> produits, RépertoireVente répertoireVente) {
+//        for (Produits produit : produits){
+//            if (produit instanceof Legume)
+//                répertoireVente.ajouterLegume((Legume)produit);
+//            else if (produit instanceof Fruit)
+//                répertoireVente.ajouterFruit((Fruit)produit);
+//            else if (produit instanceof Viande)
+//                répertoireVente.ajouterViande((Viande)produit);
+//            else if (produit instanceof Arbre)
+//                répertoireVente.ajouterArbre((Arbre)produit);
+//            else if (produit instanceof ProduitLaitier)
+//                répertoireVente.ajouterProduitLaitier((ProduitLaitier)produit) ;
+//        }
+//
+//
+//
+//
+//    }
 
 }
 
