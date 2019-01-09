@@ -5,7 +5,6 @@ import fr.univamu.iut.Client.Detaillant;
 import fr.univamu.iut.CompteBancaire;
 import org.junit.jupiter.api.Test;
 
-import java.net.PortUnreachableException;
 
 import static org.junit.jupiter.api.Assertions.*;
 

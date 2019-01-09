@@ -13,14 +13,18 @@ public class Detaillant extends Client {
 
     @Override
     public void supprimerProduit(Produits produit) {
-        for (Produits produitCourant : getMesProduitsAchetes())
-            if (produit.equals(produitCourant))
-                getMesProduitsAchetes().remove(produitCourant) ;
+        getMesProduitsAchetes().remove(produit) ;
     }
 
     public void acheterProduit(Produits produit){
         getMesProduitsAchetes().add(produit) ;
     }
 
+    public void afficherMesProduitsAchetés() {
+        System.out.println("Voici les achats de " + this.getNom() + ": ");
+        for (Produits produit : getMesProduitsAchetes()){
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles : \n \t Prix à l'unité : " + produit.getPrix() + "$ \n \t Prix total : " + produit.getPrix() * produit.getQuantite() + "$\n");
+        }
+    }
 
 }
