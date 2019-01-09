@@ -1,16 +1,20 @@
 package fr.univamu.iut;
 
+import fr.univamu.iut.Produit.Arbre.Arbre;
 import fr.univamu.iut.Produit.FruitEtLegume.Fruit;
 import fr.univamu.iut.Produit.FruitEtLegume.Legume;
+import fr.univamu.iut.Produit.Produits;
 import fr.univamu.iut.Produit.Vegetal;
 import fr.univamu.iut.Produit.Viande.Viande;
 
 import java.util.ArrayList;
 
 public class RépertoireVente {
-    private ArrayList<Vegetal> fruitsEnVente ;
-    private ArrayList<Vegetal> legumesEnVente ;
-    private ArrayList<Viande> viandesEnVente ;
+    private ArrayList<Vegetal> fruitsEnVente = new ArrayList<>();
+    private ArrayList<Vegetal> legumesEnVente = new ArrayList<>();
+    private ArrayList<Viande> viandesEnVente = new ArrayList<>();
+    private ArrayList<Arbre> arbresEnVentee = new ArrayList<>();
+    private ArrayList<Viande> viandesEnVente = new ArrayList<>();
 
     public RépertoireVente() {
 
@@ -40,14 +44,13 @@ public class RépertoireVente {
         this.viandesEnVente = viandesEnVente;
     }
 
-    public void ajouterFruit(Vegetal fruit) {
-        fruitsEnVente.add(fruit) ;
-    }
-    public void ajouterLegume(Vegetal legume) {
-        legumesEnVente.add(legume) ;
-    }
-    public void ajouterViande(Viande viande) {
-        viandesEnVente.add(viande) ;
+    public void ajouterProduit(Produits produit, RépertoireVente répertoireVente) {
+        if (produit instanceof Legume)
+            legumesEnVente.add((Legume) produit);
+        else if (produit instanceof Fruit)
+            fruitsEnVente.add((Fruit) produit);
+        else if (produit instanceof Viande)
+            viandesEnVente.add((Viande)produit);
     }
 
     public void supprimerFruit(Fruit fruit) {
