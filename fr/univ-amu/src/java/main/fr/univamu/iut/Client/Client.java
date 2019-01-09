@@ -28,6 +28,8 @@ public abstract class Client {
         this.monComte = monComte;
     }
 
+    public abstract void supprimerProduit(Produits produit);
+
     public boolean isAbonne() {
         return abonne;
     }
@@ -83,18 +85,17 @@ public abstract class Client {
     public void setNom(String nom) {
         this.nom = nom;
     }
-
     public void acheterProduit(Produits produit, Client vendeur){
             mesProduitsAchetes.add(produit);
             monComte.debiter(idClient, produit.getPrix());
             produit.getProprietaire().getMonComte().crediter(produit.getProprietaire().getIdClient(), produit.getPrix());
-            produit.getProprietaire();
+            produit.getProprietaire().supprimerProduit(produit);
             transaction = new Transaction(vendeur, this, produit);
             transaction.addTransaction(transaction);
 
     }
 
-    public String notifierClient(Client client){
+   public String notifierClient(Client client){
         return "De nouveaux produits ont été mis en vente pour vous " + client.getNom();
     }
 
@@ -113,4 +114,4 @@ public abstract class Client {
     public void setOffreAchat(OffreAchat offreAchat) {
         this.offreAchat = offreAchat;
     }
-}
+
