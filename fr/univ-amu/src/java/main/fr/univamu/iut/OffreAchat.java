@@ -60,4 +60,5 @@ public class OffreAchat {
     public void setConforme(boolean accepter) {
         this.accepter = accepter;
     }
+
 }

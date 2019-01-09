@@ -30,6 +30,7 @@ public class Controleur {
                 if (produit.equals(produitInter))                               // produit interdit 
                 {
                     produit.setConforme(false);
+                    return;
                 }
             }
             if (peremption > 0)                                                 // date de péremption dépassée
