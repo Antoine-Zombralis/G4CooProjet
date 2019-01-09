@@ -11,7 +11,7 @@ import fr.univamu.iut.Produit.Viande.Viande;
 import java.util.ArrayList;
 
 /**
- * Classe qui contient toutes les listes de produits disponibles sur le marchéé fermier
+ * Classe qui contient toutes les listes de produits disponibles sur le marchée fermier
  */
 public class RépertoireVente {
     private ArrayList<Vegetal> fruitsEnVente = new ArrayList<>();
