@@ -58,17 +58,17 @@ public abstract class Client {
         return mesProduitsAchetes;
     }
 
+    public void accepterOffre(boolean accepter) {
+        if (accepter) {
+            offreAchat.setConforme(accepter);
+        }
+    }
+
     public void validerOffre() {
         if (offreAchat.isAccepter() && offreAchat.getMonCreateur().getMonComte().getSolde() > offreAchat.getMontant()) {
             offreAchat.getMonCreateur().acheterProduit(offreAchat.getProduitConcerne(), offreAchat.getProduitConcerne().getProprietaire(), offreAchat.getQuantite());
         } else {
             System.out.println("Vous ne pouvez pas acheter ce produit...");
-        }
-    }
-
-    public void accepterOffre(boolean accepter) {
-        if (accepter) {
-            offreAchat.setConforme(accepter);
         }
     }
 
@@ -91,8 +91,8 @@ public abstract class Client {
         else{
             int newQuantite = produit.getQuantite() - quantite;
             produit.setQuantite(newQuantite);
-            mesProduitsAchetes.add(produit);
             monComte.debiter(idClient, produit.getPrix() * quantite);
+            mesProduitsAchetes.add(produit);
             produit.getProprietaire().getMonComte().crediter(produit.getProprietaire().getIdClient(), produit.getPrix() * quantite);
             produit.getProprietaire().supprimerProduit(produit);
             transaction = new Transaction(vendeur, this, produit);

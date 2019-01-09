@@ -60,7 +60,6 @@ class ControleurTest {
         controleur.validerProduit(produitInterdit);
         controleur.validerProduit(produitPérimé);
         controleur.validerProduit(produitAutorisé);
-        System.out.println(produitPérimé.getDatePeremption());
         if (produitInterdit.isConforme()) {
             fail("Erreur, ce produit a été validé alors qu'il était interdit !");
         }
