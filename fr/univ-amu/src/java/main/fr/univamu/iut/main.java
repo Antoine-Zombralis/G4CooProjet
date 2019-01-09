@@ -20,7 +20,6 @@ public class main {
     public static void main(String[] args) {
         List<Client> participants = new ArrayList<>();
 
-
         Fermier JeanLouis = new Horticulteur("JeanLouis", false, null);
         JeanLouis.setMonComte(new CompteBancaire(JeanLouis.getIdClient(), 1000));
         participants.add(JeanLouis);
@@ -61,8 +60,9 @@ public class main {
         centrale.setMonComte(new CompteBancaire(centrale.getIdClient(), 6000));
         participants.add(centrale);
 
-//        Client trader = new Trader("Trader", false, null);
-//        trader.setMonComte(new CompteBancaire(trader.getIdClient(), 2500));
+        Client trader = new Trader("Trader", false, null);
+        trader.setMonComte(new CompteBancaire(trader.getIdClient(), 2500));
+        participants.add(trader);
 
         RépertoireVente repertoireVente = new RépertoireVente();
 
@@ -71,7 +71,7 @@ public class main {
         List<Vegetal> vegeMicky = ((Horticulteur) Micky).generationVegetalAleatoire(200);
         List<Arbre> arbrePatrick = ((Arboriculteur) Patrick).generationArbreAleatoire(200);
         List<Arbre> arbreSamuel = ((Arboriculteur) Samuel).generationArbreAleatoire(150);
-        List<Viande> viandeAntone = ((ProducteurDeViande) Antone).generationViandeAleatoire(150, EnumLabel.ROUGE, CategorieCochon.LANDRACE_FRANCAIS, CategorieVolaille.CHAPON, CategorieVache.NORMANDE);
+        List<Viande> viandeAntone = ((ProducteurDeViande) Antone).generationViandeAleatoire(10000, EnumLabel.ROUGE, CategorieCochon.LANDRACE_FRANCAIS, CategorieVolaille.CHAPON, CategorieVache.NORMANDE);
         List<Viande> viandeCorentin = ((ProducteurDeViande) Corentin).generationViandeAleatoire(300, EnumLabel.BBC, CategorieCochon.BASQUE, CategorieVolaille.FAISAN, CategorieVache.TARENTAISE);
         List<ProduitLaitier> produitLaitierNico = ((ProducteurLaitier) Nicolas).generationProduitLaitierAleatoire(425);
         List<ProduitLaitier> produitLaitierAugustin = ((ProducteurLaitier) Augustin).generationProduitLaitierAleatoire(250);
@@ -91,16 +91,38 @@ public class main {
         JeanLouis.accepterOffre(true);
         JeanLouis.validerOffre();
 
-        OffreAchat offreAchatVegetal1 = new OffreAchat(Eric, vegeJean.get(1), vegeJean.get(1).getPrix(), 3);
-        Micky.setOffreAchat(offreAchatVegetal1);
+        OffreAchat offreAchatVegetal1 = new OffreAchat(Eric, vegeJean.get(1), vegeJean.get(1).getPrix(), 4);
+        JeanLouis.setOffreAchat(offreAchatVegetal1);
+        JeanLouis.accepterOffre(true);
+        JeanLouis.validerOffre();
+
+        OffreAchat offreAchatVegetal2 = new OffreAchat(Eric, vegeMicky.get(2), vegeMicky.get(2).getPrix(), 5);
+        Micky.setOffreAchat(offreAchatVegetal2);
         Micky.accepterOffre(true);
         Micky.validerOffre();
 
-        System.out.println((vegeJean.get(0).getQuantite()));
+        OffreAchat offreAchatViande = new OffreAchat(Carrefour, viandeAntone.get(0), viandeAntone.get(0).getPrix(), 200);
+        Antone.setOffreAchat(offreAchatViande);
+        Antone.accepterOffre(true);
+        Antone.validerOffre();
+
+        OffreAchat offreAchatArbre = new OffreAchat(centrale, arbreSamuel.get(1), arbreSamuel.get(1).getPrix(), 20);
+        Samuel.setOffreAchat(offreAchatArbre);
+        Samuel.accepterOffre(true);
+        Samuel.validerOffre();
+
+        OffreAchat offreLait = new OffreAchat(trader, produitLaitierNico.get(2), 1, 10);
+        Nicolas.setOffreAchat(offreLait);
+        //Nicolas est pas d'accord avec cette offre
+        offreLait.setMontant(4);
+        ((Trader) trader).Negocier(offreLait, 3);
+        //Trader negocie el prix
+        Nicolas.accepterOffre(true);
+        Nicolas.validerOffre();
 
         while (true) {
             Scanner sc = new Scanner(System.in);
-            AfficherMenu();
+            System.out.println("1 - Afficher l'emsemble des participants \n" + "2 - Consulter les transactions \n" + "3 - Consulter les répertoires de vente\n" + "4 - Prix moyens des produits sur le marché");
             String str = sc.nextLine();
             if (str.equals("1")) {
                 System.out.println("=============== LISTE DES PARTICIPANTS ===============");
@@ -109,7 +131,9 @@ public class main {
                     participant.afficherMesProduits();
                 }
             }else if(str.equals("2")){
-
+                for(Transaction transaction : Client.getTransactionsClient()){
+                    System.out.println("Transaction entre " + transaction.getAcheteur().getNom() + " et " + transaction.getVendeur().getNom() + " du montant " + transaction.getMontant() + "$\n");
+                }
             }
             else if (str.equals("3")) {
                 System.out.println("1 - Consulter les legumes à la vente \n" + "2 - Consulter les fruits à la vente \n" + "3 - Consulter les viandes à la vente \n" + "4 - Consulter les produits laitiers à la vente \n" + "5 - Consulter les arbres à la vente \n" + "6 - Consulter tous les produits à la vente \n");
@@ -130,16 +154,38 @@ public class main {
                     repertoireVente.afficherEtalageFruit();
                     repertoireVente.afficherEtalageProduitLaitier();
                     repertoireVente.afficherEtalageLegume();
-
                 }
+            }
+            else if(str.equals("4")){
+                double prix = 0;
+                int cpt = 0;
+                for(Vegetal vegetal : repertoireVente.getFruitsEnVente()){
+                    ++cpt;
+                    prix += vegetal.getPrix();
+                }
+                for(Vegetal vegetal : repertoireVente.getLegumesEnVente()){
+                    ++cpt;
+                    prix += vegetal.getPrix();
+                }
+                for(ProduitLaitier laitier : repertoireVente.getProduitLaitiersEnVente()){
+                    ++cpt;
+                    prix += laitier.getPrix();
+                }
+                for(Arbre vegetal : repertoireVente.getArbresEnVente()){
+                    ++cpt;
+                    prix += vegetal.getPrix();
+                }
+                for(Viande viande : repertoireVente.getViandesEnVente()){
+                    ++cpt;
+                    prix += viande.getPrix();
+                }
+
+                System.out.println("============= PRIX MOYEN DES VENTES =============\n" + "Le prix moyen de tous les produits en ventes est de " + prix/cpt + "$\n");
             }
 
         }
     }
 
-    public static void AfficherMenu() {
-        System.out.println("1 - Afficher l'emsemble des participants \n" + "2 - Consulter les transactions \n" + "3 - Consulter les répertoires de vente");
-    }
 
 
 
