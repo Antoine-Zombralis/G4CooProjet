@@ -4,6 +4,7 @@ import fr.univamu.iut.Produit.Arbre.Arbre;
 import fr.univamu.iut.Produit.FruitEtLegume.Fruit;
 import fr.univamu.iut.Produit.FruitEtLegume.Legume;
 import fr.univamu.iut.Produit.Produits;
+import fr.univamu.iut.Produit.ProduitsLaitier.ProduitLaitier;
 import fr.univamu.iut.Produit.Vegetal;
 import fr.univamu.iut.Produit.Viande.Viande;
 
@@ -13,8 +14,8 @@ public class RépertoireVente {
     private ArrayList<Vegetal> fruitsEnVente = new ArrayList<>();
     private ArrayList<Vegetal> legumesEnVente = new ArrayList<>();
     private ArrayList<Viande> viandesEnVente = new ArrayList<>();
-    private ArrayList<Arbre> arbresEnVentee = new ArrayList<>();
-    private ArrayList<Viande> viandesEnVente = new ArrayList<>();
+    private ArrayList<Arbre> arbresEnVente = new ArrayList<>();
+    private ArrayList<ProduitLaitier> produitLaitiersEnVente = new ArrayList<>();
 
     public RépertoireVente() {
 
@@ -44,13 +45,19 @@ public class RépertoireVente {
         this.viandesEnVente = viandesEnVente;
     }
 
-    public void ajouterProduit(Produits produit, RépertoireVente répertoireVente) {
+    public void ajouterProduit(Produits produit) {
         if (produit instanceof Legume)
             legumesEnVente.add((Legume) produit);
         else if (produit instanceof Fruit)
             fruitsEnVente.add((Fruit) produit);
         else if (produit instanceof Viande)
             viandesEnVente.add((Viande)produit);
+        else if(produit instanceof Arbre)
+            arbresEnVente.add((Arbre) produit);
+        else{
+            produitLaitiersEnVente.add((ProduitLaitier) produit);
+        }
+
     }
 
     public void supprimerFruit(Fruit fruit) {
@@ -64,23 +71,68 @@ public class RépertoireVente {
     public void supprimerLegume(Legume legume) {
                 legumesEnVente.remove(legume) ;
     }
-
-    public void afficherEtalageViande() {
-        for (Viande viande : viandesEnVente)
-            System.out.println("Il reste " + viande.getQuantite() + " kg de cette " + viande.getNom() + " à " + viande.getPrix() + " le kg.");
+    public void supprimerArbre(Arbre arbre) {
+        legumesEnVente.remove(arbre) ;
+    }
+    public void supprimerProduitsLaitiers(ProduitLaitier produitLaitier) {
+        legumesEnVente.remove(produitLaitier) ;
     }
 
 
+    public ArrayList<Arbre> getArbresEnVente() {
+        return arbresEnVente;
+    }
+
+    public void setArbresEnVentee(ArrayList<Arbre> arbresEnVente) {
+        this.arbresEnVente = arbresEnVente;
+    }
+
+    public ArrayList<ProduitLaitier> getProduitLaitiersEnVente() {
+        return produitLaitiersEnVente;
+    }
+
+    public void setProduitLaitiersEnVente(ArrayList<ProduitLaitier> produitLaitiersEnVente) {
+        this.produitLaitiersEnVente = produitLaitiersEnVente;
+    }
+
     public void afficherEtalageLegume() {
+        System.out.println("============== LEGUMES EN VENTE ============== ");
         for (Vegetal legume : legumesEnVente)
-            System.out.println("Il reste " + legume.getQuantite() + " kg de cette cagette de " + legume.getNom() + " à " + legume.getPrix() + " le kg.");
+            System.out.println("Il y a " + legume.getQuantite() + "  " + legume.getNom() + " à " + legume.getPrix() + "$ " + " proposé par  " + legume.getProprietaire().getNom());
+        System.out.println("\n");
     }
 
 
     public void afficherEtalageFruit() {
+        System.out.println("============== FRUITS EN VENTE ============== ");
+
         for (Vegetal fruit : fruitsEnVente)
-            System.out.println("Il reste " + fruit.getQuantite() + " kg de cette cagette de " + fruit.getNom() + " à " + fruit.getPrix() + " le kg.");
+            System.out.println("Il y a " + fruit.getQuantite() + " " + fruit.getNom() + " à " + fruit.getPrix() + "$ "+ " proposé par  " + fruit.getProprietaire().getNom());
+        System.out.println("\n");
     }
+
+    public void afficherEtalageArbre() {
+        System.out.println("============== ARBRES EN VENTE ============== ");
+        for (Arbre arbre : arbresEnVente)
+            System.out.println("Il y a " + arbre.getQuantite() + "  " + arbre.getNom() + " à " + arbre.getPrix() + "$ " + " proposé par  " + arbre.getProprietaire().getNom());
+        System.out.println("\n");
+    }
+
+    public void afficherEtalageViande() {
+        System.out.println("============== VIANDES EN VENTE ============== ");
+        for (Viande viande : viandesEnVente)
+            System.out.println("Il y a  " + viande.getQuantite() + "  " + viande.getNom() + " à " + viande.getPrix() + "$ " + " proposé par  " + viande.getProprietaire().getNom());
+        System.out.println("\n");
+    }
+
+    public void afficherEtalageProduitLaitier() {
+        System.out.println("============== PRODUITS LAITIERS EN VENTE ============== ");
+        for (ProduitLaitier produitLaitier : produitLaitiersEnVente)
+            System.out.println("Il y a  " + produitLaitier.getQuantite() + "  " + produitLaitier.getNom() + " à " + produitLaitier.getPrix() + "$ " + " proposé par  " + produitLaitier.getProprietaire().getNom());
+        System.out.println("\n");
+    }
+
+
 
 
 }
