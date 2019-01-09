@@ -67,11 +67,13 @@ public class Controleur {
         produitInterdits.add(produit) ;
     }
 
-    public void supprimerProduitInterfits(Produits produitAutorisé) {
+    public void supprimerProduitInterdits(Produits produitAutorisé) {
         for (Produits produit : produitInterdits)
         {
-            if (produit.equals(produitAutorisé))
-                produitInterdits.remove(produit) ;
+            if (produit.equals(produitAutorisé)){
+                produitInterdits.remove(produit);
+            }
+
         }
     }
 }

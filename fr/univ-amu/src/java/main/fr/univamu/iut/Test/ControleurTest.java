@@ -20,13 +20,29 @@ class ControleurTest {
 
     @Test
     final void supprimerProduitInterdits() {
-        Produits produits = new Volaille.BuilderProduits(12,23.9,"chicken").volailleBuild();
+        Controleur controleur = new Controleur();
+        Produits produitAutorisé = new Volaille.BuilderProduits(12,23.9,"poulet autorisé").volailleBuild();
+        controleur.supprimerProduitInterdits(produitAutorisé);
+        for (Produits produit : controleur.getProduitInterdits()){
+            if (produit.equals(produitAutorisé)) {
+                fail("Ce produit est toujours supprimé !");
+            }
+        }
     }
 
     @Test
     final void ajouterProduitInterdits() {
-        Produits produits = new Volaille.BuilderProduits(12,23.9,"chicken").volailleBuild();
+        Controleur controleur = new Controleur();
+        Produits produitInterdit = new Volaille.BuilderProduits(12,23.9,"poulet interdit").volailleBuild();
+        controleur.ajouterProduitInterdits(produitInterdit);
+        for (Produits produit : controleur.getProduitInterdits()){
+            if(produit.equals(produitInterdit)) {
+                int cpt = 0;
+                cpt = cpt + 1;
+            }
+        }
     }
+
 
     @Test
     final void validerProduit() {
