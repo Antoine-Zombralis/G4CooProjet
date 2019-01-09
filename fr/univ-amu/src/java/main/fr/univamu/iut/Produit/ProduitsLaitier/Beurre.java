@@ -6,6 +6,10 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Beurre extends ProduitLaitier {
+    /**
+     * @param builder  builder : Correspond au design patern builder
+     * Date correspond à la date de péremption du produit
+     */
     public Beurre(Produits.BuilderProduits builder) {
         super(builder);
         Calendar calendar = Calendar.getInstance();

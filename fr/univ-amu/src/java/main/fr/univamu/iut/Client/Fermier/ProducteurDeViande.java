@@ -18,12 +18,21 @@ import fr.univamu.iut.RépertoireVente;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe qui gère les producteurs de viande
+ */
 public class ProducteurDeViande extends Fermier {
 
     private List<Viande> mesProductions = new ArrayList<>();
     private List<Viande> mesProduitsCommercialisables = new ArrayList<>() ;
 
 
+    /**
+     * @param nom
+     * @param abonne
+     * @param monComte
+     * Constructeur du producteur de viande qui prend en compte un nom un abonnement et un compte bancaire
+     */
     public ProducteurDeViande(String nom, boolean abonne, CompteBancaire monComte) {
         super(nom, abonne, monComte);
     }
@@ -33,6 +42,10 @@ public class ProducteurDeViande extends Fermier {
         return mesProductions;
     }
 
+    /**
+     * @param produit
+     * Fonction qui ajoute un produit laitier à la liste des produits en vente du producteur
+     */
     @Override
     public void ajouterCommercialisable(Produits produit) {
         if(produit.isConforme()){
@@ -40,6 +53,9 @@ public class ProducteurDeViande extends Fermier {
         }
     }
 
+    /**
+     * Fonction qui permet d'afficher la liste des productions du producteur
+     */
     @Override
     public void afficherMesProductions() {
         System.out.println("Voici les produits de " + this.getNom() + ": ");
@@ -48,6 +64,9 @@ public class ProducteurDeViande extends Fermier {
         }
     }
 
+    /**
+     * Fonction qui permet d'afficher la liste des produits mis en vente par le producteur
+     */
     @Override
     public void afficherCommercialisable() {
         System.out.println("Voici les produits commercialisables de " + this.getNom() + ": ");
@@ -56,11 +75,24 @@ public class ProducteurDeViande extends Fermier {
         }
     }
 
+    /**
+     * @param viande
+     * Fonction qui supprime le produit en paramètre de la liste du producteur
+     */
     @Override
     public void supprimerProduit(Produits viande) {
                 mesProduitsCommercialisables.remove(viande) ;
     }
 
+    /**
+     * @param nbDeProduitsAGenerer
+     * @param label
+     * @param categorieCochon
+     * @param categorieVolaille
+     * @param categorieVache
+     * @return
+     * Fonction qui génère une liste aléatoire de viandes de différentes catégories que possède le producteur
+     */
     public List<Viande> generationViandeAleatoire(int nbDeProduitsAGenerer, EnumLabel label, CategorieCochon categorieCochon, CategorieVolaille categorieVolaille, CategorieVache categorieVache) {
         List<Viande> produits = new ArrayList<>();
 
@@ -99,6 +131,11 @@ public class ProducteurDeViande extends Fermier {
         return produits;
     }
 
+    /**
+     * @param produits
+     * @param répertoireVente
+     * Fonction qui ajoute le produit en paramètre dans le répertoire de vente séléctionné en paramètre
+     */
     public void ajouterDansRépertoire(List<Viande> produits, RépertoireVente répertoireVente)
     {
         Controleur controleur = new Controleur();
