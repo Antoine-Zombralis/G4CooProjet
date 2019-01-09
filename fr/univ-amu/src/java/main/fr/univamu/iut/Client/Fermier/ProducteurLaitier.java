@@ -14,12 +14,21 @@ import fr.univamu.iut.RépertoireVente;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe qui gère les vendeurs de produit laitiers
+ */
 public class ProducteurLaitier extends Fermier {
 
     private List<ProduitLaitier> mesProductions = new ArrayList<>();
     private List<ProduitLaitier> mesProduitsCommercialisables = new ArrayList<>();
 
 
+    /**
+     * @param nom
+     * @param abonne
+     * @param monComte
+     * Constructeur du producteur laitier qui prend en compte un nom un abonnement et un compte bancaire
+     */
     public ProducteurLaitier(String nom, boolean abonne, CompteBancaire monComte) {
         super(nom, abonne, monComte);
     }
@@ -28,6 +37,10 @@ public class ProducteurLaitier extends Fermier {
         return mesProductions;
     }
 
+    /**
+     * @param produit
+     * Fonction qui ajoute un produit laitier à la liste des produits en vente du producteur
+     */
     @Override
     public void ajouterCommercialisable(Produits produit) {
         if (produit.isConforme()) {
@@ -35,6 +48,9 @@ public class ProducteurLaitier extends Fermier {
         }
     }
 
+    /**
+     * Fonction qui permet d'afficher la liste des productions du producteur
+     */
     @Override
     public void afficherMesProductions() {
         System.out.println("Voici les produits de " + this.getNom() + ": ");
@@ -43,6 +59,9 @@ public class ProducteurLaitier extends Fermier {
         }
     }
 
+    /**
+     * Fonction qui permet d'afficher la liste des produits mis en vente par le producteur
+     */
     @Override
     public void afficherCommercialisable() {
         System.out.println("Voici les produits commercialisables de " + this.getNom() + ": ");
@@ -51,11 +70,20 @@ public class ProducteurLaitier extends Fermier {
         }
     }
 
+    /**
+     * @param produitLaitier
+     * Fonction qui supprime le produit en paramètre de la liste du producteur
+     */
     @Override
     public void supprimerProduit(Produits produitLaitier) {
         mesProduitsCommercialisables.remove(produitLaitier);
     }
 
+    /**
+     * @param nbDeProduitsAGenerer
+     * @return
+     * Fonction qui génère une liste aléatoire de produits laitiers que possède le producteur
+     */
     public List<ProduitLaitier> generationProduitLaitierAleatoire(int nbDeProduitsAGenerer) {
         List<ProduitLaitier> produits = new ArrayList<>();
         int cptLait = 0 ;
@@ -87,6 +115,11 @@ public class ProducteurLaitier extends Fermier {
         return produits;
     }
 
+    /**
+     * @param produits
+     * @param répertoireVente
+     * Fonction qui ajoute le produit en paramètre dans le répertoire de vente séléctionné en paramètre
+     */
     public void ajouterDansRépertoire(List<ProduitLaitier> produits, RépertoireVente répertoireVente)
     {
         Controleur controleur = new Controleur();
