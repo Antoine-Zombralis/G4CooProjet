@@ -10,6 +10,9 @@ import fr.univamu.iut.Produit.Viande.Viande;
 
 import java.util.ArrayList;
 
+/**
+ * Classe qui contient toutes les listes de produits disponibles sur le marchéé fermier
+ */
 public class RépertoireVente {
     private ArrayList<Vegetal> fruitsEnVente = new ArrayList<>();
     private ArrayList<Vegetal> legumesEnVente = new ArrayList<>();
@@ -17,6 +20,9 @@ public class RépertoireVente {
     private ArrayList<Arbre> arbresEnVente = new ArrayList<>();
     private ArrayList<ProduitLaitier> produitLaitiersEnVente = new ArrayList<>();
 
+    /**
+     * Constructeur par défautlt
+     */
     public RépertoireVente() {
 
     }
@@ -45,40 +51,6 @@ public class RépertoireVente {
         this.viandesEnVente = viandesEnVente;
     }
 
-    public void ajouterProduit(Produits produit) {
-        if (produit instanceof Legume)
-            legumesEnVente.add((Legume) produit);
-        else if (produit instanceof Fruit)
-            fruitsEnVente.add((Fruit) produit);
-        else if (produit instanceof Viande)
-            viandesEnVente.add((Viande)produit);
-        else if(produit instanceof Arbre)
-            arbresEnVente.add((Arbre) produit);
-        else{
-            produitLaitiersEnVente.add((ProduitLaitier) produit);
-        }
-
-    }
-
-    public void supprimerFruit(Fruit fruit) {
-                fruitsEnVente.remove(fruit) ;
-    }
-
-    public void supprimerViande(Viande viande) {
-                viandesEnVente.remove(viande) ;
-    }
-
-    public void supprimerLegume(Legume legume) {
-                legumesEnVente.remove(legume) ;
-    }
-    public void supprimerArbre(Arbre arbre) {
-        legumesEnVente.remove(arbre) ;
-    }
-    public void supprimerProduitsLaitiers(ProduitLaitier produitLaitier) {
-        legumesEnVente.remove(produitLaitier) ;
-    }
-
-
     public ArrayList<Arbre> getArbresEnVente() {
         return arbresEnVente;
     }
@@ -95,13 +67,58 @@ public class RépertoireVente {
         this.produitLaitiersEnVente = produitLaitiersEnVente;
     }
 
+
+
+    /**
+     * @param produit
+     * Cette fonction ajoute un projduit dans la liste des produits en vente. Pour cela, la fonction verifie le type de l'objet et l'intègre dans
+     * la liste qui correspond à son type.
+     */
+    public void ajouterProduit(Produits produit) {
+        if (produit instanceof Legume)
+            legumesEnVente.add((Legume) produit);
+        else if (produit instanceof Fruit)
+            fruitsEnVente.add((Fruit) produit);
+        else if (produit instanceof Viande)
+            viandesEnVente.add((Viande)produit);
+        else if(produit instanceof Arbre)
+            arbresEnVente.add((Arbre) produit);
+        else{
+            produitLaitiersEnVente.add((ProduitLaitier) produit);
+        }
+
+    }
+
+    /**
+     * @param fruit
+     * Fcnctions qui suppriment un produit du répertoire quand il est acheté ou plus en vente
+     */
+    public void supprimerFruit(Fruit fruit) {
+                fruitsEnVente.remove(fruit) ;
+    }
+    public void supprimerViande(Viande viande) {
+                viandesEnVente.remove(viande) ;
+    }
+    public void supprimerLegume(Legume legume) {
+                legumesEnVente.remove(legume) ;
+    }
+    public void supprimerArbre(Arbre arbre) {
+        legumesEnVente.remove(arbre) ;
+    }
+    public void supprimerProduitsLaitiers(ProduitLaitier produitLaitier) {
+        legumesEnVente.remove(produitLaitier) ;
+    }
+
+
+    /**
+     * Fonctions qui gèrent l'affichage terminal pour présenter les produits à la vente
+     */
     public void afficherEtalageLegume() {
         System.out.println("============== LEGUMES EN VENTE ============== ");
         for (Vegetal legume : legumesEnVente)
             System.out.println("Il y a " + legume.getQuantite() + "  " + legume.getNom() + " à " + legume.getPrix() + "$ " + " proposé par  " + legume.getProprietaire().getNom());
         System.out.println("\n");
     }
-
 
     public void afficherEtalageFruit() {
         System.out.println("============== FRUITS EN VENTE ============== ");
@@ -131,8 +148,4 @@ public class RépertoireVente {
             System.out.println("Il y a  " + produitLaitier.getQuantite() + "  " + produitLaitier.getNom() + " à " + produitLaitier.getPrix() + "$ " + " proposé par  " + produitLaitier.getProprietaire().getNom());
         System.out.println("\n");
     }
-
-
-
-
 }
