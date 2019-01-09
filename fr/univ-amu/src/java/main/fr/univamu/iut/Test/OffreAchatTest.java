@@ -9,7 +9,7 @@ import fr.univamu.iut.Produit.Produits.BuilderProduits;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.fail;
-//
+
 //class OffreAchatTest {
 //    OffreAchatTest() {
 //    }
@@ -22,6 +22,9 @@ import static org.junit.jupiter.api.Assertions.fail;
 //        OffreAchat offre = new OffreAchat(monCreateur, produits, 12);
 //        offre.conformerOffreAchat();
 //        if (!offre.isConforme()) {
+
+//        if (!offre.isAccepter()) {
+
 //            fail("Vous n'avez pas assez d'argent pour effectuer la transaction");
 //        }
 //
