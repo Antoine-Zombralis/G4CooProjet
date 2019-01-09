@@ -55,8 +55,6 @@ public class main {
         RépertoireVente repertoireVente = new RépertoireVente();
 
 
-
-
         List<Vegetal> vegetals = generationVegetalAleatoire(100);
         List<Arbre> arbres = generationArbreAleatoire(200);
         List<Viande> viandes = generationViandeAleatoire(150, EnumLabel.ROUGE, CategorieCochon.LANDRACE_FRANCAIS, CategorieVolaille.CHAPON, CategorieVache.NORMANDE);
@@ -87,11 +85,13 @@ public class main {
             f4.ajouterCommercialisable(produitLaitier);
         }
 
+        ((ProducteurLaitier) f4).supprimerProduittest(produitLaitiers.get(0));
 
-        OffreAchat offreAchatVegetal = new OffreAchat(detaillant, vegetals.get(0), vegetals.get(0).getPrix()) ;
-        f1.setOffreAchat(offreAchatVegetal);
-        f1.accepterOffre(true);
-        f1.validerOffre();
+//        OffreAchat offreAchatVegetal = new OffreAchat(detaillant, vegetals.get(0), vegetals.get(0).getPrix()) ;
+//        vegetals.get(0).setProprietaire(f1);
+//        f1.setOffreAchat(offreAchatVegetal);
+//        f1.accepterOffre(true);
+//        f1.validerOffre();
 
         System.out.println(detaillant.getMonComte().getSolde());
 
