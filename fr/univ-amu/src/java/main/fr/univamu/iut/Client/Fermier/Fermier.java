@@ -10,15 +10,10 @@ import java.util.List;
 public abstract class Fermier extends Client {
 
 
-    private List<Produits> mesProduitsCommercialisable = new ArrayList<>();
-
     public Fermier(String nom, boolean abonne, CompteBancaire monComte) {
         super(nom, abonne, monComte);
     }
 
-    public void acheterRessources(int prix) {
-        this.getMonComte().debiter(getIdClient(), prix);
-    }
     public int cotiserSomme(int gain, int Taxe) {
         return gain * Taxe;
     }
@@ -27,23 +22,12 @@ public abstract class Fermier extends Client {
         System.out.println("Je propose le produit " + produit + " à la vente");
     }
 
-    public void ajouterCommercialisable(Produits produit){
-        mesProduitsCommercialisable.add(produit);
-    }
+    public abstract void ajouterCommercialisable(Produits produit);
 
     public abstract void afficherCommercialisable();
 
     public void alerter(){
         System.out.println("Vous avez recu une sanction");
-    }
-
-    public int getId() {
-        return getIdClient();
-    }
-
-
-    public List<Produits> getMesProduitsCommercialisable() {
-        return mesProduitsCommercialisable;
     }
 
     public abstract void afficherMesProductions() ;

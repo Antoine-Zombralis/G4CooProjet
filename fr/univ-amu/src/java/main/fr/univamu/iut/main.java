@@ -54,21 +54,40 @@ public class main {
         ((ProducteurDeViande) f3).produireViande(viandes);
         ((ProducteurLaitier) f4).produireProduitsLaitier(produitLaitiers);
 
+        for(Vegetal vegetal:  vegetals){
+            controleur.conformerProduit(vegetal);
+            f1.ajouterCommercialisable(vegetal);
+        }
+
+        for(Arbre arbre : arbres){
+            controleur.conformerProduit(arbre);
+            f2.ajouterCommercialisable(arbre);
+        }
+
+        for(Viande viande : viandes){
+            controleur.conformerProduit(viande);
+            f3.ajouterCommercialisable(viande);
+        }
+
+        for(ProduitLaitier produitLaitier : produitLaitiers){
+            controleur.conformerProduit(produitLaitier);
+            f4.ajouterCommercialisable(produitLaitier);
+        }
 
         Scanner sc = new Scanner(System.in);
         System.out.println("1 - Consulter les produits en vente\n" + "2 - Consulter les transactions \n");
         String str = sc.nextLine();
 
         if(str.equals("1")){
-            ((Horticulteur) f1).afficherMesProductions();
+            f1.afficherCommercialisable();
+            f2.afficherCommercialisable();
+            f3.afficherCommercialisable();
+            f4.afficherCommercialisable();
         }
-
 
         RépertoireVente repertoireVente = new RépertoireVente() ;
 
-
-        ((Horticulteur) f1).afficherMesProductions();
-//        OffreAchat offreAchat = new OffreAchat() ;
+        //        OffreAchat offreAchat = new OffreAchat() ;
 
     }
 
