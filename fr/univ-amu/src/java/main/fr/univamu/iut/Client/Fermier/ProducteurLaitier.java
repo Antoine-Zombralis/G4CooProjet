@@ -38,7 +38,7 @@ public class ProducteurLaitier extends Fermier {
     public void afficherMesProductions() {
         System.out.println("Voici les produits de " + this.getNom() + ": ");
         for (Produits produit : mesProductions){
-            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles "  + " | "  + produit.getPrix() + "$");
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles : \n \t Prix à l'unité : " + produit.getPrix() + "$ \n \t Prix total : " + produit.getPrix() * produit.getQuantite() + "$\n");
         }
     }
 
@@ -46,7 +46,7 @@ public class ProducteurLaitier extends Fermier {
     public void afficherCommercialisable() {
         System.out.println("Voici les produits commercialisables de " + this.getNom() + ": ");
         for (Produits produit : mesProduitsCommercialisables){
-            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles "  + " | "  + produit.getPrix() + "$");
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles : \n \t Prix à l'unité : " + produit.getPrix() + "$ \n \t Prix total : " + produit.getPrix() * produit.getQuantite() + "$\n");
         }
     }
 
