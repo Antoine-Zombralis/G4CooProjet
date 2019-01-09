@@ -28,6 +28,8 @@ public abstract class Client {
         this.monComte = monComte;
     }
 
+    public abstract void supprimerProduit(Produits produit);
+
     public boolean isAbonne() {
         return abonne;
     }

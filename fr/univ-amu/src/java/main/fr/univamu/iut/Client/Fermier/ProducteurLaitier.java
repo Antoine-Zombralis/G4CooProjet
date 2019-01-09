@@ -19,6 +19,11 @@ public class ProducteurLaitier extends Fermier {
         super(nom, abonne, monComte);
     }
 
+    @Override
+    public void supprimerProduit(Produits produit) {
+        System.out.println("");
+    }
+
     public void produireProduitsLaitier(List <ProduitLaitier> produitLaitier) {
         mesProductions.addAll(produitLaitier);
     }
@@ -50,10 +55,9 @@ public class ProducteurLaitier extends Fermier {
         }
     }
 
-    @Override
-    public void supprimerProduit(Produits produitLaitier) {
+    public void supprimerProduittest(ProduitLaitier produitLaitier) {
         for (ProduitLaitier produitLaitierCourant: mesProduitsCommercialisables)
-            if (produitLaitier.equals(produitLaitierCourant))
+            if (produitLaitier.getId()  == produitLaitierCourant.getId())
                 mesProduitsCommercialisables.remove(produitLaitier) ;
     }
 }
