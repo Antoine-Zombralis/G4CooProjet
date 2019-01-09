@@ -69,7 +69,6 @@ public abstract class Client {
     public void accepterOffre(boolean accepter) {
         if (accepter) {
             offreAchat.setConforme(accepter);
-
         }
     }
 
