@@ -20,6 +20,7 @@ public abstract class Client {
     private OffreAchat offreAchat;
 
     private List<Produits> mesProduitsAchetes = new ArrayList<>();
+    private static List<Transaction> transactionsClient = new ArrayList<>();
 
 
     public Client(String nom, boolean abonne, CompteBancaire monComte) {
@@ -95,9 +96,9 @@ public abstract class Client {
             produit.setQuantite(newQuantite);
             mesProduitsAchetes.add(nouveau);
             monComte.debiter(idClient, produit.getPrix() * quantite);
-            produit.getProprietaire().getMonComte().crediter(produit.getProprietaire().getIdClient(), produit.getPrix() * quantite);
-            transaction = new Transaction(vendeur, this, produit);
-            transaction.addTransaction(transaction);
+            vendeur.getMonComte().setSolde(vendeur.getMonComte().getSolde() + produit.getPrix() * quantite);
+            transaction = new Transaction(vendeur, this, produit, produit.getPrix()*quantite);
+            transactionsClient.add(transaction);
 
             if(produit.getQuantite() <= 0){
                 produit.getProprietaire().supprimerProduit(produit);
@@ -117,6 +118,7 @@ public abstract class Client {
         }
     }
 
+
     public Transaction getTransaction() {
         return transaction;
     }
@@ -133,5 +135,8 @@ public abstract class Client {
         this.offreAchat = offreAchat;
     }
 
+    public static List<Transaction> getTransactionsClient() {
+        return transactionsClient;
+    }
 }
 
