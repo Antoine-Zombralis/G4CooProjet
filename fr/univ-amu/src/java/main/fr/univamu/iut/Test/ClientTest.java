@@ -18,7 +18,6 @@ class ClientTest {
 
     @Test
     final void acheterProduit() {
-        int cptClient = 0;
         int cptVendeur = 0;
         int cptTransaction = 0;
         Client  client = new Detaillant("dédé", false, null);
@@ -32,6 +31,7 @@ class ClientTest {
         Produits poulet = new Volaille.BuilderProduits(12, 22, "chicken")
                 .addProprio(vendeur)
                 .volailleBuild();
+
         int QuantiteAvantAchat = poulet.getQuantite();
         client.acheterProduit(poulet,vendeur,3);
         if (QuantiteAvantAchat == poulet.getQuantite()) {
@@ -39,13 +39,9 @@ class ClientTest {
         }
         for (Produits produits : client.getMesProduitsAchetes())
         {
-            if (produits == poulet)
-            {
-                cptClient = cptClient + 1;
+            if (poulet.getNom() != produits.getNom()) {
+                fail("Le produit acheté n'a pas été ajouté au stock des produits achetés du client !");
             }
-        }
-        if (cptClient == 0) {
-            fail("Le produit acheté n'a pas été ajouté au stock des produits achetés du client !");
         }
         for (Produits produits : vendeur.getMesProduitsAchetes())
         {
@@ -101,6 +97,7 @@ class ClientTest {
         if (!client.getOffreAchat().isAccepter()) {
             fail("L'offre n'a pas été validée !");
         }
+        //...
     }
 
     @Test

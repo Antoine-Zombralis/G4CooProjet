@@ -1,5 +1,8 @@
 package fr.univamu.iut.Test;
 
+import fr.univamu.iut.Client.Client;
+import fr.univamu.iut.Client.Detaillant;
+import fr.univamu.iut.CompteBancaire;
 import fr.univamu.iut.Controleur;
 import fr.univamu.iut.Produit.Produits;
 import fr.univamu.iut.Produit.Produits.BuilderProduits;
@@ -15,6 +18,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.fail;
 
 class ControleurTest {
+
     ControleurTest() {
     }
 
@@ -22,7 +26,7 @@ class ControleurTest {
     final void supprimerProduitInterdits() {
         Controleur controleur = new Controleur();
         Produits produitAutorisé = new Volaille.BuilderProduits(12,23.9,"poulet autorisé").volailleBuild();
-        controleur.supprimerProduitInterfits(produitAutorisé);
+        controleur.supprimerProduitInterdits(produitAutorisé);
         for (Produits produit : controleur.getProduitInterdits()){
             if (produit.equals(produitAutorisé)) {
                 fail("Ce produit est toujours interdit !");
@@ -70,4 +74,6 @@ class ControleurTest {
             fail("Erreur, ce produit n a pas été validé alors qu'il était valide!");
         }
     }
+
+
 }

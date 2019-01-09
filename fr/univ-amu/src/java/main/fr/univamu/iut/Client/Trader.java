@@ -50,6 +50,7 @@ public class Trader extends Client {
      * fonction pour l'affichange de la liste des produits du trader
      */
     public void afficherMesProduitsAchetés() {
+        String Test;
         System.out.println("Voici les achats de " + this.getNom() + ": ");
         for (Produits produit : getMesProduitsAchetes()){
             System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles : \n \t Prix à l'unité : " + produit.getPrix() + "$ \n \t Prix total : " + produit.getPrix() * produit.getQuantite() + "$\n");

@@ -101,5 +101,9 @@ public class Arboriculteur extends Fermier {
         return mesProductions;
     }
 
+    public List<Arbre> getMesProduitsCommercialisables() {
+        return mesProduitsCommercialisables;
+    }
+
 
 }
