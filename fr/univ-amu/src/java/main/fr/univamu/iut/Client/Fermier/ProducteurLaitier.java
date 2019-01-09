@@ -49,4 +49,11 @@ public class ProducteurLaitier extends Fermier {
             System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles "  + " | "  + produit.getPrix() + "$");
         }
     }
+
+    @Override
+    public void supprimerProduit(Produits produitLaitier) {
+        for (ProduitLaitier produitLaitierCourant: mesProduitsCommercialisables)
+            if (produitLaitier.equals(produitLaitierCourant))
+                mesProduitsCommercialisables.remove(produitLaitier) ;
+    }
 }

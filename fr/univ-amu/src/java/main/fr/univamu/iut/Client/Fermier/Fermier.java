@@ -22,6 +22,7 @@ public abstract class Fermier extends Client {
         System.out.println("Je propose le produit " + produit + " à la vente");
     }
 
+
     public abstract void ajouterCommercialisable(Produits produit);
 
     public abstract void afficherCommercialisable();
@@ -31,4 +32,6 @@ public abstract class Fermier extends Client {
     }
 
     public abstract void afficherMesProductions() ;
+
+    public abstract void supprimerProduit(Produits produits);
 }

@@ -3,6 +3,7 @@ package fr.univamu.iut.Client.Fermier;
 import fr.univamu.iut.Produit.Arbre.Arbre;
 import fr.univamu.iut.CompteBancaire;
 import fr.univamu.iut.Produit.Produits;
+import fr.univamu.iut.Produit.Vegetal;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +40,12 @@ public class Arboriculteur extends Fermier {
         }
     }
 
+    @Override
+    public void supprimerProduit(Produits arbre) {
+        for (Vegetal arbreCourant : mesProduitsCommercialisables)
+            if (arbre.equals(arbreCourant))
+                mesProduitsCommercialisables.remove(arbreCourant) ;
+    }
 
     public void produireArbre(List<Arbre> arbre){
         mesProductions.addAll(arbre);

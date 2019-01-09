@@ -1,19 +1,18 @@
-package fr.univamu.iut;
+package fr.univamu.iut.Client;
 
 import fr.univamu.iut.Client.Client;
+import fr.univamu.iut.CompteBancaire;
 import fr.univamu.iut.Produit.Produits;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Trader extends Client {
 
-    private Boolean travaillerSurMarche;
-    private List<Produits> mesProdtuisEnVente = null;
+    private List<Produits> mesProdtuisEnVente = new ArrayList<>();
 
-    public Trader(String nom, boolean abonne, CompteBancaire monComte, Boolean travaillerSurMarche, List<Produits> mesProdtuisEnVente) {
+    public Trader(String nom, boolean abonne, CompteBancaire monComte) {
         super(nom, abonne, monComte);
-        this.travaillerSurMarche = travaillerSurMarche;
-        this.mesProdtuisEnVente = mesProdtuisEnVente;
     }
 
 //    @Override

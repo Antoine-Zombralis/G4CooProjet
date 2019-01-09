@@ -51,4 +51,11 @@ public class Horticulteur extends Fermier {
         }
     }
 
+    @Override
+    public void supprimerProduit(Produits vegetal) {
+        for (Vegetal vegetalCourant : mesProduitsCommercialisables)
+            if (vegetal.equals(vegetalCourant))
+                mesProduitsCommercialisables.remove(vegetalCourant) ;
+    }
+
 }
