@@ -51,21 +51,15 @@ public class RépertoireVente {
     }
 
     public void supprimerFruit(Fruit fruit) {
-        for (Vegetal fruitCourant : fruitsEnVente)
-            if (fruit.equals(fruitCourant))
-                fruitsEnVente.remove(fruitCourant) ;
+                fruitsEnVente.remove(fruit) ;
     }
 
     public void supprimerViande(Viande viande) {
-        for (Viande viandeCourante : viandesEnVente)
-            if (viande.equals(viandeCourante))
-                fruitsEnVente.remove(viandeCourante) ;
+                viandesEnVente.remove(viande) ;
     }
 
     public void supprimerLegume(Legume legume) {
-        for (Vegetal legumeCourant : legumesEnVente)
-            if (legume.equals(legumeCourant))
-                fruitsEnVente.remove(legumeCourant) ;
+                legumesEnVente.remove(legume) ;
     }
 
     public void afficherEtalageViande() {
