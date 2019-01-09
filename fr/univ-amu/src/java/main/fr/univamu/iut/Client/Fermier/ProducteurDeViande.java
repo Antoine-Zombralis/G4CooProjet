@@ -1,6 +1,7 @@
 package fr.univamu.iut.Client.Fermier;
 
 import fr.univamu.iut.CompteBancaire;
+import fr.univamu.iut.Produit.Arbre.Arbre;
 import fr.univamu.iut.Produit.Produits;
 import fr.univamu.iut.Produit.Vegetal;
 import fr.univamu.iut.Produit.Viande.Cochon;
@@ -30,10 +31,17 @@ public class ProducteurDeViande extends Fermier {
     }
 
     @Override
+    public void ajouterCommercialisable(Produits produit) {
+        if(produit.isConforme()){
+            mesProduitsCommercialisables.add((Viande) produit);
+        }
+    }
+
+    @Override
     public void afficherMesProductions() {
         System.out.println("Voici les produits de " + this.getNom() + ": ");
         for (Produits produit : mesProductions){
-            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " kg disponibles "  + " | "  + produit.getPrix() + "$");
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles "  + " | "  + produit.getPrix() + "$");
         }
     }
 
@@ -41,7 +49,7 @@ public class ProducteurDeViande extends Fermier {
     public void afficherCommercialisable() {
         System.out.println("Voici les produits commercialisables de " + this.getNom() + ": ");
         for (Produits produit : mesProduitsCommercialisables){
-            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " kg disponibles "  + " | "  + produit.getPrix() + "$");
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles "  + " | "  + produit.getPrix() + "$");
         }
     }
 }

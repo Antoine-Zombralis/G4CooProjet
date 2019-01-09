@@ -17,10 +17,17 @@ public class Arboriculteur extends Fermier {
     }
 
     @Override
+    public void ajouterCommercialisable(Produits produit) {
+        if(produit.isConforme()){
+            mesProduitsCommercialisables.add((Arbre) produit);
+        }
+    }
+
+    @Override
     public void afficherCommercialisable() {
         System.out.println("Voici les produits commercialisables de " + this.getNom() + ": ");
         for (Produits produit : mesProduitsCommercialisables){
-            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " kg disponibles "  + " | "  + produit.getPrix() + "$");
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles "  + " | "  + produit.getPrix() + "$");
         }
     }
 
@@ -28,9 +35,10 @@ public class Arboriculteur extends Fermier {
     public void afficherMesProductions() {
         System.out.println("Voici les produits de " + this.getNom() + ": ");
         for (Produits produit : mesProductions){
-            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " kg disponibles "  + " | "  + produit.getPrix() + "$");
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + "produits disponibles "  + " | "  + produit.getPrix() + "$");
         }
     }
+
 
     public void produireArbre(List<Arbre> arbre){
         mesProductions.addAll(arbre);
