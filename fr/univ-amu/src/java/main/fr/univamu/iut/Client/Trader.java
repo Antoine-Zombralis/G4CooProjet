@@ -2,7 +2,12 @@ package fr.univamu.iut.Client;
 
 import fr.univamu.iut.Client.Client;
 import fr.univamu.iut.CompteBancaire;
+import fr.univamu.iut.Produit.FruitEtLegume.Fruit;
+import fr.univamu.iut.Produit.FruitEtLegume.Legume;
 import fr.univamu.iut.Produit.Produits;
+import fr.univamu.iut.Produit.Vegetal;
+import fr.univamu.iut.Produit.Viande.Viande;
+import fr.univamu.iut.RépertoireVente;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,22 +22,35 @@ public class Trader extends Client {
 
     @Override
     public void supprimerProduit(Produits produit) {
-        for (Produits produitCourant : getMesProduitsAchetes())
-            if (produit.equals(produitCourant))
-                getMesProduitsAchetes().remove(produitCourant) ;
+        mesProdtuisEnVente.remove(produit) ;
     }
 
-//    @Override
-//    public void acheterProduit(Produits produit){
-//        getMesProduitsAchetes().add(produit) ;
-//    }
+    public void acheterProduit(Produits produit){
+        mesProdtuisEnVente.add(produit) ;
+    }
+
+    public void afficherMesProduitsAchetés() {
+        System.out.println("Voici les achats de " + this.getNom() + ": ");
+        for (Produits produit : getMesProduitsAchetes()){
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles : \n \t Prix à l'unité : " + produit.getPrix() + "$ \n \t Prix total : " + produit.getPrix() * produit.getQuantite() + "$\n");
+        }
+    }
 
 
 
-//    public void mettreEnVente(Produits produit) {
-//        if (produit instanceof Viande)
-//
-//
-//    }
+    public void mettreEnVente(ArrayList<Produits> produits, RépertoireVente répertoireVente) {
+        for (Produits produit : produits){
+            if (produit instanceof Legume)
+                répertoireVente.ajouterLegume((Legume)produit);
+            else if (produit instanceof Fruit)
+                répertoireVente.ajouterFruit((Fruit)produit);
+            else if (produit instanceof Viande)
+                répertoireVente.ajouterViande((Viande)produit);
+        }
+
+
+
+
+    }
 
 }
