@@ -5,6 +5,7 @@ import fr.univamu.iut.CompteBancaire;
 import fr.univamu.iut.Produit.Produits;
 import fr.univamu.iut.Produit.Vegetal;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class Arboriculteur extends Fermier {
     public void afficherCommercialisable() {
         System.out.println("Voici les produits commercialisables de " + this.getNom() + ": ");
         for (Produits produit : mesProduitsCommercialisables){
-            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles "  + " | "  + produit.getPrix() + "$");
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles : \n \t Prix à l'unité : " + produit.getPrix() + "$ \n \t Prix total : " + produit.getPrix() * produit.getQuantite() + "$\n");
         }
     }
 
@@ -36,7 +37,7 @@ public class Arboriculteur extends Fermier {
     public void afficherMesProductions() {
         System.out.println("Voici les produits de " + this.getNom() + ": ");
         for (Produits produit : mesProductions){
-            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + "produits disponibles "  + " | "  + produit.getPrix() + "$");
+            System.out.println(produit.getNom() + " --> " + produit.getQuantite() + " produits disponibles : \n \t Prix à l'unité : " + produit.getPrix() + "$ \n \t Prix total : " + produit.getPrix() * produit.getQuantite() + "$\n");
         }
     }
 

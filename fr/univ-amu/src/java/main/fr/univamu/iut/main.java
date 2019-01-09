@@ -54,7 +54,7 @@ public class main {
         Controleur controleur = new Controleur();
         RépertoireVente repertoireVente = new RépertoireVente();
 
-//        OffreAchat offreAchat = new OffreAchat() ;
+
 
 
         List<Vegetal> vegetals = generationVegetalAleatoire(100);
@@ -68,24 +68,32 @@ public class main {
         ((ProducteurLaitier) f4).produireProduitsLaitier(produitLaitiers);
 
         for(Vegetal vegetal:  vegetals){
-            controleur.conformerProduit(vegetal);
+            controleur.validerProduit(vegetal);
             f1.ajouterCommercialisable(vegetal);
         }
 
         for(Arbre arbre : arbres){
-            controleur.conformerProduit(arbre);
+            controleur.validerProduit(arbre);
             f2.ajouterCommercialisable(arbre);
         }
 
         for(Viande viande : viandes){
-            controleur.conformerProduit(viande);
+            controleur.validerProduit(viande);
             f3.ajouterCommercialisable(viande);
         }
 
         for(ProduitLaitier produitLaitier : produitLaitiers){
-            controleur.conformerProduit(produitLaitier);
+            controleur.validerProduit(produitLaitier);
             f4.ajouterCommercialisable(produitLaitier);
         }
+
+
+        OffreAchat offreAchatVegetal = new OffreAchat(detaillant, vegetals.get(0), vegetals.get(0).getPrix()) ;
+        f1.setOffreAchat(offreAchatVegetal);
+        f1.accepterOffre(true);
+        f1.validerOffre();
+
+        System.out.println(detaillant.getMonComte().getSolde());
 
         Scanner sc = new Scanner(System.in);
         System.out.println("1 - Consulter les produits en vente \n" + "2 - Consulter les transactions \n" + "3 - Consulter les répertoires de vente");
@@ -133,13 +141,13 @@ public class main {
             else
                 ++cptPommier;
         }
-        Rosier rosier = new Rosier.BuilderProduits(cptRosier, 45 * cptRosier, "Rosier fleurie")
+        Rosier rosier = new Rosier.BuilderProduits(cptRosier, 45 , "Rosier fleurie")
                 .rosierBuid();
-        Pommier pommier = new Pommier.BuilderProduits(cptPommier, 250 * cptPommier, "Pommier d'Alsace")
+        Pommier pommier = new Pommier.BuilderProduits(cptPommier, 250, "Pommier d'Alsace")
                 .pommierBuild();
-        Sapin sapin = new Sapin.BuilderProduits(cptSapin, 25 * cptSapin, "Sapin de Noel")
+        Sapin sapin = new Sapin.BuilderProduits(cptSapin, 25, "Sapin de Noel")
                 .sapinBuild();
-        Banzai banzai = new Banzai.BuilderProduits(cptBanzai, 15 * cptBanzai, "Banzai")
+        Banzai banzai = new Banzai.BuilderProduits(cptBanzai, 15, "Banzai")
                 .banzaiBuild();
         produits.add(rosier);
         produits.add(pommier);
@@ -163,11 +171,11 @@ public class main {
                 else
                     ++cptFromage ;
             }
-            Lait lait = new Lait.BuilderProduits(cptLait, 1.33 * cptLait, "Lait demi-écrémé")
+            Lait lait = new Lait.BuilderProduits(cptLait, 1.33, "Lait demi-écrémé")
                     .laitBuild();
-            Beurre beurre = new Beurre.BuilderProduits(cptBeurre, 2 * cptBeurre, "Barquette de beurre")
+            Beurre beurre = new Beurre.BuilderProduits(cptBeurre, 2, "Barquette de beurre")
                     .beurreBuild();
-            Fromage fromage = new Fromage.BuilderProduits(cptFromage, 45 * cptFromage, "Fromage de brebis")
+            Fromage fromage = new Fromage.BuilderProduits(cptFromage, 45, "Fromage de brebis")
                     .fromageBuild();
             produits.add(lait) ;
             produits.add(beurre) ;
@@ -199,23 +207,17 @@ public class main {
                 else
                     ++cptPomme ;
             }
-            CagetteAubergine aubergine = new CagetteAubergine.BuilderProduits(cptAubergine, 2 * cptAubergine, "Cagette d'aubergines")
-                    .addPrixVegetalUnite(2)
+            CagetteAubergine aubergine = new CagetteAubergine.BuilderProduits(cptAubergine, 2, "Cagette d'aubergines")
                     .aubergineBuild();
-            CagetteCarotte carotte = new CagetteCarotte.BuilderProduits(cptCarotte, 2 * cptCarotte, "Cagette de carottes")
-                    .addPrixVegetalUnite(2)
+            CagetteCarotte carotte = new CagetteCarotte.BuilderProduits(cptCarotte, 2, "Cagette de carottes")
                     .carotteBuild();
-            CagetteChou chou = new CagetteChou.BuilderProduits(cptChou, 1.25 * cptChou, "Cagette de chou")
-                    .addPrixVegetalUnite(1.25)
+            CagetteChou chou = new CagetteChou.BuilderProduits(cptChou, 1.25, "Cagette de chou")
                     .chouBuild();
-            CagetteFraise fraise = new CagetteFraise.BuilderProduits(cptFraise, 13 * cptFraise, "Cagette de fraises")
-                    .addPrixVegetalUnite(13)
+            CagetteFraise fraise = new CagetteFraise.BuilderProduits(cptFraise, 13, "Cagette de fraises")
                     .fraiseBuild();
-            CagettePoire poire = new CagettePoire.BuilderProduits(cptPoire, 8 * cptPoire, "Cagette de poires")
-                    .addPrixVegetalUnite(8)
+            CagettePoire poire = new CagettePoire.BuilderProduits(cptPoire, 8, "Cagette de poires")
                     .poireBuild() ;
-            CagettePomme pomme = new CagettePomme.BuilderProduits(cptPomme, 5 * cptPomme, "Cagette de pommes")
-                    .addPrixVegetalUnite(5)
+            CagettePomme pomme = new CagettePomme.BuilderProduits(cptPomme, 5, "Cagette de pommes")
                     .pommeBuild() ;
             produits.add(aubergine) ;
             produits.add(carotte) ;
@@ -226,7 +228,6 @@ public class main {
 
             return produits;
         }
-
     public static List<Viande> generationViandeAleatoire(int nbDeProduitsAGenerer, EnumLabel label, CategorieCochon categorieCochon, CategorieVolaille categorieVolaille, CategorieVache categorieVache) {
         List<Viande> produits = new ArrayList<>();
 
@@ -242,15 +243,15 @@ public class main {
                 else
                     ++cptVolaille ;
             }
-            Cochon cochon = new Cochon.BuilderProduits(cptCochon, 24 * cptCochon, "Entrecote de porc")
+            Cochon cochon = new Cochon.BuilderProduits(cptCochon, 24, "Entrecote de porc")
                     .addLabel(label)
                     .addCategorieCochon(categorieCochon)
                     .cochonBuild();
-            Vache vache = new Vache.BuilderProduits(cptVache, 36 * cptVache, "Steack de vache")
+            Vache vache = new Vache.BuilderProduits(cptVache, 36 , "Steack de vache")
                     .addLabel(label)
                     .addCategorieVache(categorieVache)
                     .vacheBuild();
-            Volaille volaille = new Volaille.BuilderProduits(cptVolaille, 15 * cptVolaille, "Poulet fermier")
+            Volaille volaille = new Volaille.BuilderProduits(cptVolaille, 15, "Poulet fermier")
                     .addLabel(label)
                     .addCategorieVolaille(categorieVolaille)
                     .volailleBuild();
