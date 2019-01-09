@@ -14,14 +14,16 @@ public class Transaction {
     private Client vendeur;
     private Client acheteur;
     private Produits produits;
+    double montant;
 
-    private static List<Transaction> transactions = new ArrayList<>();
+    private List<Transaction> transactions = new ArrayList<>();
 
-    public Transaction(Client vendeur, Client acheteur, Produits produits) {
+    public Transaction(Client vendeur, Client acheteur, Produits produits, double montant) {
         setNumero(++cpt);
         this.vendeur = vendeur;
         this.acheteur = acheteur;
         this.produits = produits;
+        this.montant = montant;
     }
 
     public void addTransaction(Transaction transaction){
@@ -66,5 +68,13 @@ public class Transaction {
 
     public void setTransactions(List<Transaction> transactions) {
         this.transactions = transactions;
+    }
+
+    public double getMontant() {
+        return montant;
+    }
+
+    public void setMontant(double montant) {
+        this.montant = montant;
     }
 }

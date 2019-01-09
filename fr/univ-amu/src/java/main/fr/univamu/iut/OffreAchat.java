@@ -40,7 +40,7 @@ public class OffreAchat {
         return montant;
     }
 
-    public void setMontant(int montant) {
+    public void setMontant(double montant) {
         this.montant = montant;
     }
 

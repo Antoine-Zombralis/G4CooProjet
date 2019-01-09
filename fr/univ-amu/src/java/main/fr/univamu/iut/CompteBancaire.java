@@ -44,7 +44,7 @@ public class CompteBancaire {
         this.idClient = idClient;
     }
 
-    public void setSolde(int solde) {
+    public void setSolde(double solde) {
         this.solde = solde;
     }
 
