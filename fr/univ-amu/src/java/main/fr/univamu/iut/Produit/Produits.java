@@ -20,7 +20,12 @@ import fr.univamu.iut.Produit.Viande.Volaille;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Produits{
+/**
+ * Classe Produits qui a un builder qui permet d'ajouter des parametres optonnelles à ses classes filles.
+ * Le builder retourne une instance différente pour chaque type des classe filles
+ */
+
+public class Produits {
 
     private Client proprietaire;
     private boolean bio, conforme;
@@ -36,7 +41,11 @@ public class Produits{
     private CategorieCochon categorieCochon;
     private CategorieVolaille categorieVolaille;
 
-    public Produits (BuilderProduits builder) {
+    /**
+     * @param builder
+     * L'identifiant est généré automatiquement
+     */
+    public Produits(BuilderProduits builder) {
         proprietaire = builder.proprietaire;
         nom = builder.nom;
         bio = builder.bio;
@@ -45,9 +54,9 @@ public class Produits{
         setId(++cpt);
         prix = builder.prix;
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.DAY_OF_YEAR, 7) ;
+        calendar.add(Calendar.DAY_OF_YEAR, 7);
         Date date = calendar.getTime();
-        datePeremption = date ;
+        datePeremption = date;
         prixUnite = builder.prixUnite;
         quantiteVegetalDansCagette = builder.quantiteVegetalDansCagette;
         label = builder.label;
@@ -56,6 +65,9 @@ public class Produits{
         categorieVolaille = builder.categorieVolaille;
     }
 
+    /**
+     * La classe static BuilderProduits permet d'ajouter des attributs optionnels aux sous-classe de produit
+     */
     public static class BuilderProduits {
         private Client proprietaire;
         private boolean bio;
@@ -71,107 +83,219 @@ public class Produits{
         private CategorieVolaille categorieVolaille;
 
 
-        public BuilderProduits(int quantite, double prix, String nom){
+        /**
+         * @param quantite
+         * @param prix
+         * @param nom
+         */
+        public BuilderProduits(int quantite, double prix, String nom) {
             this.quantite = quantite;
             this.prix = prix;
             this.nom = nom;
         }
 
 
-        public BuilderProduits addProprio(Client proprietaire){
-            this.proprietaire = proprietaire; return this;
+        /**
+         * @param proprietaire
+         * @return this
+         */
+        public BuilderProduits addProprio(Client proprietaire) {
+            this.proprietaire = proprietaire;
+            return this;
         }
 
-        public BuilderProduits addBio(boolean bio){
-            this.bio = bio; return this;
+        /**
+         * @param bio
+         * @return this
+         */
+        public BuilderProduits addBio(boolean bio) {
+            this.bio = bio;
+            return this;
         }
 
-        public BuilderProduits addDatePeremption(Date fin){
-            datePeremption = fin; return this;
+        /**
+         * @param fin
+         * @return this
+         */
+        public BuilderProduits addDatePeremption(Date fin) {
+            datePeremption = fin;
+            return this;
         }
 
-        public BuilderProduits addPrixUnite(double prix){
-            prixUnite = prix; return this;
+        /**
+         * @param prix
+         * @return this
+         */
+        public BuilderProduits addPrixUnite(double prix) {
+            prixUnite = prix;
+            return this;
         }
 
-        public BuilderProduits addQuantiteVegetalDansCagette(int quantite){
-            quantiteVegetalDansCagette = quantite; return this;
+        /**
+         * @param quantite
+         * @return this
+         */
+        public BuilderProduits addQuantiteVegetalDansCagette(int quantite) {
+            quantiteVegetalDansCagette = quantite;
+            return this;
         }
 
-        public BuilderProduits addLabel(EnumLabel label){
-            this.label = label; return this;
+        /**
+         * @param label
+         * @return this
+         */
+        public BuilderProduits addLabel(EnumLabel label) {
+            this.label = label;
+            return this;
         }
 
-        public BuilderProduits addCategorieVache(CategorieVache categorieVache){
-             this.categorieVache = categorieVache; return this;
+        /**
+         * @param categorieVache
+         * @return this
+         */
+        public BuilderProduits addCategorieVache(CategorieVache categorieVache) {
+            this.categorieVache = categorieVache;
+            return this;
         }
 
-        public BuilderProduits addCategorieVolaille(CategorieVolaille categorieVolaille){
-            this.categorieVolaille = categorieVolaille; return this;
+        /**
+         * @param categorieVolaille
+         * @return this
+         */
+        public BuilderProduits addCategorieVolaille(CategorieVolaille categorieVolaille) {
+            this.categorieVolaille = categorieVolaille;
+            return this;
         }
 
-        public BuilderProduits addCategorieCochon(CategorieCochon categorieCochon){
-            this.categorieCochon = categorieCochon; return this;
+        /**
+         * @param categorieCochon
+         * @return this
+         */
+        public BuilderProduits addCategorieCochon(CategorieCochon categorieCochon) {
+            this.categorieCochon = categorieCochon;
+            return this;
         }
 
-        public CagettePoire poireBuild(){
+        /**
+         * @return nouvelle instance de CagetteDePoire
+         */
+        public CagettePoire poireBuild() {
             return new CagettePoire(this);
         }
 
-        public CagetteAubergine aubergineBuild(){
+        /**
+         * @return nouvelle instance de CagetteDeAubergine
+         */
+        public CagetteAubergine aubergineBuild() {
             return new CagetteAubergine(this);
         }
 
-        public CagetteCarotte carotteBuild(){return new CagetteCarotte(this);
+        /**
+         * @return nouvelle instance de CagetteDeCarotte
+         */
+        public CagetteCarotte carotteBuild() {
+            return new CagetteCarotte(this);
         }
 
-        public CagetteChou chouBuild(){
+        /**
+         * @return nouvelle instance de CagetteDeChou
+         */
+        public CagetteChou chouBuild() {
             return new CagetteChou(this);
         }
 
-        public CagetteFraise fraiseBuild(){
+        /**
+         * @return nouvelle instance de CagetteDeFraise
+         */
+        public CagetteFraise fraiseBuild() {
             return new CagetteFraise(this);
         }
 
-        public CagettePoire poirebuild(){
-            return new CagettePoire(this);
-        }
-
-        public CagettePomme pommeBuild(){
+        /**
+         * @return nouvelle instance de CagetteDePomme
+         */
+        public CagettePomme pommeBuild() {
             return new CagettePomme(this);
         }
 
-        public Banzai banzaiBuild(){
+        /**
+         * @return nouvelle instance de Banzai
+         */
+        public Banzai banzaiBuild() {
             return new Banzai(this);
         }
 
-        public Pommier pommierBuild(){
+        /**
+         * @return nouvelle instance de Pommier
+         */
+        public Pommier pommierBuild() {
             return new Pommier(this);
         }
 
-        public Rosier rosierBuid(){
+        /**
+         * @return nouvelle instance de Rosier
+         */
+        public Rosier rosierBuid() {
             return new Rosier(this);
         }
 
-        public Sapin sapinBuild(){
+        /**
+         * @return nouvelle instance de Sapin
+         */
+        public Sapin sapinBuild() {
             return new Sapin(this);
         }
 
-        public Beurre beurreBuild(){return new Beurre(this);}
-
-        public Fromage fromageBuild(){return new Fromage(this);}
-
-        public Lait laitBuild(){return new Lait(this);}
-
-        public Vache vacheBuild(){return new Vache(this);}
-
-        public Cochon cochonBuild(){return new Cochon(this);}
-
-        public Volaille volailleBuild(){return new Volaille(this);}
-
-        public Produits build(){return new Produits(this);}
-
+        /**
+         * @return nouvelle instance de Beurre
+         */
+        public Beurre beurreBuild() {
+            return new Beurre(this);
         }
+
+        /**
+         * @return nouvelle instance de Fromage
+         */
+        public Fromage fromageBuild() {
+            return new Fromage(this);
+        }
+
+        /**
+         * @return nouvelle instance de Lait
+         */
+        public Lait laitBuild() {
+            return new Lait(this);
+        }
+
+        /**
+         * @return nouvelle instance de Vache
+         */
+        public Vache vacheBuild() {
+            return new Vache(this);
+        }
+
+        /**
+         * @return nouvelle instance de Cochon
+         */
+        public Cochon cochonBuild() {
+            return new Cochon(this);
+        }
+
+        /**
+         * @return nouvelle instance de Volailles
+         */
+        public Volaille volailleBuild() {
+            return new Volaille(this);
+        }
+
+        /**
+         * @return nouvelle instance de Produits
+         */
+        public Produits build() {
+            return new Produits(this);
+        }
+
+    }
 
 
     public Client getProprietaire() {
@@ -215,7 +339,7 @@ public class Produits{
     }
 
     public Date getDatePeremption() {
-        return datePeremption ;
+        return datePeremption;
     }
 
     public void setDatePeremption(Date datePeremption) {
@@ -230,7 +354,7 @@ public class Produits{
         this.nom = nom;
     }
 
-    public void mettreEnVente(){
+    public void mettreEnVente() {
         System.out.println("Je suis le produit " + this.getNom() + " mon stock est de " + this.getQuantite() + " et je coute " + this.getPrix() + "euro");
     }
 
@@ -289,23 +413,5 @@ public class Produits{
     public void setCategorieVolaille(CategorieVolaille categorieVolaille) {
         this.categorieVolaille = categorieVolaille;
     }
-
-    //    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        PropositionProduitFermier that = (PropositionProduitFermier) o;
-//        return isBio() == that.isBio() &&
-//                isConforme() == that.isConforme() &&
-//                getQuantite() == that.getQuantite() &&
-//                getPrix() == that.getPrix() &&
-//                Objects.equals(getProprietaire(), that.getProprietaire()) &&
-//                Objects.equals(getId(), that.getId()) &&
-//                Objects.equals(getDatePeremption(), that.getDatePeremption());
-//    }
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(getProprietaire(), getId(), isBio(), isConforme(), getQuantite(), getPrix(), getDatePeremption());
-//    }
-
 }
+
