@@ -15,18 +15,6 @@ public class OffreAchat {
         this.montant = montant;
     }
 
-    public void conformerOffreAchat() {
-        if (monCreateur.getMonComte().getSolde() > montant)
-            setConforme(true);
-        else
-            System.out.println("Vous n'avez pas assaez d'argent pour effectuer la transaction");
-    }
-
-    public void validerOffre(){
-        if(accepter){
-            monCreateur.acheterProduit(produitConcerne, produitConcerne.getProprietaire());
-        }
-    }
 
 
     public Client getMonCreateur() {

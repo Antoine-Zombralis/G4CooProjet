@@ -114,4 +114,4 @@ public abstract class Client {
     public void setOffreAchat(OffreAchat offreAchat) {
         this.offreAchat = offreAchat;
     }
-}
+
